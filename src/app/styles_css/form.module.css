@@ -1,0 +1,115 @@
+/* contactForm.module.css */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+  }
+  
+  .input,
+  .textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    border-radius: 17px;
+    width: 33vw;
+    min-width: 33vw;
+  }
+ 
+  @media (max-width: 1200px) {
+    .input,
+    .textarea {
+      width: 33vw;
+      min-width: 33vw;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .input,
+    .textarea {
+      width: 43vw;
+      min-width: 43vw;
+      
+    }
+  }
+
+  @media (max-width:768px) {
+    .input,
+    .textarea {
+      width: 55vw;
+    }
+  }
+
+  @media (max-width:576px) {
+    .input,
+    .textarea {
+      width: 60vw;
+    }
+  }
+
+  @media (max-width:480px) {
+    .input,
+    .textarea {
+      width: 70vw;
+    }
+  }
+
+  
+  .input {
+    height: 60px;
+  }
+  
+  .textarea {
+    height: 210px;
+    margin-top: 8px;
+  }
+  
+  .button {
+    color: #2C2B2B;
+    padding: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 125px;
+    margin-top: 16px;
+    background: url('/button.png') no-repeat center/cover;
+    background-position: center;
+    background-size: cover;
+    image-rendering: crisp-edges;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 100px;
+    background-color: transparent !important;
+
+
+}
+  
+  .button:hover {
+    transform: translateY(-6px);
+    background-color: transparent !important;
+  }
+
+.input::placeholder,
+.textarea::placeholder {
+  font-size: 12px;
+  color: #888;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  
+}
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 35px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 30px;
+  border-color: #da05ac;
+  border-width: 1px;
+  width: fit-content;
+}

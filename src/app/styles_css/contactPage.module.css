@@ -1,0 +1,40 @@
+
+.mainContainer {
+display: flex;
+align-items: center;
+text-align: center;
+margin-top: 150px;
+margin-bottom: 100px;
+
+
+
+gap: 8px;
+flex-direction: column;
+background-color: rgb(255, 255, 255) !important;
+}
+
+.paragraph {
+    font-size: 16px;
+    
+  }
+  
+  .h1 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+    background: linear-gradient(
+        108deg,
+        rgba(250, 0, 0, 1) 23%,
+        rgba(223, 18, 135, 1) 41%,
+        rgba(107, 0, 172, 1) 74%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+  
+  .lastParagraph {
+    font-size: 16px;
+  }
+
+  
