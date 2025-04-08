@@ -13,6 +13,9 @@ const NavBar = () => {
         <li><Link href="/services">Services</Link></li>
         <li><Link href="/contact">Contact</Link></li>
       </ul>
+
+    <button type="Contact" className={navStyles.button}></button>
+
     </nav>
   );
 }

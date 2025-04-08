@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
 
-  padding: 1.3rem 2rem;
+  padding: 1.2rem 2rem;
   background-color: #ffffff;
   color: #ffffff;
 
@@ -12,6 +12,7 @@
   left: 2.6rem;                /* Slightly away from the left edge */
   right: 2.6rem;               /* Slightly away from the right edge */
   z-index: 1000;
+
 
   border-radius: 16px;
   box-shadow: 0 0px 1px rgba(249, 2, 171, 0.5);
@@ -73,4 +74,23 @@
   .navbar.expanded .nav-links {
     display: flex;
   }
+
+
+}
+
+.button {
+  padding: 21px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 120px;
+  background: url('/final button.png') no-repeat center/cover;
+  background-position: center;
+  background-size: cover;
+  image-rendering: crisp-edges;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1px;
+  background-color: transparent !important;
+  position: absolute;
+  right: 7px;
+  scale: relative;
 }
