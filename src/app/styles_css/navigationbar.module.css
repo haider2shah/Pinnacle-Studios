@@ -22,6 +22,9 @@
   text-decoration: none; /* Remove underline from the link */
   font-size: 1rem;
   font-weight:450; /* Light font weight */
+
+  position: absolute;
+  left: 25px;
   
   /* Apply the gradient to the text */
   background: linear-gradient(
@@ -91,6 +94,5 @@
   border-radius: 1px;
   background-color: transparent !important;
   position: absolute;
-  right: 7px;
-  scale: relative;
+  right: 15px;
 }
