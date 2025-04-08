@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.3rem 2rem;
+  background-color: #ffffff;
+  color: #ffffff;
+
+  position: fixed;           /* Stick it while scrolling */
+  top: 1.3rem;                 /* Push it a bit below the top */
+  left: 2.6rem;                /* Slightly away from the left edge */
+  right: 2.6rem;               /* Slightly away from the right edge */
+  z-index: 1000;
+
+  border-radius: 16px;
+  box-shadow: 0 0px 1px rgba(249, 2, 171, 0.5);
+}
+
+.logo {
+  text-decoration: none; /* Remove underline from the link */
+  font-size: 1rem;
+  font-weight:450; /* Light font weight */
+  
+  /* Apply the gradient to the text */
+  background: linear-gradient(
+    45deg,  /* Adjusted the angle to 45deg for smoother transition */
+    rgba(250, 0, 0, 1) 0%, 
+    rgba(223, 18, 135, 1) 50%, 
+    #6b00ac 100%
+  );
+  -webkit-background-clip: text; /* Ensures the gradient is clipped to the text */
+  background-clip: text; /* Applies the gradient to the text */
+  
+  color: transparent; /* Make the text transparent to show the gradient */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-links li a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  font-weight:520;
+}
+
+.nav-links li a:hover {
+  color: #ff00b3; /* Cyan hover effect */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    display: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.expanded .nav-links {
+    display: flex;
+  }
+}
