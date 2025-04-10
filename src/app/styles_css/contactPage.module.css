@@ -14,19 +14,19 @@ background-color: rgb(255, 255, 255) !important;
 }
 
 .paragraph {
-  font-size: clamp(12px, 3vw, 16px);
+  font-size: clamp(15px, 3vw, 16px);
     
   }
   
   .h1 {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(26px, 6vw, 32px);
     font-weight: 500;
     line-height: 1.4;
     background: linear-gradient(
         108deg,
         rgba(250, 0, 0, 1) 23%,
         rgba(223, 18, 135, 1) 41%,
-        rgba(107, 0, 172, 1) 74%
+        #6b00ac 74%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -34,7 +34,7 @@ background-color: rgb(255, 255, 255) !important;
 
   
   .lastParagraph {
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: clamp(15px, 3vw, 16px);
 
   }
 
