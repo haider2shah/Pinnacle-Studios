@@ -76,9 +76,14 @@
     width: 190px;
     left:50%;
     transform: translateX(-50%);
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+
   }
   .logo {
     position: static;
+  }
+  .logo {
+    color: #4a4a4a;
   }
 }
 
