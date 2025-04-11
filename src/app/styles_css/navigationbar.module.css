@@ -63,7 +63,7 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
     background-color: #ffffff;
     position: absolute;
     top: 100%;
@@ -95,4 +95,10 @@
   background-color: transparent !important;
   position: absolute;
   right: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
 }
