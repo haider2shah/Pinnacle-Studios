@@ -4,9 +4,10 @@ import navStyles from '../styles_css/navigationbar.module.css';
 const NavBar = () => {
   return (
     <nav className={navStyles.navbar}>
-
-      <div className = {navStyles.logo}>Pinnacle Studios.</div>
-
+      <div className = {navStyles.menu}>
+        <img src="/menu.svg" className = {navStyles.menuIcon} />
+        <div className = {navStyles.logo}>Pinnacle Studios.</div>
+      </div>
       <ul className={navStyles['nav-links']}>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/about">About us</Link></li>
