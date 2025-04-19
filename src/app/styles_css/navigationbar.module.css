@@ -1,111 +1,66 @@
-.navbar {
+/* ========== Base (Mobile First) ========== */
+.navWrapper {
+  position: fixed;
+  top: 1.3rem;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  padding: 1.2rem 2rem;
-  background-color: #ffffff;
-  color: #ffffff;
-
-  position: fixed;           /* Stick it while scrolling */
-  top: 1.3rem;                 /* Push it a bit below the top */
-  left: 2.6rem;                /* Slightly away from the left edge */
-  right: 2.6rem;               /* Slightly away from the right edge */
   z-index: 1000;
+}
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 16px;
-  box-shadow: 0 0px 1px rgba(249, 2, 171, 0.5);
+  position: fixed;
+  top: 1.3rem;
+  width: 210px;
+  padding: 1.1rem 0rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: none;
+  z-index: 1000;
 }
 
 .logo {
-  text-decoration: none; /* Remove underline from the link */
   font-size: 1rem;
-  font-weight:450; /* Light font weight */
-  position: absolute;
-  left: 25px;
-
-
-  
-  /* Apply the gradient to the text */
-  background: linear-gradient(
-    45deg,  /* Adjusted the angle to 45deg for smoother transition */
-    rgba(250, 0, 0, 1) 0%, 
-    rgba(223, 18, 135, 1) 50%, 
-    #6b00ac 100%
-  );
-  -webkit-background-clip: text; /* Ensures the gradient is clipped to the text */
-  background-clip: text; /* Applies the gradient to the text */
-  
-  color: transparent; /* Make the text transparent to show the gradient */
+  font-weight: 450;
+  position: static;
+  text-decoration: none;
+  color: #4a4a4a;
 }
 
 .nav-links {
   list-style: none;
-  display: flex;
+  display: none;
   gap: 3rem;
   margin: 0;
   padding: 0;
+  flex-direction: column;
 }
-
 
 .nav-links li a {
   color: #4a4a4a;
   text-decoration: none;
   font-size: 0.89rem;
+  font-weight: 520;
   transition: color 0.3s ease;
-  font-weight:520;
 }
 
 .nav-links li a:hover {
-  color: #ff00b3; /* Cyan hover effect */
+  color: #ff00b3;
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .nav-links,
-  .button {
-    display: none;
-    
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    border-radius: 14px;
-    padding: 1.1rem 0rem;
-    width: 190px;
-    left:50%;
-    transform: translateX(-50%);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: none;
-  }
-  .logo {
-    position: static;
-  }
-  .logo {
-    color: #4a4a4a;
-  }
-}
-
-@media (min-width: 768px) {
-  .menuIcon {
-    display: none;
-  }
-}
-
-  .navbar.expanded .nav-links {
-    display: flex;
-  }
 
 .button {
+  display: none;
   padding: 21px;
   font-size: 12px;
   cursor: pointer;
   width: 120px;
   background: url('/final button.png') no-repeat center/cover;
-  background-position: center;
-  background-size: cover;
   image-rendering: crisp-edges;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 1px;
@@ -125,4 +80,51 @@
   justify-content: center;
   gap: 12px;
   align-items: center;
+}
+
+/* When navbar is expanded (e.g., after menu toggle) */
+.navbar.expanded .nav-links {
+  display: flex;
+}
+
+/* ========== Tablets and Up ========== */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    width: 95%;
+    border-radius: 16px;
+    background-color: #ffffff;
+  }
+
+  .logo {
+    position: absolute;
+    left: 25px;
+
+    /* Gradient text effect */
+    background: linear-gradient(
+      45deg,
+      rgba(250, 0, 0, 1) 0%,
+      rgba(223, 18, 135, 1) 50%,
+      #6b00ac 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button {
+    display: flex;
+  }
+
+  .menuIcon {
+    display: none;
+  }
 }
