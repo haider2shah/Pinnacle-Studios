@@ -8,39 +8,44 @@ const mobileMenuPage = () => {
         <>
             <NavBar/>
 
-            <div className= {menuStyles.buttons}>
-                <MobileMenuCard
-                    title= "Home"
-                    icon = "/home.svg"
-                    arrowIcon= "/arrow.svg"
-                />
+                <div className= {menuStyles.buttons}>
 
-                <MobileMenuCard
-                    title= "About us"
-                    icon = "/about us.svg"
-                    arrowIcon= "/arrow.svg"
-                />
+                    <h2 className= {menuStyles.heading}>MENU</h2>
 
-                <MobileMenuCard
-                    title= "Our services"
-                    icon = "/our services.svg"
-                    arrowIcon= "/arrow.svg"
-                />
+                    <MobileMenuCard
+                        title= "Home"
+                        icon = "/home.svg"
+                        arrowIcon= "/arrow.svg"
+                    />
 
-                <MobileMenuCard
-                    title= "Contact us"
-                    icon = "/contact us.svg"
-                    arrowIcon= "/arrow.svg"
-                />
-                <div className= {menuStyles.logoContainer}>
-                    <img className= {menuStyles.logo} src ="/li-icon.svg"/>
-                    <img className= {menuStyles.logo} src ="/fb-icon.svg"/>
-                    <img className= {menuStyles.logo} src ="/ig-icon.svg"/>
+                    <MobileMenuCard
+                        title= "About us"
+                        icon = "/about us.svg"
+                        arrowIcon= "/arrow.svg"
+                    />
+
+                    <MobileMenuCard
+                        title= "Our services"
+                        icon = "/our services.svg"
+                        arrowIcon= "/arrow.svg"
+                    />
+
+                    <MobileMenuCard
+                        title= "Contact us"
+                        icon = "/contact us.svg"
+                        arrowIcon= "/arrow.svg"
+                    />
+                    <div className= {menuStyles.logoContainer}>
+                        <img className= {menuStyles.logo} src ="/li-icon.svg"/>
+                        <img className= {menuStyles.logo} src ="/fb-icon.svg"/>
+                        <img className= {menuStyles.logo} src ="/ig-icon.svg"/>
+                    </div>
+
+                    <img className= {menuStyles.image} src ="/menuPicture.png"/>
+
                 </div>
 
-                <img className= {menuStyles.image} src ="/menuPicture.png"/>
 
-            </div>
         </>
 
 
