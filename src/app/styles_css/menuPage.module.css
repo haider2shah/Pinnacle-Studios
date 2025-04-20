@@ -13,3 +13,18 @@
     position: fixed;
     bottom: 0px;
 }
+
+.logoContainer {
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    border-width: 1px;
+    border-radius: 8px;
+    margin-top: 20px;
+
+}
