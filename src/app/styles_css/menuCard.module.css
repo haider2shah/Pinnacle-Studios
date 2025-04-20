@@ -3,8 +3,8 @@
     flex-direction: row;
     background-color: rgb(255, 255, 255);
     width: 75vw;
-    border-width: 2px;
-    height: 65px;
+    border-width: 1px;
+    height: 60px;
     border-radius: 20px;
     border-color: #525252;
     align-items: center;
@@ -13,12 +13,12 @@
 
 .cardIcon,
 .cardArrow{
-    height: 16px;
+    height: 12px;
 
 }
 
 .cardTitle{
-    font-size: 20px;
+    font-size: 1rem;
     margin-left: 20px;
     color: #525252;
     
