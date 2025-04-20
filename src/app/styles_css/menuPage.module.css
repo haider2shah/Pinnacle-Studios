@@ -10,6 +10,7 @@
 
 .image {
     width: 90vw;
+    height: 18vh;
     position: fixed;
     bottom: 0px;
 }
