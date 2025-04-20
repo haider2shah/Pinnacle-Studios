@@ -1,0 +1,15 @@
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: fixed;
+    top: 210px;
+    width: 100%;
+}
+
+.image {
+    width: 370px;
+    position: fixed;
+    bottom: 0px;
+}

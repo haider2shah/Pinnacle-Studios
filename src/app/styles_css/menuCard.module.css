@@ -1,0 +1,39 @@
+.menuCard {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    width: 320px;
+    border-width: 2px;
+    height: 85px;
+    border-radius: 20px;
+    border-color: #525252;
+    align-items: center;
+    padding: 25px;
+}
+
+.cardIcon,
+.cardArrow{
+    height: 16px;
+
+}
+
+.cardTitle{
+    font-size: 20px;
+    margin-left: 20px;
+    color: #525252;
+    
+
+}
+
+.cardArrow {
+    margin-left: auto;
+
+}
+
+
+
+
+
+
+
+  
