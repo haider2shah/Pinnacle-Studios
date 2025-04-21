@@ -41,7 +41,7 @@ const mobileMenuPage = () => {
                         <img className= {menuStyles.logo} src ="/ig-icon.svg"/>
                     </div>
 
-                    <img className= {menuStyles.image} src ="/menuPicture.png"/>
+                    <img className= {menuStyles.image} src ="/menuImage.svg"/>
 
                 </div>
 

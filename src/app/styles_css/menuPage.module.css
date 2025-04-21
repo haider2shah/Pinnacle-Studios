@@ -4,15 +4,14 @@
     gap: 20px;
     align-items: center;
     position: fixed;
-    top: 180px;
+    top: 260px;
     width: 100%;
 }
 
 .image {
     width: 90vw;
-    height: 18vh;
     position: fixed;
-    bottom: 0px;
+    top:-30px;
 }
 
 .logoContainer {
