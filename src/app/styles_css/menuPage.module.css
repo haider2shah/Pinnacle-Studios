@@ -9,9 +9,8 @@
 }
 
 .image {
-    width: 90vw;
     position: fixed;
-    top:-30px;
+    top:-50px;
 }
 
 .logoContainer {
