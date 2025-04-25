@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import navStyles from '../styles_css/navigationbar.module.css';
+import MobileMenu from './menu'; // Capital 'M' and correct spelling
+
 
 const NavBar = () => {
   const { scrollY } = useScroll();
   const [isVisible, setIsVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState (false); 
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -27,7 +30,12 @@ const NavBar = () => {
         className={navStyles.navbar}
       >
         <div className={navStyles.menu}>
-          <img src="/menu.svg" className={navStyles.menuIcon} />
+          <img 
+            src="/menu.svg" 
+            className={navStyles.menuIcon} 
+            onClick = {() => setMenuOpen(true)}
+            />
+
           <div className={navStyles.logo}>Pinnacle Studios.</div>
         </div>
 
@@ -40,6 +48,9 @@ const NavBar = () => {
 
         <button type="button" className={navStyles.button}></button>
       </motion.nav>
+      <AnimatePresence>
+          {menuOpen && <MobileMenu onClose={() => setMenuOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 };

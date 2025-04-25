@@ -1,3 +1,12 @@
+.menuWrapper {
+    position: fixed; /* Makes it cover the screen */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: rgb(255, 255, 255); /* Your red background */
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -27,3 +36,5 @@
     margin-top: 20px;
 
 }
+
+
