@@ -13,11 +13,14 @@ const MobileMenu = ({ onClose }) => {
             exit={{ x: '-100%', transition: { duration: 0.6, ease: [0.75, 0, 0.25, 1] } }}            
             className={menuStyles.menuWrapper} // You already have styles for this
         >
+            <div className= {menuStyles.closeWrapper}>
+                <div className={menuStyles.closeBox}>
+                    <img onClick= {onClose} className={menuStyles.cencelIcon} src="/cancel-icon.svg" />
+                    <h2 className={menuStyles.heading}>MENU</h2>
+                </div>
+            </div>
+
             <div className={menuStyles.buttons}>
-
-                <img onClick= {onClose} className={menuStyles.cencelIcon} src="/cancel-icon.svg" />
-
-                <h2 className={menuStyles.heading}>MENU</h2>
 
                 {/* Clickable Cards that Close the Menu */}
                 <Link href="/" onClick={onClose}>
