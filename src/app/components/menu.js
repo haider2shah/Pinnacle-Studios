@@ -15,8 +15,7 @@ const MobileMenu = ({ onClose }) => {
         >
             <div className={menuStyles.buttons}>
 
-                {/* Close Button */}
-                <button onClick={onClose} className={menuStyles.closeButton}>Close</button>
+                <img onClick= {onClose} className={menuStyles.cencelIcon} src="/cancel.svg" />
 
                 <h2 className={menuStyles.heading}>MENU</h2>
 

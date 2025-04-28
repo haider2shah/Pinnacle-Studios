@@ -5,6 +5,18 @@
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
     background-color: rgb(255, 255, 255); /* Your red background */
+    z-index: 1000;
+}
+
+.cencelIcon {
+    width: 50px;
+    border-width: 1px;
+    padding: 15px;
+    border-radius: 15px;
+    position:fixed;
+    top: 40px;
+    z-index: 1000;
+    background-color: white;
 }
 
 .buttons {
@@ -20,7 +32,7 @@
 .image {
     width: 90vw;
     position: fixed;
-    top: calc(-1 * (100vw - 320px) * 0.35);}
+    top: calc(-1 * (90vw - 320px) * 0.35);}
 
 .logoContainer {
     display:flex;
