@@ -23,7 +23,7 @@
     position: fixed;
     top: 1.3rem;
     width: 140px;
-    padding: 0.5rem 0rem;
+    padding: 0.4rem 0rem;
     border: 1px solid #0000001a;
     border-radius: 14px;
     background-color: #ffffff;
@@ -41,6 +41,12 @@
     top: 40px;
     z-index: 1000;
     background-color: white;
+}
+
+.heading {
+    font-size: 1rem;
+    font-weight: 450;
+    color:#4a4a4a;
 }
 
 
