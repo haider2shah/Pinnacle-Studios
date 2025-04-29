@@ -17,9 +17,9 @@
   position: fixed;
   top: 1.3rem;
   width: 210px;
-  padding: 1.1rem 0rem;
+  padding: 0.4rem 0rem;
   border: 1px solid #0000001a;
-  border-radius: 14px;
+  border-radius: 13px;
   background-color: #ffffff;
   box-shadow: none;
   z-index: 1000;
@@ -70,9 +70,15 @@
 }
 
 .menuIcon {
-  height: 20px;
   position: relative;
   color: #e00000;
+  width: 45px;
+  border-width: 1px;
+  border-color: #0000001a;
+  padding: 14px;
+  border-radius: 13px;
+  z-index: 1000;
+  background-color: white;
 }
 
 .menu {
