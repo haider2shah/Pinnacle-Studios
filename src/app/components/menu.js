@@ -4,6 +4,7 @@ import { easeInOut, motion } from 'framer-motion';
 import Link from 'next/link';
 import MobileMenuCard from "../components/mobileMenu"; // Your existing card component
 import menuStyles from '../styles_css/menuPage.module.css'; // Your existing CSS
+import Image from 'next/image';
 
 const MobileMenu = ({ onClose }) => {
     return (
@@ -21,6 +22,8 @@ const MobileMenu = ({ onClose }) => {
             </div>
 
             <div className={menuStyles.buttons}>
+                
+                <Image className={menuStyles.image} alt="Menu image" width={1} height={1} src="/menuImage.svg" priority unoptimized/>
 
                 {/* Clickable Cards that Close the Menu */}
                 <Link href="/" onClick={onClose}>
@@ -46,7 +49,6 @@ const MobileMenu = ({ onClose }) => {
                     <img className={menuStyles.logo} src="/ig-icon.svg" />
                 </div>
 
-                <img className={menuStyles.image} src="/menuImage.svg" />
 
             </div>
         </motion.div>
