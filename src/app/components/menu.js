@@ -23,7 +23,7 @@ const MobileMenu = ({ onClose }) => {
 
             <div className={menuStyles.buttons}>
                 
-                <Image className={menuStyles.image} alt="Menu image" width={1} height={1} src="/mobileMenuImage.png" unoptimized priority/>
+                <Image className={menuStyles.image} alt="Menu image" width={0} height={0} src="/mobileMenuImage.png" unoptimized priority/>
 
                 {/* Clickable Cards that Close the Menu */}
                 <Link href="/" onClick={onClose}>
