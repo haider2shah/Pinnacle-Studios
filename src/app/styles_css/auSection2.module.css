@@ -1,0 +1,34 @@
+/* auSection2.module.css */
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 1rem;
+    background-color: white; /* or any subtle background */
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 90px;
+    justify-content: space-between;
+    background-image: url('/auSection2.png');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 35px;
+    width: 900px;
+    height: 600px;
+  }
+  
+  .text {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #ffffff;
+  }
+
+  .imageTwo {
+    width: 600px;
+    margin-left: 320px;
+  }
+  

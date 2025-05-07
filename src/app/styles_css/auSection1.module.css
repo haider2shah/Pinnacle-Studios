@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    align-items: center;
+    border-radius: 35px;
+    width: 900px;
+
+
+}
+
+.imageOne {
+    width: 450px;
+}
+
+.text {
+    font-size: 22px;
+    
+
+}

@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.image {
+    width: 230px;
+}
+
+.text {
+    margin-left: 12px;
+
+}
+.name {
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.position {
+    font-size: 9px;
+}
