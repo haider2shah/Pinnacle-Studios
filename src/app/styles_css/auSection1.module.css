@@ -10,13 +10,13 @@
 .box {
     display: flex;
     flex-direction: column;
-    padding: clamp(2rem, 5vw, 14rem) clamp(2rem, 7vw, 14rem);
+    padding: clamp(2rem, 7vw, 14rem) clamp(2rem, 7vw, 14rem);
     background-color: #F5F5F5;
     justify-content: center;
-    gap: 40px;
+    gap: 42px;
     align-items: center;
-    border-radius: 3vw;
-    width: 80vw;
+    border-radius: 6vw;
+    width: 85vw;
 }
 
 .imageOne {
@@ -24,7 +24,8 @@
 }
 
 .text {
-    font-size: clamp(15px, 3vw, 26px);
+    font-size: clamp(18px, 5vw, 29px);
+    text-align: center;
 }
 
 
