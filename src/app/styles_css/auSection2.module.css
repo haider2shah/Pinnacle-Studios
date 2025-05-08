@@ -23,7 +23,7 @@
 }
 
 .text {
-  font-size: clamp(18px, 5vw, 29px);
+  font-size: clamp(9px, 2.5vw, 22px);
   line-height: 1.8;
   color: #ffffff;
   text-align: center;
