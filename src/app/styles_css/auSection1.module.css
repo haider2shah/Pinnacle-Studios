@@ -26,6 +26,7 @@
 .text {
     font-size: clamp(18px, 5vw, 29px);
     text-align: center;
+    font-weight: 500;
 }
 
 
