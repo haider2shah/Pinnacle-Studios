@@ -8,10 +8,10 @@ const SectionTwo = () => {
             <div className= {auStyles.box}>
                 <div>
                     <p className= {auStyles.text}>
-                        At Pinnacle Studios, we turn your ideas into seamless <br/>
-                        digital experiences. Based in the San Francisco Bay Area, <br/>
-                        we design engaging websites and build custom software, <br/>
-                        so you can focus on growing your business while we <br/>
+                        At Pinnacle Studios, we turn your ideas into seamless 
+                        digital experiences. Based in the San Francisco Bay Area, 
+                        we design engaging websites and build custom software, 
+                        so you can focus on growing your business while we
                         handle the tech. 
                     </p>
                 </div>
