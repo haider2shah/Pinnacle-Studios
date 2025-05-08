@@ -1,6 +1,41 @@
 /* auSection2.module.css */
 
 .wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: white; /* or any subtle background */
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: clamp(2rem, 7vw, 14rem) clamp(2rem, 7vw, 14rem);
+  align-items: center;
+
+  background-image: url('/auSection2.png');    
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6vw;
+  width: 85vw;
+  margin-top: clamp(6vw, 8vw, 12vw);
+
+}
+
+.text {
+  font-size: clamp(18px, 5vw, 29px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+}
+
+.imageTwo {
+  width: 100%;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
     display: flex;
     justify-content: center;
     background-color: white; /* or any subtle background */
@@ -32,4 +67,5 @@
     width: 48vw;
     margin-left: 23vw;
   }
+}
   
