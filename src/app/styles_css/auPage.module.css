@@ -1,5 +1,5 @@
 .Section3 {
-    margin-top: 150px;
+    margin-top: clamp(8vw, 18vw, 22vw);
     justify-items: center;
 }
 
@@ -10,13 +10,13 @@
 }
 
 .heading1 {
-    font-size: clamp(26px, 6vw, 42px);
+    font-size: clamp(26px, 3.1vw, 43rem);
     font-weight: 550;
 
 }
 
 .heading2 {
-    font-size: clamp(26px, 6vw, 42px);
+    font-size: clamp(26px, 3.3vw, 43rem);
     font-weight: 550;
     background: linear-gradient(
   90deg,
@@ -31,8 +31,8 @@
 .team {
     display: flex;
     flex-direction: row;
-    width: 900px;
-    margin-top: 80px;
+    width: 70vw;
+    margin-top: clamp(4rem, 6vw, 10rem);
     margin-bottom: 80px;
     justify-content: space-between;
     align-items: center;

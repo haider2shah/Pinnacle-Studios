@@ -38,7 +38,7 @@ export default function AboutUs() {
                 />
 
                 <ImageCard
-                    name = "Ali Raza"
+                    name = "Ali Raza Kazmi"
                     src = "/raza.png"
                     position = "Full - Stack Developer"
                 />  

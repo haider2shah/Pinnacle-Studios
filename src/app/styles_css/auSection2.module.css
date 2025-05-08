@@ -3,7 +3,6 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    padding: 6rem 1rem;
     background-color: white; /* or any subtle background */
   }
   
@@ -11,24 +10,26 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 90px;
+    padding: clamp(2rem, 7vw, 12rem);
     justify-content: space-between;
     background-image: url('/auSection2.png');    
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 35px;
+    border-radius: 3vw;
     width: 70vw;
-    height: 100vh;
+    height: 48vw;
+    margin-top: clamp(6vw, 8vw, 12vw);
+
   }
   
   .text {
-    font-size: 22px;
+    font-size: clamp(1rem, 1.6vw, 3.5rem);
     line-height: 1.8;
     color: #ffffff;
   }
 
   .imageTwo {
-    width: 600px;
-    margin-left: 320px;
+    width: 48vw;
+    margin-left: 23vw;
   }
   
