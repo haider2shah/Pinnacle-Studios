@@ -1,11 +1,11 @@
 .card {
     display: flex;
-    gap: clamp(0.5rem, 1.5vw, 1.25rem);
     flex-direction: column;
+    gap: clamp(0.5rem, 4.5vw, 4.25rem);
 }
 
 .image {
-    width: clamp(10rem, 17vw, 62rem);
+    width: clamp(10rem, 85vw, 62rem);
 }
 
 .text {
@@ -13,11 +13,40 @@
 
 }
 .name {
-    font-size: clamp(1rem, 1.8vw, 4.5rem);
+    font-size: clamp(1rem, 6.8vw, 6.5rem);
     font-weight: 700;
 
 }
 
 .position {
-    font-size: clamp(0.3rem, 0.9vw, 2rem);
+    font-size: clamp(0.3rem, 2.9vw, 2rem);
 }
+
+
+@media (min-width: 768px) {
+    .card {
+        display: flex;
+        gap: clamp(0.5rem, 1.5vw, 1.25rem);
+        flex-direction: column;
+    }
+    
+    .image {
+        width: clamp(10rem, 17vw, 62rem);
+    }
+    
+    .text {
+        margin-left: clamp(0.5rem, 1vw, 1.8rem);
+    
+    }
+    .name {
+        font-size: clamp(1rem, 1.8vw, 4.5rem);
+        font-weight: 700;
+    
+    }
+    
+    .position {
+        font-size: clamp(0.3rem, 0.9vw, 2rem);
+    }
+        
+}
+

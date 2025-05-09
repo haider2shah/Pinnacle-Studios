@@ -30,13 +30,25 @@
 
 .team {
     display: flex;
-    flex-direction: row;
-    width: 70vw;
+    flex-direction: column;
+    width: 85vw;
     margin-top: clamp(4rem, 6vw, 10rem);
     margin-bottom: 80px;
-    justify-content: space-between;
     align-items: center;
+    gap: 110px;
 
+}
 
+@media (min-width: 768px) {
+    .team {
+        display: flex;
+        flex-direction: row;
+        width: 70vw;
+        margin-top: clamp(4rem, 6vw, 10rem);
+        margin-bottom: 80px;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
 
 }
