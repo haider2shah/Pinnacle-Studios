@@ -30,12 +30,12 @@
 
 .team {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 85vw;
     margin-top: clamp(4rem, 6vw, 10rem);
     margin-bottom: 80px;
     align-items: center;
-    gap: 110px;
+    justify-content: space-between;
 
 }
 
