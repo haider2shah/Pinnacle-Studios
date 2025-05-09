@@ -28,7 +28,7 @@ export default function AboutUs() {
                 <ImageCard
                     name = "Haider Shah"
                     src = "/haider.png"
-                    position = "Founder & Lead UX Designer"
+                    position = "Lead UX Designer"
                 />
 
                 <ImageCard
