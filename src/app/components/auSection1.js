@@ -8,8 +8,8 @@ const SectionOne = () => {
             <div className= {auStyles.box}>
                 <div>
                     <p className= {auStyles.text}>
-                        We help startups put <br/>
-                        their best foot forward <br/>
+                        We help startups put 
+                        their best foot forward 
                         in the digital world. 
                     </p>
                 </div>

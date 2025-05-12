@@ -1,5 +1,5 @@
 .Section3 {
-    margin-top: clamp(8vw, 18vw, 22vw);
+  margin-top: clamp(6vw, 8vw, 12vw);
     justify-items: center;
 }
 

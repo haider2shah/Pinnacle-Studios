@@ -45,18 +45,22 @@
         display: flex;
         flex-direction: row;
         padding: clamp(2rem, 5vw, 14rem) clamp(2rem, 7vw, 14rem);
-        justify-content: space-between;
         background-color: #F5F5F5;
         align-items: center;
         border-radius: 3vw;
         width: 70vw;
+        gap: 10%;
     }
 
     .imageOne {
-        width: 30vw;
+        width: clamp(75vw, 90vw, 90vw);
     }
 
     .text {
-        font-size: clamp(1rem, 1.6vw, 4.5rem);
+        font-size: clamp(0.8rem, 1.6vw, 3.5rem);
+        text-align: left;
+        width: 100%;
+
+
     }
 }

@@ -9,9 +9,9 @@
 .box {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   padding: clamp(3rem, 7vw, 14rem) clamp(2rem, 7vw, 14rem);
   align-items: center;
+  gap: 12vw;
 
   background-image: url('/auSection2.png');    
   background-size: cover;
@@ -27,7 +27,6 @@
   line-height: 1.6;
   color: #ffffff;
   text-align: center;
-  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -36,7 +35,8 @@
 
 .imageTwo {
   width: 100%;
-  margin-left: auto;
+  margin-left: 1.4vw;
+
 }
 
 @media (min-width: 768px) {
@@ -49,28 +49,30 @@
   .box {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: clamp(2rem, 7vw, 12rem);
-    justify-content: space-between;
     background-image: url('/auSection2.png');    
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 3vw;
     width: 70vw;
-    height: 48vw;
+    height: 100%;
     margin-top: clamp(6vw, 8vw, 12vw);
+    align-items: center;
+    gap: 6vw;
+
 
   }
   
   .text {
-    font-size: clamp(1rem, 1.6vw, 3.5rem);
+    font-size: clamp(0.8rem, 1.6vw, 3.5rem);
     line-height: 1.8;
     color: #ffffff;
+    text-align: center;
   }
 
   .imageTwo {
-    width: 48vw;
-    margin-left: 23vw;
+    width: auto;
+    margin-left: 1.3vw;
+
   }
 }
   
