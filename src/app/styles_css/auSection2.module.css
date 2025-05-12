@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   background-color: white; /* or any subtle background */
+  margin-top: clamp(6vw, 14vw, 19vw);
+
 }
 
 .box {
@@ -18,7 +20,6 @@
   background-repeat: no-repeat;
   border-radius: 6vw;
   width: 85vw;
-  margin-top: clamp(6vw, 8vw, 12vw);
 
 }
 
@@ -44,6 +45,8 @@
     display: flex;
     justify-content: center;
     background-color: white; /* or any subtle background */
+    margin-top: clamp(6vw, 10vw, 12vw);
+
   }
   
   .box {
@@ -55,7 +58,6 @@
     border-radius: 3vw;
     width: 70vw;
     height: 100%;
-    margin-top: clamp(6vw, 8vw, 12vw);
     align-items: center;
     gap: 6vw;
 
