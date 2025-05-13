@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     background-color: white; /* or any subtle background */
-    margin-top: clamp(6vw, 10vw, 12vw);
+    margin-top: clamp(6vw, 8vw, 12vw);
 
   }
   

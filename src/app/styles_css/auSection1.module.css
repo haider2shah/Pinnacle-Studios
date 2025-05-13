@@ -13,10 +13,11 @@
     padding: clamp(3rem, 7vw, 14rem) clamp(2rem, 7vw, 14rem);
     background-color: #F5F5F5;
     justify-content: center;
-    gap: 140px;
     align-items: center;
     border-radius: 6vw;
     width: 85vw;
+    gap: 10vw;
+    
 }
 
 .imageOne {
@@ -27,6 +28,21 @@
     font-size: clamp(18px, 5vw, 29px);
     text-align: center;
     font-weight: 500;
+}
+
+.button {
+    background-color: rgb(5, 116, 144);
+    border-radius: 1.2rem;
+    width: 50%;
+    padding: 0.8rem;
+    font-weight: 550;
+}
+
+.textButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vw;
 }
 
 
@@ -62,5 +78,20 @@
         width: 100%;
 
 
+    }
+
+    .button {
+        background-color: rgb(5, 116, 144);
+        border-radius: 1.2rem;
+        width: 100%;
+        padding: 0.9rem;
+        font-weight: 600;
+    }
+
+    .textButton{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
     }
 }

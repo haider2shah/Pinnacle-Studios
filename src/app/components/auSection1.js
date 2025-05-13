@@ -6,12 +6,14 @@ const SectionOne = () => {
     return (
         <div className= {auStyles.wrapper}>
             <div className= {auStyles.box}>
-                <div>
+                <div className= {auStyles.textButton}>
                     <p className= {auStyles.text}>
                         We help startups put 
                         their best foot forward 
                         in the digital world. 
                     </p>
+
+                    <button className= {auStyles.button}>Contact us</button>
                 </div>
 
                 <div>
