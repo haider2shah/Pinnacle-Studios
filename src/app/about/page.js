@@ -2,6 +2,7 @@ import SectionOne from '../components/auSection1';
 import SectionTwo from '../components/auSection2';
 import ImageCard from '../components/auImageCard';
 
+
 import NavBar from '../components/navBar';
 import auStyles from '../styles_css/auPage.module.css';
 
@@ -42,7 +43,20 @@ export default function AboutUs() {
                     src = "/raza.png"
                     position = "Full - Stack Developer"
                 />  
+
+                <ImageCard
+                    name = "Ali Raza Kazmi"
+                    src = "/raza.png"
+                    position = "Full - Stack Developer"
+                />  
+
+                
+
+
+
+ 
           </div>
+          
 
         </section>
 

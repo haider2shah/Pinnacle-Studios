@@ -82,16 +82,22 @@
 
     .button {
         background-color: rgb(5, 116, 144);
-        border-radius: 1.2rem;
-        width: 100%;
-        padding: 0.9rem;
+        border-radius: 4.9rem;
+        width: 70%;
         font-weight: 600;
+        padding: clamp(0.6rem, 1vw, 1.8rem);
+        font-size: clamp(0.4rem, 1vw, 2vw);
+
+
     }
 
     .textButton{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 2vw;
+        align-items: start;
+
+        gap: 2.8vw;
     }
+
+    
 }

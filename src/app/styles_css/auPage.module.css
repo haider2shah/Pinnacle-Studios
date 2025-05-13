@@ -1,6 +1,8 @@
 .Section3 {
   margin-top: clamp(6vw, 14vw, 19vw);
     justify-items: center;
+    margin-bottom: clamp(6vw, 14vw, 19vw);
+
 }
 
 .heading {
@@ -58,7 +60,7 @@
         display: flex;
         flex-direction: row;
         width: 70vw;
-        margin-top: clamp(4rem, 6vw, 10rem);
+        margin-top: clamp(4rem, 6.4vw, 10rem);
         margin-bottom: 80px;
         justify-content: space-between;
         align-items: center;
