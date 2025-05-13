@@ -32,10 +32,11 @@
 
 .button {
     background-color: rgb(5, 116, 144);
-    border-radius: 1.2rem;
+    border-radius: 30px;
     width: 50%;
     padding: 0.8rem;
     font-weight: 550;
+    font-size:small;
 }
 
 .textButton{
