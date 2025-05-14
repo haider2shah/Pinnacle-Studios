@@ -18,7 +18,7 @@
 }
 
 .heading2 {
-    font-size: clamp(26px, 3.3vw, 43rem);
+    font-size: clamp(28px, 3.3vw, 43rem);
     font-weight: 550;
     background: linear-gradient(
   90deg,
