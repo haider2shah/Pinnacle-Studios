@@ -46,7 +46,7 @@ const NavBar = () => {
           <li><Link href="/contact">Contact</Link></li>
         </ul>
 
-        <button type="button" className={navStyles.button}></button>
+        <button type="button" className={navStyles.button}> Contact us</button>
       </motion.nav>
       <AnimatePresence>
           {menuOpen && <MobileMenu onClose={() => setMenuOpen(false)} />}
