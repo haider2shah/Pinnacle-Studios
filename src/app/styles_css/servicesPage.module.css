@@ -1,0 +1,17 @@
+
+
+.sectionOne {
+    margin-top: 130px;
+
+}
+
+.sectionTwo {
+    margin-top: clamp(6vw, 8vw, 12vw);
+
+}
+
+.sectionThree {
+    margin-top: clamp(6vw, 8vw, 12vw);
+
+}
+

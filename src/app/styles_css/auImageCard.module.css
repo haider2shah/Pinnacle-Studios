@@ -31,7 +31,7 @@
     }
     
     .image {
-        width: clamp(10rem, 16vw, 62rem);
+        width: clamp(10rem, 14vw, 62rem);
     }
     
     .text {
