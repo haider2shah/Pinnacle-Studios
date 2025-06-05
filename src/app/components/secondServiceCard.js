@@ -1,9 +1,9 @@
-import Styles from '../styles_css/serviceCard.module.css';
+import Styles from '../styles_css/secondServiceCard.module.css';
 import Image from 'next/image';
 
 
 
-const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParagraphOne,iconParagraphTwo,iconParagraphThree, iconHeadingOne, iconHeadingTwo,iconHeadingThree}) => {
+const SecondServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParagraphOne,iconParagraphTwo,iconParagraphThree, iconHeadingOne, iconHeadingTwo,iconHeadingThree}) => {
     return (
         <div className= {Styles.wrapper}>
             <div className= {Styles.card}>
@@ -77,4 +77,4 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
     );
 };
 
-export default ServicesCard;
+export default SecondServicesCard;

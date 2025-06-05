@@ -38,12 +38,13 @@
         margin: 0;             /* Remove top/bottom margin */
         display: inline-block;
         background: linear-gradient(
-         95deg,
-         #0464c4 0%,   /* purple */
-         #00c6ff 100%  /* sky blue */
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        108deg,
+        rgba(250, 0, 0, 1) 23%,
+        rgba(223, 18, 135, 1) 41%,
+        #6b00ac 74%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
           
 }
@@ -101,12 +102,13 @@
 .iconHeadingThree {
     font-weight: 700;
     background: linear-gradient(
-         95deg,
-         #024b93 0%,   /* purple */
-         #00a3d1 100%  /* sky blue */
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        108deg,
+        rgb(222, 2, 2) 23%,
+        rgba(250, 0, 0, 1) 23%,
+        #ff0000 74%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
