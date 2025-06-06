@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 
-const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParagraphOne,iconParagraphTwo,iconParagraphThree, iconHeadingOne, iconHeadingTwo,iconHeadingThree}) => {
+const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParagraphOne,iconParagraphTwo,iconParagraphThree, iconHeadingOne, iconHeadingTwo,iconHeadingThree,imageMobile}) => {
     return (
         <div className= {Styles.wrapper}>
             <div className= {Styles.card}>
@@ -20,6 +20,9 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
 
                     <div className= {Styles.picture}>
                         <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {image} unoptimized priority/>
+                    </div>
+                    <div className= {Styles.picture}>
+                        <Image className= {Styles.imageMobile} alt="Team members" width={0} height={0} src= {imageMobile} unoptimized priority/>
                     </div>
 
                     <div className= {Styles.iconWrapper}>

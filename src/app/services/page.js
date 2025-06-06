@@ -18,6 +18,7 @@ export default function Services() {
                 title = "User Experience Design"
                 paragraph = "We design experiences that anticipate needs before they’re felt. Every detail — from layout to motion — is engineered for clarity, speed, and delight. By blending human insight with intelligent design, we craft interfaces that not only work beautifully but feel invisible. Because great design doesn’t just look good — it just works."
                 image = "/UX image.png"
+                imageMobile = "/UX mobile.png"
                 iconParagraphOne={"With Figma, we design intuitive, user-focused interfaces that simplify workflows and bring your ideas to life."}
                 iconParagraphTwo={"We test early and often, ensuring your product aligns with user behavior, expectations, and business outcomes."}
                 iconParagraphThree={"We turn complex ideas into clean, responsive interfaces that feel natural, empowering users with every click and scroll."}

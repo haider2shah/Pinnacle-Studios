@@ -10,7 +10,7 @@
     width: 85vw;
     padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 10vw, 14rem);
     border-radius: 6vw;
-    gap: 10vw;
+    gap: 6vw;
     align-items: center;
 
 }
@@ -30,7 +30,14 @@
     border-radius: 3vw;
     border-color: #036fb8;
     border-width: 1px;
+    display: none;
 
+
+}
+
+.imageMobile {
+    width: 100%;
+    border-radius: 3vw;
 
 }
 
@@ -80,6 +87,7 @@
     justify-content: space-between;
     width: 100%;
     gap: 8vw;
+    margin-top: 4vw;
     
 }
 
@@ -163,8 +171,13 @@
         border-radius: 3vw;
         border-color: #036fb8;
         border-width: 1px;
+        display: flex;
 
 
+    }
+
+    .imageMobile {
+        display: none;
     }
 
     .title {
@@ -212,6 +225,8 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
+        margin-top: 0vw;
+
         
     }
 
