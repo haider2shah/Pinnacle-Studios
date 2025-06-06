@@ -53,8 +53,8 @@
 }
 
 .paragraph  {
-    font-size: clamp(0.8rem, 3.6vw, 3.5rem);
-    color: #5f5f5f;
+    font-size: clamp(0.8rem, 3.8vw, 3.5rem);
+    color: #818080;
     font-weight: 680;
     width: 100%;
 
@@ -84,7 +84,7 @@
 }
 
 .icon {
-    width: 6vw;
+    width: 8vw;
 }
 
 
@@ -122,9 +122,9 @@
 .iconParaOne,
 .iconParaTwo,
 .iconParaThree {
-    color: #5f5f5f;
+    color: #818080;
     font-weight: 650;
-    font-size: clamp(0.8rem, 2.6vw, 3.5rem);
+    font-size: clamp(0.8rem, 2.9vw, 3.5rem);
 
 }
 
