@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: #f7f7f7;
     width: 85vw;
-    padding: clamp(3rem, 10vw, 14rem) clamp(2rem, 10vw, 14rem);
+    padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 10vw, 14rem);
     border-radius: 6vw;
     gap: 10vw;
     align-items: center;
@@ -54,7 +54,7 @@
 
 .paragraph  {
     font-size: clamp(0.8rem, 3.8vw, 3.5rem);
-    color: #818080;
+    color: #484747;
     font-weight: 680;
     width: 100%;
 
@@ -122,9 +122,9 @@
 .iconParaOne,
 .iconParaTwo,
 .iconParaThree {
-    color: #818080;
+    color: #484747;
     font-weight: 650;
-    font-size: clamp(0.8rem, 2.9vw, 3.5rem);
+    font-size: clamp(0.8rem, 3.4vw, 3.5rem);
 
 }
 
