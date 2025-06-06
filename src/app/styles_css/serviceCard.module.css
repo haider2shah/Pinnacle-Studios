@@ -60,9 +60,10 @@
 }
 
 .paragraph  {
-    font-size: clamp(0.8rem, 3.8vw, 3.5rem);
+    font-size: clamp(0.8rem, 3.4vw, 3.5rem);
     color: #484747;
-    font-weight: 680;
+    font-weight: 650;
+
     width: 100%;
 
     
