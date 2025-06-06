@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: #F5F5F5;
     width: 70vw;
-    padding: clamp(6rem, 4vw, 14rem) clamp(6rem, 7vw, 14rem);
+    padding: clamp(1rem, 7vw, 14rem) clamp(4rem, 7vw, 14rem);
     border-radius: 3vw;
     gap: 5vw;
     align-items: center;
@@ -26,12 +26,14 @@
 
 .image {
     width: 100vw;
-    margin-left: 1.3vw;
     margin-top: 2vw;
+    border-radius: 3vw;
+    border-color: #d20124;
+    border-width: 1px;
 }
 
 .title {
-        font-size: clamp(28px, 3.3vw, 43rem);
+        font-size: clamp(30px, 3.3vw, 43rem);
         font-weight: 550;
         line-height: 1.3;        /* Add this */
         padding: 0;            /* Ensure no padding */
@@ -80,7 +82,7 @@
 }
 
 .icon {
-    width: 42px;
+    width: 3vw;
 }
 
 
@@ -109,6 +111,8 @@
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: clamp(0.7rem, 1.2vw, 3.5rem);
+
 }
 
 
@@ -119,7 +123,7 @@
 .iconParaThree {
     color: #5f5f5f;
     font-weight: 550;
-    font-size: clamp(0.8rem, 1.2vw, 3.5rem);
+    font-size: clamp(0.7rem, 1.2vw, 3.5rem);
 
 }
 

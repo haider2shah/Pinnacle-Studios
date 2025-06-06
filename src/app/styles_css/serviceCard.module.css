@@ -6,9 +6,9 @@
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #F5F5F5;
-    width: 70vw;
-    padding: clamp(6rem, 4vw, 14rem) clamp(6rem, 7vw, 14rem);
+    background-color: #f7f7f7;
+    width: 85vw;
+    padding: clamp(3rem, 10vw, 14rem) clamp(2rem, 10vw, 14rem);
     border-radius: 3vw;
     gap: 5vw;
     align-items: center;
@@ -19,19 +19,23 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    gap: 1.8vw;
+    gap: 3vw;
 
 }
 
 
 .image {
     width: 100vw;
-    margin-left: 1.3vw;
     margin-top: 2vw;
+    border-radius: 3vw;
+    border-color: #036fb8;
+    border-width: 1px;
+
+
 }
 
 .title {
-        font-size: clamp(28px, 3.3vw, 43rem);
+         font-size: clamp(28px, 5vw, 43px);
         font-weight: 550;
         line-height: 1.3;        /* Add this */
         padding: 0;            /* Ensure no padding */
@@ -49,7 +53,7 @@
 }
 
 .paragraph  {
-    font-size: clamp(0.8rem, 1.4vw, 3.5rem);
+    font-size: clamp(0.8rem, 2.6vw, 3.5rem);
     color: #5f5f5f;
     font-weight: 500;
     width: 85%;
@@ -72,22 +76,23 @@
 
 .iconWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     
 }
 
 .icon {
-    width: 42px;
+    width: 3vw;
+    display: none;
 }
 
 
 .iconCard {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 30%;
+    gap: 6vw;
+    width: 100%;
 }
 
 .iconText {
@@ -107,6 +112,8 @@
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    font-size: clamp(18px, 5vw, 29px);
+
 }
 
 
@@ -117,12 +124,140 @@
 .iconParaThree {
     color: #5f5f5f;
     font-weight: 550;
-    font-size: clamp(0.8rem, 1.2vw, 3.5rem);
+    font-size: clamp(0.8rem, 2.6vw, 3.5rem);
 
 }
 
 
+@media (min-width: 768px) {
+
+    .wrapper {
+    justify-content: center;
+    display: flex;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background-color: #f7f7f7;
+        width: 70vw;
+        padding: clamp(1rem, 7vw, 14rem) clamp(4rem, 7vw, 14rem);
+        border-radius: 3vw;
+        gap: 5vw;
+        align-items: center;
+
+    }
+
+    .textBox {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 1.8vw;
+
+    }
+
+
+    .image {
+        width: 100vw;
+        margin-top: 2vw;
+        border-radius: 3vw;
+        border-color: #036fb8;
+        border-width: 1px;
+
+
+    }
+
+    .title {
+            font-size: clamp(30px, 3.3vw, 43rem);
+            font-weight: 550;
+            line-height: 1.3;        /* Add this */
+            padding: 0;            /* Ensure no padding */
+            margin: 0;             /* Remove top/bottom margin */
+            display: inline-block;
+            background: linear-gradient(
+            95deg,
+            #0464c4 0%,   /* purple */
+            #00c6ff 100%  /* sky blue */
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            
+    }
+
+    .paragraph  {
+        font-size: clamp(0.8rem, 1.4vw, 3.5rem);
+        color: #5f5f5f;
+        font-weight: 500;
+        width: 85%;
+
+        
+    }
+
+    .button {
+            background-color:#0071E3;
+            border-radius: 4.9rem;
+            width: 40%;
+            font-weight: 600;
+            padding: clamp(0.6rem, 0.8vw, 1.8rem);
+            font-size: clamp(0.4rem, 1vw, 2vw);
+            display: none;
+
+
+
+    }
+
+    .iconWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        
+    }
+
+    .icon {
+        width: 3vw;
+        display: flex;
+    }
+
+
+    .iconCard {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 30%;
+    }
+
+    .iconText {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8vw;
+    }
+
+    .iconHeadingOne,
+    .iconHeadingTwo,
+    .iconHeadingThree {
+        font-weight: 700;
+        background: linear-gradient(
+            95deg,
+            #024b93 0%,   /* purple */
+            #00a3d1 100%  /* sky blue */
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: clamp(0.7rem, 1.2vw, 3.5rem);
+
+    }
 
 
 
 
+    .iconParaOne,
+    .iconParaTwo,
+    .iconParaThree {
+        color: #5f5f5f;
+        font-weight: 550;
+        font-size: clamp(0.7rem, 1.2vw, 3.5rem);
+
+    }
+}
