@@ -30,6 +30,7 @@
     border-radius: 3vw;
     border-color: #036fb8;
     border-width: 1px;
+    display: none;
 
 
 }
@@ -37,6 +38,7 @@
 .imageMobile {
     width: 100%;
     border-radius: 3vw;
+    display: flex;
 
 }
 

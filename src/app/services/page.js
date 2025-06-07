@@ -36,6 +36,7 @@ export default function Services() {
                 title = "Full - Stack Development"
                 paragraph = "We engineer full-stack applications with clean, scalable code — from responsive React UIs to secure backend systems. Our services include REST and GraphQL APIs, custom database schemas, authentication flows, and deployment pipelines. Every feature is thoughtfully built for speed, reliability, and flexibility — turning business logic into high-performance, production-ready digital products."
                 image = "/coding.png"
+                imageMobile = "/Code mobile.png"
                 iconParagraphOne={"Delivers fast, responsive interfaces that ensure fluid navigation and consistent experiences across all devices."}
                 iconParagraphTwo={"Structured for growth, so your product evolves smoothly without breaking performance or maintainability."}
                 iconParagraphThree={"Zero-downtime deployments maintain performance, so users never face disruption during feature or system updates."}
