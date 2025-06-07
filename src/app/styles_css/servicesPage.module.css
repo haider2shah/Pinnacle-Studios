@@ -6,12 +6,14 @@
 }
 
 .sectionTwo {
-    margin-top: clamp(6vw, 8vw, 12vw);
+    margin-top: clamp(80px, 8vw, 12vw);
 
 }
 
 .sectionThree {
-    margin-top: clamp(6vw, 8vw, 12vw);
+    margin-top: clamp(80px, 8vw, 12vw);
+    margin-bottom: clamp(80px, 8vw, 12vw);
+
 
 }
 

@@ -31,7 +31,7 @@ export default function Services() {
             />
         </section>
 
-         <section className = {styles.sectionOne}>
+         <section className = {styles.sectionTwo}>
             <SecondServicesCard
                 title = "Full - Stack Development"
                 paragraph = "We engineer full-stack applications with clean, scalable code — from responsive React UIs to secure backend systems. Our services include REST and GraphQL APIs, custom database schemas, authentication flows, and deployment pipelines. Every feature is thoughtfully built for speed, reliability, and flexibility — turning business logic into high-performance, production-ready digital products."
@@ -49,7 +49,7 @@ export default function Services() {
             />
         </section>
 
-         <section className = {styles.sectionOne}>
+         <section className = {styles.sectionThree}>
             <ThirdServicesCard
                 title = "No - Code Development"
                 paragraph = "We build high-quality websites using no-code tools like Webflow and Framer — no coding required. From responsive layouts and smooth animations to CMS-powered content and fast performance, everything is custom-designed and easy to manage. You get a professional, scalable site that looks and works like a fully coded build — without the complexity."
