@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: #f7f7f7;
     width: 85vw;
-    padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 10vw, 14rem);
+    padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 8vw, 14rem);
     border-radius: 6vw;
     gap: 6vw;
     align-items: center;
@@ -49,8 +49,8 @@
         display: inline-block;
         background: linear-gradient(
          95deg,
-         #0464c4 0%,   /* purple */
-         #00c6ff 100%  /* sky blue */
+         #009735 0%,   /* purple */
+         #03ff4a 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -115,8 +115,8 @@
     font-weight: 700;
     background: linear-gradient(
          95deg,
-         #024b93 0%,   /* purple */
-         #00a3d1 100%  /* sky blue */
+         #009735 0%,   /* purple */
+         #03ff4a 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -189,8 +189,8 @@
             display: inline-block;
             background: linear-gradient(
             95deg,
-            #0464c4 0%,   /* purple */
-            #00c6ff 100%  /* sky blue */
+            #009735 0%,   /* purple */
+            #03ff4a 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -255,8 +255,8 @@
         font-weight: 700;
         background: linear-gradient(
             95deg,
-            #024b93 0%,   /* purple */
-            #00a3d1 100%  /* sky blue */
+            #009735 0%,   /* purple */
+            #03ff4a 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

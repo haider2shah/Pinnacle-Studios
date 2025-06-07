@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: #f7f7f7;
     width: 85vw;
-    padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 10vw, 14rem);
+    padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 8vw, 14rem);
     border-radius: 6vw;
     gap: 6vw;
     align-items: center;
