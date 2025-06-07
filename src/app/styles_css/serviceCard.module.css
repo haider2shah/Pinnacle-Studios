@@ -1,6 +1,26 @@
 .wrapper {
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.heading {
+    font-size: 50px;
+    margin-left: 0%;
+    margin-bottom: 50px;
+    font-weight: 650;
+    justify-self: center;
+    text-align: center;
+    background: linear-gradient(
+         95deg,
+         #0f59c1 0%,   /* purple */
+            #2ab6f2 100%  /* sky blue */
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
 }
 
 .card {
@@ -10,7 +30,6 @@
     width: 85vw;
     padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 8vw, 14rem);
     border-radius: 6vw;
-    align-items: center;
     gap: 6vw;
 
 
@@ -21,6 +40,7 @@
     flex-direction: column;
     height: fit-content;
     gap: 8vw;
+
 
 }
 
@@ -50,8 +70,8 @@
         display: inline-block;
         background: linear-gradient(
          95deg,
-         #0464c4 0%,   /* purple */
-         #00c6ff 100%  /* sky blue */
+          #0f59c1 0%,   /* purple */
+            #2ab6f2 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -116,8 +136,8 @@
     font-weight: 700;
     background: linear-gradient(
          95deg,
-         #024b93 0%,   /* purple */
-         #00a3d1 100%  /* sky blue */
+          #0a88be 0%,   /* purple */
+            #2395ff 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -189,8 +209,8 @@
             display: inline-block;
             background: linear-gradient(
             95deg,
-            #0464c4 0%,   /* purple */
-            #00c6ff 100%  /* sky blue */
+             #0f59c1 0%,   /* purple */
+            #2ab6f2 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -261,8 +281,8 @@
         font-weight: 700;
         background: linear-gradient(
             95deg,
-            #024b93 0%,   /* purple */
-            #00a3d1 100%  /* sky blue */
+          #0f59c1 0%,   /* purple */
+            #2ab6f2 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

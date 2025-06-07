@@ -1,7 +1,6 @@
 
-
 .sectionOne {
-    margin-top: 130px;
+        margin-top: clamp(80px, 12vw, 12vw);
 
 }
 

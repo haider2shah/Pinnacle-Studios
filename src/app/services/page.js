@@ -13,6 +13,7 @@ export default function Services() {
           <NavBar/>
         </div>
 
+
         <section className = {styles.sectionOne}>
             <ServicesCard
                 title = "User Experience Design"
