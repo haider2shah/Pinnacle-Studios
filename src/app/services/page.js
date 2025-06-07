@@ -54,6 +54,7 @@ export default function Services() {
                 title = "No - Code Development"
                 paragraph = "We build high-quality websites using no-code tools like Webflow and Framer — no coding required. From responsive layouts and smooth animations to CMS-powered content and fast performance, everything is custom-designed and easy to manage. You get a professional, scalable site that looks and works like a fully coded build — without the complexity."
                 image = "/nocode.png"
+                imageMobile = "/No code.png"
                 iconParagraphOne={"Designed for speed, helping you launch quickly without compromising quality, responsiveness, or user experience."}
                 iconParagraphTwo={"Empowers your team to update content or design instantly, without relying on developers or technical tools."}
                 iconParagraphThree={"Structured to grow, ensuring your product handles new features and traffic without losing performance or stability."}
