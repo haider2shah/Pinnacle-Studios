@@ -43,7 +43,7 @@ export default function Services() {
                 iconParagraphThree={"Zero-downtime deployments maintain performance, so users never face disruption during feature or system updates."}
                 icon = "/react white.svg"
                 iconTwo = "/code white.svg"
-                iconThree = "/deploy white.svg"
+                iconThree = "/cloud.svg"
                 iconHeadingOne = {"React.js"}
                 iconHeadingTwo = {"Scalable Code"}
                 iconHeadingThree = {"Easy Deployment"}
