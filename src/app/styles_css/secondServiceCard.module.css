@@ -6,7 +6,7 @@
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #f7f7f7;
+    background-color: #000000;
     width: 85vw;
     padding: clamp(3rem, 14vw, 14rem) clamp(2rem, 8vw, 14rem);
     border-radius: 6vw;
@@ -50,8 +50,8 @@
         display: inline-block;
         background: linear-gradient(
          95deg,
-         #00875a 0%,   /* purple */
-         #00de60 100%  /* sky blue */
+         #AAFF00 0%,   /* purple */
+         #AAFF00 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -61,7 +61,7 @@
 
 .paragraph  {
     font-size: clamp(0.8rem, 3.6vw, 3.5rem);
-    color: #484747;
+    color: #ffffff;
     font-weight: 650;
 
     width: 100%;
@@ -116,8 +116,8 @@
     font-weight: 700;
     background: linear-gradient(
          95deg,
-         #00875a 0%,   /* purple */
-         #00de60 100%  /* sky blue */
+         #AAFF00 0%,   /* purple */
+         #AAFF00 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -131,7 +131,7 @@
 .iconParaOne,
 .iconParaTwo,
 .iconParaThree {
-    color: #484747;
+    color: #ffffff;
     font-weight: 650;
     font-size: clamp(0.8rem, 3.4vw, 3.5rem);
 
@@ -148,7 +148,7 @@
     .card {
         display: flex;
         flex-direction: column;
-        background-color: #f7f7f7;
+        background-color: #000000;
         width: 70vw;
         padding: clamp(1rem, 7vw, 14rem) clamp(4rem, 7vw, 14rem);
         border-radius: 3vw;
@@ -170,8 +170,8 @@
         width: 100vw;
         margin-top: 2vw;
         border-radius: 3vw;
-        border-width: 1px;
         display: flex;
+        
 
 
     }
@@ -189,8 +189,8 @@
             display: inline-block;
             background: linear-gradient(
             95deg,
-            #00875a 0%,   /* purple */
-            #00de60 100%  /* sky blue */
+             #AAFF00 0%,   /* purple */
+             #AAFF00 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -200,7 +200,7 @@
 
     .paragraph  {
         font-size: clamp(0.8rem, 1.4vw, 3.5rem);
-       color: #484747;
+       color: #ffffff;
         font-weight: 500;
         width: 85%;
 
@@ -261,8 +261,8 @@
         font-weight: 700;
         background: linear-gradient(
             95deg,
-            #00875a 0%,   /* purple */
-            #00de60 100%  /* sky blue */
+            #AAFF00 0%,   /* purple */
+            #AAFF00 100%  /* sky blue */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -276,7 +276,7 @@
     .iconParaOne,
     .iconParaTwo,
     .iconParaThree {
-        color: #484747;
+        color: #ffffff;
         font-weight: 550;
         font-size: clamp(0.7rem, 1.2vw, 3.5rem);
 

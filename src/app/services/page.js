@@ -17,7 +17,7 @@ export default function Services() {
         <section className = {styles.sectionOne}>
             <ServicesCard
                 title = "User Experience Design"
-                paragraph = "We design experiences that anticipate needs before they’re felt. Every detail — from layout to motion — is engineered for clarity, speed, and delight. By blending human insight with intelligent design, we craft interfaces that not only work beautifully but feel invisible. Because great design doesn’t just look good — it just works."
+                paragraph = "It just works. Because we believe design should serve you, not distract you. Every motion, every moment is shaped to support your flow — so what you’re doing takes center stage, not how you’re doing it."
                 image = "/UX image.png"
                 imageMobile = "/UX mobile.png"
                 iconParagraphOne={"With Figma, we design intuitive, user-focused interfaces that simplify workflows and bring your ideas to life."}
@@ -35,15 +35,15 @@ export default function Services() {
          <section className = {styles.sectionTwo}>
             <SecondServicesCard
                 title = "Full - Stack Development"
-                paragraph = "We engineer full-stack applications with clean, scalable code — from responsive React UIs to secure backend systems. Our services include REST and GraphQL APIs, custom database schemas, authentication flows, and deployment pipelines. Every feature is thoughtfully built for speed, reliability, and flexibility — turning business logic into high-performance, production-ready digital products."
+                paragraph = "Built to feel effortless. Designed to disappear. You won’t see the systems. Or the code. Just the flow — fast, stable, and intuitive. Everything working quietly in the background, so you can stay focused on what matters."
                 image = "/coding.png"
                 imageMobile = "/Code mobile.png"
                 iconParagraphOne={"Delivers fast, responsive interfaces that ensure fluid navigation and consistent experiences across all devices."}
                 iconParagraphTwo={"Structured for growth, so your product evolves smoothly without breaking performance or maintainability."}
                 iconParagraphThree={"Zero-downtime deployments maintain performance, so users never face disruption during feature or system updates."}
-                icon = "/react.svg"
-                iconTwo = "/code.svg"
-                iconThree = "/deploy.svg"
+                icon = "/react white.svg"
+                iconTwo = "/code white.svg"
+                iconThree = "/deploy white.svg"
                 iconHeadingOne = {"React.js"}
                 iconHeadingTwo = {"Scalable Code"}
                 iconHeadingThree = {"Easy Deployment"}
@@ -53,7 +53,8 @@ export default function Services() {
          <section className = {styles.sectionThree}>
             <ThirdServicesCard
                 title = "No - Code Development"
-                paragraph = "We build high-quality websites using no-code tools like Webflow and Framer — no coding required. From responsive layouts and smooth animations to CMS-powered content and fast performance, everything is custom-designed and easy to manage. You get a professional, scalable site that looks and works like a fully coded build — without the complexity."
+                paragraph = "Fully custom. Surprisingly simple.
+With modern no-code platforms, we create smooth, responsive websites that scale — without writing a line of code. No complexity. No limits. Just clean, intuitive design that works."
                 image = "/nocode.png"
                 imageMobile = "/No code.png"
                 iconParagraphOne={"Designed for speed, helping you launch quickly without compromising quality, responsiveness, or user experience."}
