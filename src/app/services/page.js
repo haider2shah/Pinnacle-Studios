@@ -3,6 +3,11 @@ import styles from '../styles_css/servicesPage.module.css';
 import ServicesCard from '../components/serviceCard';
 import SecondServicesCard from '../components/secondServiceCard';
 import ThirdServicesCard from '../components/thirdServiceCard';
+import Subsection1 from '../components/servicesSubSection1';
+import Subsection from '../components/servicesSubSection';
+import Subsection3 from '../components/servicesSubSection3';
+
+
 
 
 
@@ -30,6 +35,20 @@ export default function Services() {
                 iconHeadingTwo = {"User Research"}
                 iconHeadingThree = {"UI Design"}
             />
+            <Subsection1
+                title="Design that tells your story"
+                text="Design becomes powerful when it reflects more than style — when it captures identity, intention, and story in every interaction."
+                cards={[
+                    { image: '/hospitality.jpg', text: 'Hospitality' },
+                    { image: '/tech.jpg', text: 'Start Ups' },
+                    { image: '/event.jpg', text: 'Event Organizer' },
+                    { image: '/test.jpg', text: 'Hiring Firms' },
+                    { image: '/doc.jpg', text: 'Private Clinics' },
+                    { image: '/test.jpg', text: 'Bio Tech' }
+                    
+                ]}
+            />
+
         </section>
 
          <section className = {styles.sectionTwo}>
@@ -48,6 +67,20 @@ export default function Services() {
                 iconHeadingTwo = {"Scalable Code"}
                 iconHeadingThree = {"Easy Deployment"}
             />
+             <Subsection
+                title="Architecture that scales with your ambition"
+                text="True performance begins beneath the surface — in the way systems connect, scale, and stay reliable as your product grows."
+                cards={[
+                    { image: '/test.jpg', text: 'SaaS Dashboard' },
+                    { image: '/test.jpg', text: 'Healthcare Platform' },
+                    { image: '/test.jpg', text: 'E-Commerce Stack' },
+                    { image: '/test.jpg', text: 'Learning Management System' },
+                    { image: '/test.jpg', text: 'Banking App' },
+                    { image: '/test.jpg', text: 'Booking System' }
+                    
+                ]}
+            />
+
         </section>
 
          <section className = {styles.sectionThree}>
@@ -66,6 +99,19 @@ With modern no-code platforms, we create smooth, responsive websites that scale 
                 iconHeadingOne = {"Fast Launches"}
                 iconHeadingTwo = {"Easily Editable."}
                 iconHeadingThree = {"Built to Scale"}
+            />
+             <Subsection3
+                title="Freedom to launch. Power to grow."
+                text="No-code isn’t a shortcut. It’s a smarter way to build — combining speed, flexibility, and craftsmanship in one scalable system."
+                cards={[
+                    { image: '/product.jpg', text: 'Product Landing Pages' },
+                    { image: '/estate.jpg', text: 'Real Estate Listings' },
+                    { image: '/dining.jpg', text: 'Fine Dining Restaurants' },
+                    { image: '/creative.jpg', text: 'Creative Agencies' },
+                    { image: '/wellness.jpg', text: 'Wellness & Lifestyle Brands' },
+                    { image: '/art.jpg', text: 'Art Galleries & Exhibitions' }
+                    
+                ]}
             />
         </section>
 

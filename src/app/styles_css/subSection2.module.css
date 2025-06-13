@@ -1,0 +1,89 @@
+/* ---------- Layout ---------- */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 3vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  width: 70vw;
+  padding: clamp(3rem, 6vw, 14rem) clamp(0rem, 0vw, 14rem);
+  border-radius: 3vw;
+  gap: 2vw;
+  align-items: center;
+}
+
+.textCombined {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  align-items: center;
+  text-align: center;
+}
+
+.para {
+  width: 70%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(25px, 1vw, 43rem);
+  font-weight: 600;
+  color: #AAFF00;
+}
+
+/* ---------- Card Content ---------- */
+.image {
+  width: 100%;
+  border-radius: 1vw;
+}
+
+.text {
+  color: #ffffff;
+  font-size: clamp(12px, 1.1vw, 43rem);
+  text-align: left;           /* ✅ align text to the left */
+  width: 100%;   
+  font-weight: 500;
+             /* ✅ make sure it spans full width of the card */
+}
+
+
+/* ---------- Scrolling Cards ---------- */
+.scrollerWrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scrollerContent {
+  display: flex;
+  gap: 2vw;
+  width: fit-content;
+  animation: scroll-marquee 45s linear infinite;
+}
+
+.mainCard {
+  flex: 0 0 auto;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  align-items: center;
+}
+
+/* 🔁 Infinite scroll without snapping */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
