@@ -11,9 +11,9 @@
   display: flex;
   flex-direction: column;
   background-color: #f7f7f7;
-  width: 70vw;
+  width: 85vw;
   padding: clamp(3rem, 6vw, 14rem) clamp(0rem, 0vw, 14rem);
-  border-radius: 3vw;
+  border-radius: 6vw;
   gap: 2vw;
   align-items: center;
 }

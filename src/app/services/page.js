@@ -42,9 +42,9 @@ export default function Services() {
                     { image: '/hospitality.jpg', text: 'Hospitality' },
                     { image: '/tech.jpg', text: 'Start Ups' },
                     { image: '/event.jpg', text: 'Event Organizer' },
-                    { image: '/test.jpg', text: 'Hiring Firms' },
+                    { image: '/hiring.jpg', text: 'Hiring Firms' },
                     { image: '/doc.jpg', text: 'Private Clinics' },
-                    { image: '/test.jpg', text: 'Bio Tech' }
+                    { image: '/bio.jpg', text: 'Bio Tech' }
                     
                 ]}
             />
