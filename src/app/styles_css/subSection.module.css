@@ -21,27 +21,26 @@
 .textCombined {
   display: flex;
   flex-direction: column;
-  gap: 2.6vw;
+  gap: 6vw;
   align-items: center;
   text-align: center;
 }
 
 .para {
-  width: 70%;
+  width: 75%;
   text-align: center;
   color: #484747;
   font-weight: 500;
-  font-size: clamp(0.8rem, 3.6vw, 3.5rem);
-
 }
 
 .title {
-  font-size: clamp(25px, 5vw, 43rem);
+  font-size: clamp(25px, 1vw, 43rem);
   font-weight: 600;
+  width: 80%;
   background: linear-gradient(
          95deg,
-          #0f59c1 0%,   /* purple */
-            #2ab6f2 100%  /* sky blue */
+         #8201b5 0%,   /* purple */
+         #e6052a 100%  /* sky blue */
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -53,9 +52,12 @@
   border-radius: 2vw;
 }
 
+
+
+
 .text {
   color: #484747;
-  font-size: clamp(12px, 1.1vw, 43rem);
+  font-size: clamp(13px, 1.1vw, 43rem);
   text-align: left;           /* ✅ align text to the left */
   width: 100%;
   font-weight: 500;
@@ -79,7 +81,7 @@
 
 .mainCard {
   flex: 0 0 auto;
-  width: 50vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   gap: 0.6vw;
@@ -95,31 +97,3 @@
     transform: translateX(-50%);
   }
 }
-
-@media (min-width: 768px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #f7f7f7;
-    width: 70vw;
-    padding: clamp(3rem, 6vw, 14rem) clamp(0rem, 0vw, 14rem);
-    border-radius: 3vw;
-    gap: 2vw;
-    align-items: center;
-}
-.image {
-  width: 100%;
-  border-radius: 1vw;
-}
-
-.mainCard {
-  flex: 0 0 auto;
-  width: 18vw;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6vw;
-  align-items: center;
-}
-
-    
-  }
