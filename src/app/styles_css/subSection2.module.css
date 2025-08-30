@@ -90,3 +90,40 @@
     transform: translateX(-50%);
   }
 }
+
+@media (min-width: 768px) { 
+  .card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  width: 70vw;
+  padding: clamp(3rem, 6vw, 14rem) clamp(0rem, 0vw, 14rem);
+  border-radius: 3vw;
+  gap: 4vw;
+  align-items: center;
+}
+
+.mainCard {
+  flex: 0 0 auto;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  align-items: center;
+
+}
+.image {
+  width: 100%;
+  border-radius: 1vw;
+}
+
+.textCombined {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  align-items: center;
+  text-align: center;
+}
+
+
+}
