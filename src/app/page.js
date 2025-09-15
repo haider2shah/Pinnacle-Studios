@@ -49,7 +49,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6, margin: '-25% 0px -25% 0px' }}
-        transition={{ duration: 0.4, ease: 'easeOut', delay: 0.05 }}
+        transition={{ duration: 0.9, ease: 'easeOut'}}
       >
         With a website <br /> that is uniquely yours.
       </motion.h2>
