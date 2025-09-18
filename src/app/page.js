@@ -33,15 +33,36 @@ export default function HomePage() {
         Make them jealous.
       </motion.h1>
 
-      <Image
-        className={styles.heroImage}
-        alt="About us image"
-        src="/show the world.png"     // ← remove the space in the filename
-        width={460}
-        height={920}
-        unoptimized
-        priority
-      />
+
+      <div className={styles.heroImages}>
+        {/* Main image */}
+              <Image
+                className={styles.mainImage}
+                src="/show the world.png"  // ✅ no space in filename
+                alt="Main phone"
+                width={0}
+                height={0}
+                unoptimized 
+              />
+
+              <div className={styles.heroSmallImage}>
+
+                  <Image className= {styles.heroImageOne} alt="About us image" width={0} height={0} src="/image3.png" unoptimized priority/>
+
+                  <Image className= {styles.heroImageTwo} alt="About us image" width={0} height={0} src="/image8.png" unoptimized priority/>
+
+                  <Image className= {styles.heroImageThree} alt="About us image" width={0} height={0} src="/image9.png" unoptimized priority/>
+
+                  <Image className= {styles.heroImageFour} alt="About us image" width={0} height={0} src="/image10.png" unoptimized priority/>
+
+                  <Image className= {styles.heroImageFive} alt="About us image" width={0} height={0} src="/image1.png" unoptimized priority/>
+
+                  <Image className= {styles.heroImageSix} alt="About us image" width={0} height={0} src="/image7.png" unoptimized priority/>
+
+              </div>
+
+      </div>
+
 
       {/* H2: animate only when it scrolls into view */}
       <motion.h2
@@ -57,7 +78,8 @@ export default function HomePage() {
 
         <section className = {styles.sectionOne}>
             
-            <h1 className = {styles.sectionOneHeading}> But Your website <br/>doesn’t have to be. </h1>
+            <h1 
+              className = {styles.sectionOneHeading}> But Your website <br/>doesn’t have to be. </h1>
 
             <div className = {styles.images}>
 

@@ -9,10 +9,82 @@
 
 }
 
-.heroImage {
-    width: 65%;
-    height: auto;
+.heroImages {
+  position: relative;       /* needed for absolute children */
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-inline: auto;
 }
+
+.mainImage {
+  width: 65%;
+  height: auto;
+  z-index: 2;               /* phone above icons */
+}
+
+.heroImageOne {
+  position: absolute;
+  width: clamp(44px, 10vw, 80px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+
+}
+
+.heroImageTwo {
+  position: absolute;
+  width: clamp(44px, 10vw, 100px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+
+}
+
+.heroImageThree {
+  position: absolute;
+  width: clamp(44px, 10vw, 80px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+
+}
+
+.heroImageFour {
+  position: absolute;
+  width: clamp(44px, 10vw, 100px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+
+}
+
+.heroImageFive {
+  position: absolute;
+  width: clamp(44px, 10vw, 80px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+
+}
+
+.heroImageSix {
+    position: absolute;
+    width: clamp(44px, 10vw, 80px);
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+/* desktop positions (tweak to taste) */
+.heroImageOne  { left: 8%; top: 8%; }   /* left-upper */
+.heroImageTwo  { left: 10%; bottom: 35%; }/* left-lower (big) */
+.heroImageThree{ left: 4%; bottom: 6%; } /* bottom-left near phone */
+.heroImageFour { right: 4%; top: -3%; }  /* right-upper */
+.heroImageFive { right: 8%; bottom: 10%; }/* right-lower */
+.heroImageSix { right:13%; bottom: 46%; }/* right-lower */
 
 .heroHeading {
         font-size: clamp(24px, 8vw, 70px);
