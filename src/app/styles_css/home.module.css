@@ -203,3 +203,36 @@
   will-change: background-image;
 }
 
+/* Ensure proper stacking so the center phone occludes others */
+.images {
+  position: relative;
+  isolation: isolate; /* creates a local stacking context */
+}
+
+.images {
+  position: relative;
+  isolation: isolate; /* local stacking so z-index works predictably */
+}
+
+/* Center image ABOVE others */
+.zOver {
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Side images BELOW center */
+.zUnder {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+
+
+
+
+
+

@@ -6,18 +6,30 @@ import styles from './styles_css/home.module.css';
 import Image from 'next/image';
 
 export default function HomePage() {
-  // Parallax: move the small icon group faster than page scroll
+  // Parallax for the small icon group in hero
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, v => v * 0.3); // use negative to flip direction
+  const y = useTransform(scrollY, v => v * 0.3);
 
   // Scroll-driven color change for ONLY the word "yours"
   const subRef = useRef(null);
   const { scrollYProgress: yoursProgress } = useScroll({
     target: subRef,
-    offset: ['start 52%', 'start 42%'], // starts earlier, finishes sooner
+    offset: ['start 52%', 'start 42%'],
   });
-  // Fade white layer OUT (1 → 0) so the gradient underneath becomes visible
   const whiteAlpha = useTransform(yoursProgress, [0, 1], [1, 0]);
+
+  // ===== SECTION ONE scroll setup (for sliding images) =====
+  const sectionOneRef = useRef(null);
+  const { scrollYProgress: sec1 } = useScroll({
+    target: sectionOneRef,
+    offset: ['start 80%', 'end 10%'],
+  });
+
+  const xL1 = useTransform(sec1, [0,1], ['12vw','0vw']);
+  const xL2 = useTransform(sec1, [0,1], ['6vw','0vw']);
+  const xR1 = useTransform(sec1, [0,1], ['-6vw','0vw']);
+  const xR2 = useTransform(sec1, [0,1], ['-12vw','0vw']); // match the left side
+
 
   return (
     <>
@@ -65,15 +77,15 @@ export default function HomePage() {
           With a website <br /> that is{' '}
           <motion.span
             className={styles.yoursBlend}
-            style={{ '--whiteAlpha': whiteAlpha }} // Framer animates this CSS var
+            style={{ '--whiteAlpha': whiteAlpha }}
           >
-           uniquely yours.
+            uniquely yours.
           </motion.span>
         </motion.h2>
       </section>
 
       {/* ===== SECTION ONE ===== */}
-      <section className={styles.sectionOne}>
+      <section ref={sectionOneRef} className={styles.sectionOne}>
         <motion.h1
           className={styles.sectionOneHeading}
           initial={{ opacity: 0, y: 30 }}
@@ -85,12 +97,30 @@ export default function HomePage() {
         </motion.h1>
 
         <div className={styles.images}>
-          <Image className={styles.imageOne}   alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
-          <Image className={styles.imageTwo}   alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+        {/* Left two */}
+        <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
+          <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+        </motion.div>
+
+        <motion.div style={{ x: xL2, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
+          <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+        </motion.div>
+
+        {/* Center on top */}
+        <div style={{ zIndex: 10, position: 'relative', transform: 'translateZ(0)' }}>
           <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
-          <Image className={styles.imageFour}  alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
-          <Image className={styles.imageFive}  alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
         </div>
+
+        {/* Right two (4 above 5) */}
+        <motion.div style={{ x: xR1, zIndex: 3, position: 'relative', transform: 'translateZ(0)' }}>
+          <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+        </motion.div>
+
+        <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
+          <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+        </motion.div>
+      </div>
+
       </section>
 
       {/* ===== SECTION TWO ===== */}
