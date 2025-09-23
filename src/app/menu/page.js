@@ -5,7 +5,7 @@ import NavBar from '../components/navBar';
 
 const mobileMenuPage = () => {
     return (
-        <>
+        <div className= {menuStyles.menuComponent}>
             <NavBar/>
 
                 <div className= {menuStyles.buttons}>
@@ -46,7 +46,7 @@ const mobileMenuPage = () => {
                 </div>
 
 
-        </>
+        </div>
 
 
     );

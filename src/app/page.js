@@ -71,7 +71,7 @@ export default function HomePage() {
           ref={subRef}
           className={styles.heroSubHeading}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6, margin: '-25% 0px -25% 0px' }}
+          viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
           transition={{ duration: 4, ease: 'easeOut' }}
         >
           With a website <br /> that is{' '}
@@ -87,14 +87,17 @@ export default function HomePage() {
       {/* ===== SECTION ONE ===== */}
       <section ref={sectionOneRef} className={styles.sectionOne}>
         <motion.h1
-          className={styles.sectionOneHeading}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6, margin: '-25% 0px -25% 0px' }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
+            className={styles.sectionOneHeading}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          But Your website <br /> doesn’t have to be.
+          <span className={styles.blackText}>But your website</span>
+          <br />
+          <span className={styles.gradientOneText}>doesn’t have to be.</span>
         </motion.h1>
+
 
         <div className={styles.images}>
         {/* Left two */}
@@ -126,14 +129,17 @@ export default function HomePage() {
       {/* ===== SECTION TWO ===== */}
       <section className={styles.sectionTwo}>
         <motion.h1
-          className={styles.sectionTwoHeading}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6, margin: '-25% 0px -25% 0px' }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-        >
-          If You’re changing the world, <br /> the world should know.
+            className={styles.sectionTwoHeading}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+          >
+          <span className={styles.blackText}>If you’re changing the world,</span>
+            <br />
+          <span className={styles.gradientTwoText}>the world should know.</span>
         </motion.h1>
+
 
         <Image className={styles.sectionTwoImage} alt="" width={0} height={0} src="/show the world.png" unoptimized priority />
       </section>
@@ -141,23 +147,35 @@ export default function HomePage() {
       {/* ===== SECTION THREE ===== */}
       <section className={styles.sectionThree}>
         <motion.h1
-          className={styles.sectionThreeHeading}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6, margin: '-25% 0px -25% 0px' }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
+            className={styles.sectionThreeHeading}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          Does your website reflect <br /> your vision for the future?
+          <span className={styles.blackText}>Does your website reflect</span>
+          <br />
+          <span className={styles.gradientText}>your vision for the future?</span>
         </motion.h1>
+
 
         <Image className={styles.sectionThreeImage} alt="" width={0} height={0} src="/tablet.png" unoptimized priority />
       </section>
 
       {/* ===== SECTION FOUR ===== */}
       <section className={styles.sectionFour}>
-        <h1 className={styles.sectionFourHeading}>
-          Developing websites with <br /> world-class technology.
-        </h1>
+        <motion.h1
+            className={styles.sectionFourHeading}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+          >
+            <span className={styles.blackText}>Developing websites with</span>
+            <br />
+            <span className={styles.gradientFourText}>world-class technology.</span>
+        </motion.h1>
+
 
         <div className={styles.sectionFourImages}>
           <Image className={styles.figma}  alt="" width={0} height={0} src="/Figmaa.png"   unoptimized priority />
@@ -170,18 +188,36 @@ export default function HomePage() {
 
       {/* ===== SECTION FIVE ===== */}
       <section className={styles.sectionFive}>
-        <h1 className={styles.sectionFiveHeading}>
-          Connect with your customers <br /> across all devices.
-        </h1>
+        <motion.h1
+          className={styles.sectionFiveHeading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+        >
+          <span className={styles.blackText}>Connect with your customers</span>
+          <br />
+          <span className={styles.gradientText}>across all devices.</span>
+        </motion.h1>
+
         <Image className={styles.sectionFiveImage} alt="" width={0} height={0} src="/bg.png" unoptimized priority />
       </section>
 
       {/* ===== SECTION SIX ===== */}
       <section className={styles.sectionSix}>
-        <h1 className={styles.sectionSixHeading}>
-          Design that tells your story, <br /> before you say a word.
-        </h1>
-        <Image className={styles.sectionSixImage} alt="" width={0} height={0} src="/.png" unoptimized priority />
+        <motion.h1
+          className={styles.sectionSixHeading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+        >
+          <span className={styles.blackText}>Design that tells your story,</span>
+          <br />
+          <span className={styles.gradientText}>before you say a word.</span>
+        </motion.h1>
+
+        <Image className={styles.sectionSixImage} alt="" width={0} height={0} src="/San Fran.png" unoptimized priority />
       </section>
     </>
   );
