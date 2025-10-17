@@ -102,25 +102,25 @@ export default function HomePage() {
         <div className={styles.images}>
         {/* Left two */}
         <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+          <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone-1.png" unoptimized priority />
         </motion.div>
 
         <motion.div style={{ x: xL2, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+          <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone-2.png" unoptimized priority />
         </motion.div>
 
         {/* Center on top */}
         <div style={{ zIndex: 10, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+          <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone-3.png" unoptimized priority />
         </div>
 
         {/* Right two (4 above 5) */}
         <motion.div style={{ x: xR1, zIndex: 3, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+          <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone-4.png" unoptimized priority />
         </motion.div>
 
         <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone.png" unoptimized priority />
+          <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5.png" unoptimized priority />
         </motion.div>
       </div>
 

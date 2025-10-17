@@ -97,7 +97,7 @@
 
 /* Gradient text for second line */
 .gradientOneText {
-  background: linear-gradient(95deg, #eb0e75 0%, #1190cb 100%);
+  background: linear-gradient(95deg, #eb0e75 0%, #680bb9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
