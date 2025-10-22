@@ -120,7 +120,7 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
-          <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5.png" unoptimized priority />
+          <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5A.png" unoptimized priority />
         </motion.div>
       </div>
 
