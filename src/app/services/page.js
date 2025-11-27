@@ -86,8 +86,7 @@ export default function Services() {
          <section className = {styles.sectionThree}>
             <ThirdServicesCard
                 title = "No - Code Development"
-                paragraph = "Fully custom. Surprisingly simple.
-With modern no-code platforms, we create smooth, responsive websites that scale — without writing a line of code. No complexity. No limits. Just clean, intuitive design that works."
+                paragraph = "Fully custom. Surprisingly simple. With modern no-code platforms, we create smooth, responsive websites that scale — without writing a line of code. No complexity. No limits. Just clean, intuitive design that works."
                 image = "/nocode.png"
                 imageMobile = "/No code.png"
                 iconParagraphOne={"Designed for speed, helping you launch quickly without compromising quality, responsiveness, or user experience."}

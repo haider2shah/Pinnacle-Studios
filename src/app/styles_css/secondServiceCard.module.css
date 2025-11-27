@@ -50,8 +50,7 @@
         display: inline-block;
         background: linear-gradient(
          95deg,
-         #AAFF00 0%,   /* purple */
-         #AAFF00 100%  /* sky blue */
+         #AAFF00 100% 
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
