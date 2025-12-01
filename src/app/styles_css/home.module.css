@@ -573,8 +573,12 @@
 
   .sectionFive {
   }
+
+  .sectionSix {
+    padding-top: 4rem;
+  }
   .sectionSixHeading {
-  font-size: clamp(24px, 6.4vw, 43px);
+  font-size: clamp(24px,10vw, 55px);
   font-weight: 600;
   line-height: 1.3;
   margin: 0;
@@ -582,6 +586,7 @@
   width: 90%;
 
   }
+
 
   .sectionSixImageCard {
   background-color: #ffffff;
@@ -629,6 +634,12 @@
   font-size: 2.2rem;
   font-weight: 600;
   line-height: 1.2;
+  background: linear-gradient(95deg, #8201b5 0%, #e6052a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  pointer-events: none;
 }
 
   .sectionFiveHeading {
@@ -639,14 +650,7 @@
     text-align: center;
   }
 
-  .sectionSixHeading {
-  font-size: clamp(24px,10vw, 55px);
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0;
-  text-align:left;
-  /* remove gradient from the whole heading */
-}
+
 
 .whiteText { color: rgb(255, 255, 255); }
 
