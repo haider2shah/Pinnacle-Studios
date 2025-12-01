@@ -587,7 +587,7 @@
   background-color: #ffffff;
   border-radius: 2rem;
   width: 90%;
-  padding: 2.5rem;
+  padding: 2.2rem;
   padding-top: 4rem;
   overflow: hidden;
   display: flex;
@@ -607,7 +607,7 @@
 
     margin-top: 1.6rem;
     align-self: center;
-    width: 30vw;
+    width: 36vw;
     padding: 3vw;
     font-size: 1rem;
   }
@@ -618,8 +618,8 @@
 
   .sectionSixText1 {
   background-color:#e7e7e7;
-  padding: 2px;
-  width: 16vw;
+  padding: 3px;
+  width: 18vw;
   font-weight: 500;
   font-size: .9rem;
   color: rgb(59, 59, 59);
