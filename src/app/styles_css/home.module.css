@@ -639,6 +639,24 @@
     text-align: center;
   }
 
+  .sectionSixHeading {
+  font-size: clamp(24px,10vw, 55px);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  text-align:left;
+  /* remove gradient from the whole heading */
+}
+
+.whiteText { color: rgb(255, 255, 255); }
+
+/* Only the second line gets Section Six's gradient */
+.sectionSixHeading .gradientText {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
   .sectionSixPara{
     font-size: 1.1rem;
   }
