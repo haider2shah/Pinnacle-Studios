@@ -334,10 +334,18 @@
   text-align: center;
   width: 75%;
   color: rgb(95, 95, 95);
-
-
 }
 
+.mainButton {
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 2rem;
+    background-color:#0071E3;
+    align-self: center;
+    margin-top: 2rem;
+}
 
 
 .figma { width: 20%;}
@@ -428,6 +436,8 @@
   align-items: center; 
   padding-top: 6rem; 
   background-color: black;
+    padding-bottom: 6rem;
+
 }
 .sectionSixHeading {
   font-size: clamp(24px, 8vw, 55px);
@@ -438,16 +448,56 @@
   /* remove gradient from the whole heading */
 }
 
-.blackText { color: rgb(49, 49, 49); }
+.whiteText { color: rgb(255, 255, 255); }
 
 /* Only the second line gets Section Six's gradient */
 .sectionSixHeading .gradientText {
-  background: linear-gradient(95deg, #1ec6e8 0%, #6906bf 100%);
+  background: linear-gradient(95deg, #b23fff 0%, #0f97eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.sectionSixImage { width: 65%; height: auto; }
+.sectionSixImage { 
+  width: 40%; 
+  height: auto; 
+  margin-bottom: -40%;
+}
+
+.sectionSixTextbox {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  align-self:center;
+  margin-top: auto;
+}
+
+.sectionSixText1 {
+  background-color:#e7e7e7;
+  border-radius: 6px;
+  text-align: center;
+  padding: 2px;
+  width: 6vw;
+  font-weight: 500;
+  font-size: .8rem;
+  color: rgb(59, 59, 59);
+}
+
+.sectionSixText {
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+  .button {
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 2rem;
+    background-color:#0071E3;
+    right: 15px;
+    margin-top: .4rem;
+  }
 
 /* ===== Gradient-on-scroll word ===== */
 .yoursWrap { position: relative; display: inline-block; }
@@ -462,6 +512,21 @@
   color: transparent;
   pointer-events: none;
 }
+
+.sectionSixImageCard {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  width: 65%;
+  padding: 4rem;
+  overflow: hidden;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+
+
+
 
 /* single-span gradient blend: no double-render, no halo */
 .yoursBlend{
@@ -503,6 +568,7 @@
   will-change: transform;
   transform: translateZ(0);
 }
+
 
 
 

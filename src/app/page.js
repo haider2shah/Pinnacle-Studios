@@ -281,7 +281,12 @@ export default function HomePage() {
           </div>
 
           <h1 className={styles.secondHeading}> Design | Develop | Deploy</h1>
-            <h1 className={styles.sectionFourlast}>We design compelling visual narratives and intuitive user experiences, develop robust and high-performing applications with world-class technology, and strategically deploy your final solution to the global market.</h1>
+            <h1 className={styles.sectionFourlast}>We design compelling 
+              visual narratives and intuitive user experiences, develop robust and
+              high-performing applications with world-class technology, and strategically 
+              deploy your final solution to the global market.</h1>
+            <button type="button" className={styles.mainButton}> Contact us</button>
+
 
 
           <Image
@@ -349,12 +354,22 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          <span className={styles.blackText}>Design that tells your story,</span>
-          <br />
-          <span className={styles.gradientText}>before you say a word.</span>
+        <span className={styles.whiteText}>Design that tells your story,</span>
+        <br />
+        <span className={styles.gradientText}>before you say a word.</span>
         </motion.h1>
+        <div className={styles.sectionSixImageCard}>
+            <Image className={styles.sectionSixImage} alt="" width={0} height={0} src="/iphone-3.png" unoptimized priority />
+            <div className={styles.sectionSixTextbox}>
+              <span className={styles.sectionSixText1}>Bespoke</span>
+              <span className={styles.sectionSixText}>Let the design <br/> speak for itself.</span>
+              <span className={styles.sectionSixPara}>Bespoke design, purpose-built to deliver compelling visual narratives and seamless user experiences.</span>
+              <button type="button" className={styles.button}> Contact us</button>
 
-        <Image className={styles.sectionSixImage} alt="" width={0} height={0} src="/San Fran.png" unoptimized priority />
+
+            </div>
+
+        </div>
       </section>
     </>
   );
