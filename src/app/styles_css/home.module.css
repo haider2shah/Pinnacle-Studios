@@ -587,7 +587,8 @@
   background-color: #ffffff;
   border-radius: 2rem;
   width: 90%;
-  padding: 4rem;
+  padding: 2.5rem;
+  padding-top: 4rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -599,16 +600,20 @@
 .sectionSixImage { 
   width: 100%; 
   height: auto; 
-  margin-bottom: -98%;
+  margin-bottom: -94%;
 }
 
 .button {
 
     margin-top: 1.6rem;
     align-self: center;
-    width: 25vw;
+    width: 30vw;
     padding: 3vw;
-    font-size: .8rem;
+    font-size: 1rem;
+  }
+
+  .sectionSixTextbox {
+    gap: 1.6rem;
   }
 
   .sectionSixText1 {
