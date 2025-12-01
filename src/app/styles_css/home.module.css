@@ -638,4 +638,8 @@
     margin: 0;
     text-align: center;
   }
+
+  .sectionSixPara{
+    font-size: 1.1rem;
+  }
 }
