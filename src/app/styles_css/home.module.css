@@ -637,7 +637,7 @@
   border-radius: 2.6rem;
   width: 90%;
   padding: 2.2rem;
-  padding-top: 3.4rem;
+  padding-top: 4.4rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -662,7 +662,7 @@
   }
 
   .sectionSixTextbox {
-    gap: 4.2vh;
+    gap: 2rem;
   }
 
   .sectionSixText1 {
@@ -675,7 +675,7 @@
 }
 
 .sectionSixText {
-  font-size: clamp(20px,9vw, 70px);
+  font-size: clamp(25px,9.4vw, 70px);
   font-weight: 600;
   line-height: 1.2;
   background: linear-gradient(95deg, #8201b5 0%, #e6052a 100%);
@@ -687,7 +687,7 @@
 }
 
 .sectionSixPara {
-    font-size: clamp(12px,1.2rem, 75px);
+    font-size: clamp(12px,1.3rem, 75px);
 
 }
 
