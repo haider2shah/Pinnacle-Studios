@@ -657,7 +657,7 @@
     align-self: center;
     width: 36vw;
     padding: 3vw;
-    font-size: clamp(18px,3vw, 75px);
+    font-size: clamp(14px,3vw, 75px);
     border-radius: 3rem;
   }
 
