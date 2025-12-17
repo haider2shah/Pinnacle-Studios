@@ -675,7 +675,7 @@
 }
 
 .sectionSixText {
-  font-size: clamp(25px,9.4vw, 70px);
+  font-size: clamp(25px,9.6vw, 70px);
   font-weight: 600;
   line-height: 1.2;
   background: linear-gradient(95deg, #8201b5 0%, #e6052a 100%);
@@ -687,7 +687,7 @@
 }
 
 .sectionSixPara {
-    font-size: clamp(12px,1.3rem, 75px);
+    font-size: clamp(19px,3.2vw, 75px);
 
 }
 
