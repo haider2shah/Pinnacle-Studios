@@ -634,10 +634,10 @@
 
   .sectionSixImageCard {
   background-color: #ffffff;
-  border-radius: 3rem;
+  border-radius: 2.6rem;
   width: 90%;
   padding: 2.2rem;
-  padding-top: 13vh;
+  padding-top: 3.4rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -687,7 +687,7 @@
 }
 
 .sectionSixPara {
-    font-size: clamp(22px,1.2rem, 68px);
+    font-size: clamp(12px,1.2rem, 75px);
 
 }
 
