@@ -241,7 +241,6 @@
   align-items: center; 
   padding-top: 6rem; 
   padding-bottom: 6rem; 
-
   background-color: black;
 }
 
@@ -254,7 +253,6 @@
 
 }
 
-/* First part in solid black (or your preferred color) */
 .whiteText {
   color: #ffffff;
 }
@@ -581,17 +579,19 @@
   }
   
 
-
+  .sectionFour {
+    padding-top: 5rem;
+  }
   .sectionFourImages { 
   display: flex; 
   flex-direction: column;
   gap: .4vw;
-  width: 90%; 
+  width: 90%;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
   padding-top: 6rem;
   padding-bottom: 0rem;
-  border-radius: 2rem;
+  border-radius: 2.6rem;
   overflow: hidden;
 }
 
@@ -603,6 +603,40 @@
   text-align: center;
   width: 80%;
 
+}
+.sectionFourText1{
+    font-size: clamp(18px,4vw, 75px);
+
+}
+.sectionFourText {
+  font-size: clamp(19px,6.7vw, 75px);
+
+}
+
+.figma { width: 25%;}
+.wix { width: 25%; }
+.framer { width: 25%; }
+.webflow { width: 25%; }
+.react { width: 25%; }
+
+.firstRow,
+.secondRow {
+  padding-top: 1.4rem;
+  gap: 1.6vw;
+}
+
+.secondHeading {
+  font-size: clamp(24px,5.4vw, 95px);
+}
+
+.sectionFourlast {
+  font-size: clamp(17px,2.4vw, 75px);
+  padding-top: 1.6rem;
+
+}
+
+.sectionFourImage {
+  margin-bottom: -4vh;
 }
 
 /* First part in solid black (or your preferred color) */
@@ -622,7 +656,6 @@
     padding-top: 5rem; 
 
   }
-
 
   .sectionSixHeading {
   font-size: clamp(20px,9.9vw, 75px);
