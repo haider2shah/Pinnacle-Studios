@@ -630,7 +630,7 @@
 }
 
 .sectionFourlast {
-  font-size: clamp(17px,2.4vw, 75px);
+  font-size: clamp(18px,2.4vw, 75px);
   padding-top: 1.6rem;
 
 }
