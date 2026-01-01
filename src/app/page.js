@@ -281,7 +281,7 @@ export default function HomePage() {
           </div>
 
           <h1 className={styles.secondHeading}> Design | Develop | Deploy</h1>
-            <h1 className={styles.sectionFourlast}>We design compelling 
+            <h1 className={styles.sectionFourPara}>We design compelling 
               visual narratives and intuitive user experiences, develop robust and
               high-performing applications with world-class technology, and strategically 
               deploy your final solution to the global market.</h1>

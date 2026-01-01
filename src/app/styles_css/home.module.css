@@ -269,7 +269,7 @@
   flex-direction: column;
   gap: .4vw;
   width: 65%; 
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
   padding-top: 6rem;
   padding-bottom: 0rem;
@@ -328,7 +328,7 @@
 
 }
 
-.sectionFourlast {
+.sectionFourPara {
   align-self: center;
   text-align: center;
   width: 75%;
@@ -465,7 +465,6 @@
   display: flex;
   flex-direction: column;
   gap: .8rem;
-  align-self:center;
   margin-top: auto;
 }
 
@@ -591,6 +590,8 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
   padding-top: 6rem;
   padding-bottom: 0rem;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
   border-radius: 2.6rem;
   overflow: hidden;
 }
@@ -606,18 +607,22 @@
 }
 .sectionFourText1{
     font-size: clamp(18px,4vw, 75px);
+    padding-left: 0px;
+    margin-left: 0px;
 
 }
 .sectionFourText {
-  font-size: clamp(19px,6.7vw, 75px);
+  padding-left: 0px;
+   margin-left: 0px;
+  font-size: clamp(19px,7.4vw, 75px);
 
 }
 
-.figma { width: 25%;}
-.wix { width: 25%; }
-.framer { width: 25%; }
-.webflow { width: 25%; }
-.react { width: 25%; }
+.figma { width: 32%;}
+.wix { width: 32%; }
+.framer { width: 32%; }
+.webflow { width: 32%; }
+.react { width: 32%; }
 
 .firstRow,
 .secondRow {
@@ -626,17 +631,26 @@
 }
 
 .secondHeading {
-  font-size: clamp(24px,5.4vw, 95px);
+  font-size: clamp(24px,5.7vw, 95px);
+  align-self:flex-start
+
 }
 
-.sectionFourlast {
+.sectionFourPara {
   font-size: clamp(18px,2.4vw, 75px);
   padding-top: 1.6rem;
+  align-self:flex-start;
+  width: 100%;
+
 
 }
 
 .sectionFourImage {
-  margin-bottom: -4vh;
+  margin-bottom: 12vh;
+  align-self: flex-start;
+  width: 100%;
+  ;
+
 }
 
 /* First part in solid black (or your preferred color) */
@@ -698,6 +712,7 @@
 
   .sectionSixTextbox {
     gap: 2rem;
+
   }
 
   .sectionSixText1 {
