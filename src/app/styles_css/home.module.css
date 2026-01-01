@@ -588,7 +588,7 @@
   width: 90%;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
-  padding-top: 6rem;
+  padding-top: 5rem;
   padding-bottom: 0rem;
   padding-left: 2.2rem;
   padding-right: 2.2rem;
@@ -631,14 +631,15 @@
 }
 
 .secondHeading {
-  font-size: clamp(20px,5.7vw, 95px);
-  align-self:flex-start
+  font-size: clamp(12px,5.6vw, 75px);
+  align-self:center;
 
 }
 
 .sectionFourPara {
   font-size: clamp(18px,2.4vw, 75px);
   padding-top: 1.6rem;
+  margin-bottom: 1.6rem;
   align-self:flex-start;
   width: 100%;
 
@@ -701,7 +702,8 @@
   margin-bottom: -94%;
 }
 
-.button {
+.button,
+.mainButton{
     margin-top: 1.6rem;
     align-self: center;
     width: 36vw;
