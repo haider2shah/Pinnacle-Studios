@@ -631,7 +631,7 @@
 }
 
 .secondHeading {
-  font-size: clamp(24px,5.7vw, 95px);
+  font-size: clamp(20px,5.7vw, 95px);
   align-self:flex-start
 
 }
