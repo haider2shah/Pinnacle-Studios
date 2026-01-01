@@ -568,6 +568,35 @@
 
 @media (max-width: 768px){
 
+  .heroHeading {
+    font-size: clamp(20px,9.4vw, 75px);
+    margin-top: 14vw;
+  }
+
+  .mainImage {
+    width: 75%;
+  }
+
+  /* Small icon boxes */
+.heroImageOne,
+.heroImageTwo,
+.heroImageThree,
+.heroImageFour,
+.heroImageFive,
+.heroImageSix {
+  position: absolute;
+  width: clamp(44px, 16vw, 100px);
+  height: auto;
+}
+
+/* Positions (adjust to taste) */
+.heroImageOne  { left: 3%;  top: 8%;    }
+.heroImageTwo  { left: 1%; bottom: 35%; }
+.heroImageThree{ left: 4%;  bottom: 6%;  }
+.heroImageFour { right: 4%; top: 0%;     }
+.heroImageFive { right: 8%; bottom: 10%; }
+.heroImageSix  { right: 8%; bottom: 46%; }
+
   .sectionTwoHeading {
     font-size: clamp(20px,9.4vw, 75px);
     font-weight: 600;
@@ -588,7 +617,7 @@
   width: 90%;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
-  padding-top: 5rem;
+  padding-top: 6rem;
   padding-bottom: 0rem;
   padding-left: 2.2rem;
   padding-right: 2.2rem;
@@ -631,16 +660,17 @@
 }
 
 .secondHeading {
-  font-size: clamp(12px,5.6vw, 75px);
-  align-self:center;
+  font-size: clamp(12px,5.7vw, 75px);
+  align-self:center
 
 }
 
 .sectionFourPara {
-  font-size: clamp(18px,2.4vw, 75px);
+  font-size: clamp(19px,3.2vw, 75px);
   padding-top: 1.6rem;
   margin-bottom: 1.6rem;
   align-self:flex-start;
+  text-align:center;
   width: 100%;
 
 

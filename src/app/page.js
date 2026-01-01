@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className={styles.heroImages}>
           <Image
             className={styles.mainImage}
-            src="/show the world.png"
+            src="/iphone-3.png"
             alt="Main phone"
             width={460}
             height={920}
