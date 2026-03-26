@@ -590,9 +590,12 @@
 }
 
 /* Positions (adjust to taste) */
-.heroImageOne  { left: 3%;  top: 8%;    }
-.heroImageTwo  { left: 1%; bottom: 35%; }
-.heroImageThree{ left: 4%;  bottom: 6%;  }
+.heroImageOne  { left: 1%;  top: 19%; }
+.heroImageTwo  { left: 3%; bottom: 35%; }
+.heroImageThree { 
+  left: 4%;  
+  bottom: 6%; 
+}
 .heroImageFour { right: 4%; top: 0%;     }
 .heroImageFive { right: 8%; bottom: 10%; }
 .heroImageSix  { right: 8%; bottom: 46%; }
