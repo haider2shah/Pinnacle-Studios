@@ -630,11 +630,11 @@
 
   }
 .heroImageFive { 
-  right: 8%; 
+  right: 2%; 
   bottom: 16%; 
 }
 .heroImageSix  { 
-  right: 8%; 
+  right: 9%; 
   bottom: 46%;
 }
 
@@ -646,6 +646,13 @@
     text-align: center;
     width: 80%;
   }
+
+  .images { display: flex; gap: 1.4vw; width: auto; align-items: center; justify-content: center; }
+.imageOne { width: 45vw; height: auto; }
+.imageTwo { width: 90vw; height: auto; }
+.imageThree { width: 300vw; height: auto; }
+.imageFour { width: 90vw; height: auto; }
+.imageFive { width: 45vw; height: auto; }
   
 
   .sectionFour {
