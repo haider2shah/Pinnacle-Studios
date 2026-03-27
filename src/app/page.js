@@ -45,7 +45,7 @@ export default function HomePage() {
   // --- SCROLL PARALLAX SETUP ---
   // Parallax for the small icon group in hero
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, (v) => v * 0.3);
+  const y = useTransform(scrollY, (v) => v * 0.1);
 
   // Scroll-driven color change for ONLY the word "yours"
   const subRef = useRef(null);
