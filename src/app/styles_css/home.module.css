@@ -574,7 +574,11 @@
 
   .heroHeading {
     font-size: clamp(20px,9.4vw, 75px);
-    margin-top: 14vw;
+    margin-top: 16vw;
+  }
+
+  .heroSmallImage {
+    display: none;
   }
 
   .mainImage {
