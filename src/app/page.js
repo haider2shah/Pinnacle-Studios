@@ -85,7 +85,16 @@ export default function HomePage() {
         <div className={styles.heroImages}>
           <Image
             className={styles.mainImage}
-            src="/iphone-3.png"
+            src="/emailmock.png"
+            alt="Main phone"
+            width={460}
+            height={920}
+            unoptimized
+            priority
+          />
+          <Image
+            className={styles.mainImageMobile}
+            src="/mobilemock.png"
             alt="Main phone"
             width={460}
             height={920}

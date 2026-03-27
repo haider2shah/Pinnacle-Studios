@@ -20,6 +20,10 @@
   letter-spacing: -3px;
 }
 
+.mainImageMobile {
+  display: none;
+}
+
 .heroSubHeading {
   font-size: clamp(24px, 8vw, 40px);
   font-weight: 510;
@@ -575,7 +579,13 @@
 
   .mainImage {
     width: 75%;
+    display: none;
   }
+
+  .mainImageMobile {
+    display: flex;
+    width: 85%;
+}
 
   /* Small icon boxes */
 .heroImageOne,
