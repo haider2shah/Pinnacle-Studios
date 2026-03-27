@@ -578,7 +578,7 @@
   }
 
   .heroSmallImage {
-    display: none;
+    display: flex;
   }
 
   .mainImage {
@@ -590,7 +590,7 @@
     display: flex;
     width: 95%;
     background-color: white;
-    padding: 16%;
+    padding: 14%;
     border-radius: 2.6rem;
 }
 
