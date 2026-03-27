@@ -588,7 +588,10 @@
 
   .mainImageMobile {
     display: flex;
-    width: 85%;
+    width: 95%;
+    background-color: white;
+    padding: 16%;
+    border-radius: 2.6rem;
 }
 
   /* Small icon boxes */
