@@ -639,6 +639,17 @@
   bottom: 46%;
 }
 
+
+  .sectionOneHeading {
+  font-size: clamp(20px,9.9vw, 75px);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+  width: 77%;
+
+  }
+
   .sectionTwoHeading {
     font-size: clamp(20px,9.4vw, 75px);
     font-weight: 600;
@@ -647,6 +658,7 @@
     text-align: center;
     width: 80%;
   }
+
 
   .images { display: flex; gap: 1.4vw; width:auto; align-items: center; justify-content: center; }
 .imageOne { display: none; width: 40vw; height: auto; }

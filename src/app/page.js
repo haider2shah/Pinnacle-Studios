@@ -172,9 +172,9 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          <span className={styles.blackText}>But your website</span>
+          <span className={styles.blackText}> Greetings from </span>
           <br />
-          <span className={styles.gradientOneText}>doesn’t have to be.</span>
+          <span className={styles.gradientOneText}>the finish line.</span>
         </motion.h1>
 
 
