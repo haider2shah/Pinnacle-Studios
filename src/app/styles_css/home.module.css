@@ -647,12 +647,12 @@
     width: 80%;
   }
 
-  .images { display: flex; gap: 1.4vw; width: auto; align-items: center; justify-content: center; }
-.imageOne { width: 45vw; height: auto; }
-.imageTwo { width: 90vw; height: auto; }
-.imageThree { width: 300vw; height: auto; }
-.imageFour { width: 90vw; height: auto; }
-.imageFive { width: 45vw; height: auto; }
+  .images { display: flex; gap: 1.4vw; width:auto; align-items: center; justify-content: center; }
+.imageOne { width: 40vw; height: auto; }
+.imageTwo { width: 60vw; height: auto; }
+.imageThree { width: 140vw; height: auto; }
+.imageFour { width: 60vw; height: auto; }
+.imageFive { width: 40vw; height: auto; }
   
 
   .sectionFour {
