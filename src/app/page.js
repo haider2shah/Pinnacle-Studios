@@ -51,7 +51,7 @@ export default function HomePage() {
   const subRef = useRef(null);
   const { scrollYProgress: yoursProgress } = useScroll({
     target: subRef,
-    offset: ['start 52%', 'start 42%'],
+    offset: ['start 85%', 'start 65%'],
   });
   const whiteAlpha = useTransform(yoursProgress, [0, 1], [1, 0]);
 
@@ -149,9 +149,10 @@ export default function HomePage() {
         <motion.h2
           ref={subRef}
           className={styles.heroSubHeading}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
-          transition={{ duration: 4, ease: 'easeOut' }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
         >
           With a website <br /> that is{' '}
           <motion.span
