@@ -319,9 +319,9 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          <span className={styles.blackText}>Connect with your customers</span>
+          <span className={styles.blackText}>Seamless everywhere.</span>
           <br />
-          <span className={styles.gradientText}>across all devices.</span>
+          <span className={styles.gradientText}>Across all devices.</span>
         </motion.h1>
         <div className={styles.sectionFiveImages}>
           <Image
