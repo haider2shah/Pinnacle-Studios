@@ -125,18 +125,14 @@
 .imageFive { width: 13vw; height: 26vw; }
 
 /* ===== SECTION TWO ===== */
-.sectionTwo { 
-  display: flex; 
-  flex-direction: column; 
-  width: 100%; 
-  gap: 4rem; 
-  align-items: center; 
-  padding-top: 6rem; 
-  padding-bottom: 6rem; 
-
-
-  
-; 
+.sectionTwo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 .sectionTwoHeading {
   font-size: clamp(24px, 8vw, 55px);
@@ -657,13 +653,23 @@
     width: 77%;
   }
 
+  .sectionTwo {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .sectionTwoHeading {
-    font-size: clamp(20px,9.4vw, 75px);
+    font-size: clamp(20px, 9.9vw, 75px);
     font-weight: 600;
     line-height: 1.3;
     margin: 0;
     text-align: center;
-    width: 80%;
+    width: 77%;
+  }
+
+  .sectionTwoImage {
+    width: 90%;
+    height: auto;
   }
 
 
