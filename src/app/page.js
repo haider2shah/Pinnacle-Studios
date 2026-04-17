@@ -231,9 +231,9 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-          <span className={styles.blackText}>If you’re changing the world,</span>
+          <span className={styles.blackText}>Make your mark.</span>
             <br />
-          <span className={styles.gradientTwoText}>the world should know.</span>
+          <span className={styles.gradientTwoText}>The world is watching.</span>
         </motion.h1>
 
 
