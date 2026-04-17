@@ -2,70 +2,97 @@
 
 .container {
   width: 100%;
-  padding: 4rem 0 1rem; /* top: 4rem, bottom: 1rem */
+  padding: 4rem 0 1rem;
   overflow: hidden;
-  height: 130vh;
+  height: 140vh;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
-
 
 .gridWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 4.5rem; /* Space between columns */
+  gap: 1.4rem;
   height: auto;
-
-  
-  /* This makes the grid wider than the screen */
-  width: calc(100% + 300px); 
-  
-  /* This pulls it left to clip both edges evenly */
-  transform: translateX(-150px); 
+  width: calc(100% + 200px);
+  transform: translateX(-100px);
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 5.5rem; /* Space between images in a column */
-  will-change: transform; 
-  transition: transform 0.1s linear;
-
+  gap: 1.4rem;
+  will-change: transform;
+  transform: translateZ(0);
+  flex: 1;
+  min-width: 0;
 }
 
 .imageCard {
   position: relative;
   width: 100%;
-  
-  /* Reduced height to make cards smaller */
-  height: 250px; 
-  
-  border-radius: 24px; /* Matches the rounded corners on your screen */
-  overflow: hidden; 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  transition: box-shadow 0.4s ease;
 }
 
 .image {
   width: 100%;
-  height: 100%; 
-  object-fit: cover; 
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* --- Responsive for Mobile --- */
+/* ── Mobile rows: hidden on desktop ── */
+.mobileRows {
+  display: none;
+}
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
+
+  /* Hide the desktop parallax grid */
   .gridWrapper {
-    /* Stack them on mobile and remove the transforms */
+    display: none;
+  }
+
+  .container {
+    height: auto;
+    padding: 2rem 0 3rem;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  /* Show the mobile rows */
+  .mobileRows {
+    display: flex;
     flex-direction: column;
+    gap: 0.85rem;
     width: 100%;
-    transform: none;
-    padding: 0 1rem;
-    gap: 1rem;
   }
-  .column {
-    transform: none !important; 
-    gap: 1rem;
+
+  /* Each row is a horizontal strip that slides */
+  .mobileRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85rem;
+    will-change: transform;
   }
-  .imageCard {
-    height: 300px; /* Mobile height */
+
+  /* Each image card in a row */
+  .mobileCard {
+    flex-shrink: 0;
+    width: clamp(210px, 60vw, 270px);
+    height: clamp(155px, 44vw, 195px);
+    border-radius: 0.9rem;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   }
 }
