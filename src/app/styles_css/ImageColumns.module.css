@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  padding: 4rem 0 1rem;
+  padding: 0 0 1rem;
   overflow: hidden;
   height: 140vh;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
@@ -64,7 +64,7 @@
 
   .container {
     height: auto;
-    padding: 2rem 0 3rem;
+    padding: 0 0 0.85rem;
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
