@@ -609,14 +609,18 @@
 }
 
 
-  .sectionOneHeading {
-  font-size: clamp(20px,9.9vw, 75px);
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0;
-  text-align: center;
-  width: 77%;
+  .sectionOne {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
+  .sectionOneHeading {
+    font-size: clamp(20px, 9.9vw, 75px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-align: center;
+    width: 77%;
   }
 
   .portfolioSectionHeading {
@@ -663,6 +667,7 @@
 
   .sectionFour {
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .sectionFourImages { 
   display: flex; 
@@ -680,13 +685,12 @@
 }
 
 .sectionFourHeading {
-  font-size: clamp(20px,9.9vw, 75px);
+  font-size: clamp(20px, 9.9vw, 75px);
   font-weight: 600;
   line-height: 1.3;
   margin: 0;
   text-align: center;
-  width: 80%;
-
+  width: 77%;
 }
 .sectionFourText1{
     font-size: clamp(18px,4vw, 75px);
@@ -821,6 +825,11 @@
     font-size: clamp(19px,3.2vw, 75px);
 
 }
+
+  .sectionFive {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
   .sectionFiveHeading {
     font-size: clamp(20px, 9.9vw, 75px);
