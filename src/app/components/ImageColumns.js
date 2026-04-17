@@ -68,6 +68,15 @@ const mobileRow3 = [
   { id: 'm14', src: '/SF.png', alt: 'Project 14' },
   { id: 'm15', src: '/SF.png', alt: 'Project 15' },
 ];
+const mobileRow4 = [
+  { id: 'm18', src: '/SF.png', alt: 'Project 18' },
+  { id: 'm19', src: '/SF.png', alt: 'Project 19' },
+  { id: 'm20', src: '/SF.png', alt: 'Project 20' },
+  { id: 'm21', src: '/SF.png', alt: 'Project 21' },
+  { id: 'm22', src: '/SF.png', alt: 'Project 22' },
+  { id: 'm23', src: '/SF.png', alt: 'Project 23' },
+  { id: 'm24', src: '/SF.png', alt: 'Project 24' },
+];
 
 export default function ImageColumns() {
   const containerRef = useRef(null);
@@ -96,13 +105,15 @@ export default function ImageColumns() {
 
   // Mobile: horizontal parallax per row
   // Rows 1 & 3 slide left (aligned), row 2 slides right
-  const rawX1 = useTransform(scrollYProgress, [0, 1], [60,  -220]);
+  const rawX1 = useTransform(scrollYProgress, [0, 1], [0,  -280]);
   const rawX2 = useTransform(scrollYProgress, [0, 1], [-260,  0]);
-  const rawX3 = useTransform(scrollYProgress, [0, 1], [60,  -220]);
+  const rawX3 = useTransform(scrollYProgress, [0, 1], [0,  -280]);
+  const rawX4 = useTransform(scrollYProgress, [0, 1], [-260,  0]);
 
   const xRow1 = useSpring(rawX1, spring);
   const xRow2 = useSpring(rawX2, spring);
   const xRow3 = useSpring(rawX3, spring);
+  const xRow4 = useSpring(rawX4, spring);
 
   return (
     <section ref={containerRef} className={styles.container}>
@@ -133,12 +144,13 @@ export default function ImageColumns() {
         ))}
       </div>
 
-      {/* ── Mobile: 3-row horizontal sliding ── */}
+      {/* ── Mobile: 4-row horizontal sliding ── */}
       <div className={styles.mobileRows}>
         {[
           { row: mobileRow1, x: xRow1 },
           { row: mobileRow2, x: xRow2 },
           { row: mobileRow3, x: xRow3 },
+          { row: mobileRow4, x: xRow4 },
         ].map(({ row, x }, i) => (
           <motion.div key={i} className={styles.mobileRow} style={{ x }}>
             {row.map((img) => (
