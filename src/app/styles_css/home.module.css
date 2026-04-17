@@ -167,17 +167,15 @@
 
 /* ===== Portfolio Section ===== */
 
-.portfolioSection { 
-  display: flex; 
-  flex-direction: column; 
-  width: 100%; 
-  gap: 4rem; 
-  align-items: center; 
+.portfolioSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  align-items: center;
   padding-top: 6rem;
+  padding-bottom: 6rem;
   background-color: black;
-  
-
-
   }
 
 
@@ -676,6 +674,11 @@
 .imageFour { width: 80vw; height: auto; }
 .imageFive { display: none; width: 40vw; height: auto; }
   
+
+  .portfolioSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
   .sectionFour {
     padding-top: 5rem;
