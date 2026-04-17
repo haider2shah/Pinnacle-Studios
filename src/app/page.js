@@ -214,7 +214,7 @@ export default function HomePage() {
                 viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
             >
-              <span className={styles.whiteText}>Your digital presence,</span>
+              <span className={styles.whiteText}>Your presence,</span>
               <br />
               <span className={styles.colorText}>Unapologetically bold.</span>
           </motion.h1>
