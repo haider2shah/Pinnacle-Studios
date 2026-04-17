@@ -231,7 +231,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-          <span className={styles.blackText}>Be seen.</span>
+          <span className={styles.blackText}>Make a statement.</span>
             <br />
           <span className={styles.gradientTwoText}>The world is watching.</span>
         </motion.h1>
