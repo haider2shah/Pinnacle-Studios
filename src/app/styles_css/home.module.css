@@ -97,9 +97,13 @@
   text-align: center;
 }
 
-/* Black text for first line */
+/* Shared text colour utilities */
 .blackText {
   color: rgb(49, 49, 49);
+}
+
+.whiteText {
+  color: rgb(255, 255, 255);
 }
 
 /* Gradient text for second line */
@@ -144,12 +148,6 @@
   
 }
 
-/* First line: black */
-.blackText {
-  color: rgb(49, 49, 49);
-}
-
-/* Second line: gradient */
 .gradientTwoText {
   background: linear-gradient(95deg, #B200FF 0%, #FF0404 100%);
   -webkit-background-clip: text;
@@ -185,18 +183,6 @@
   
 }
 
-/* First line: black */
-.blackText {
-  color: rgb(255, 255, 255);
-}
-
-/* Second line: gradient */
-.gradientTwoText {
-  background: linear-gradient(95deg, #B200FF 0%, #FF0404 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* ===== SECTION THREE ===== */
 .sectionThree { 
   display: flex; 
@@ -217,9 +203,6 @@
   margin: 0;
   text-align: center;
 }
-
-/* solid first line */
-.blackText { color: rgb(49, 49, 49); }
 
 /* section-scoped gradient second line */
 .sectionThreeHeading .gradientText {
@@ -249,10 +232,6 @@
   margin: 0;
   text-align: center;
 
-}
-
-.whiteText {
-  color: #ffffff;
 }
 
 /* Second part with Section Four’s gradient */
@@ -372,8 +351,6 @@
   /* Remove the full-heading gradient from here */
 }
 
-.blackText { color: rgb(49, 49, 49); }
-
 /* Only the second line gets the Section Five gradient */
 .sectionFiveHeading .gradientText {
   background: linear-gradient(95deg, #eca509 0%, #ea1818 100%);
@@ -443,8 +420,6 @@
   text-align: center;
   /* remove gradient from the whole heading */
 }
-
-.whiteText { color: rgb(255, 255, 255); }
 
 /* Only the second line gets Section Six's gradient */
 .sectionSixHeading .gradientText {
@@ -763,10 +738,6 @@
 
 }
 
-/* First part in solid black (or your preferred color) */
-.whiteText {
-  color: #ffffff;
-}
 
 /* Second part with Section Four’s gradient */
 .sectionFourHeading 
@@ -863,11 +834,9 @@
 
 
 
-.whiteText { color: rgb(255, 255, 255); }
-
 /* Only the second line gets Section Six's gradient */
 .sectionSixHeading .gradientText {
-  background: white;
+  background: linear-gradient(95deg, #b23fff 0%, #0f97eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
