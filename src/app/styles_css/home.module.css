@@ -740,9 +740,8 @@
 
 
 /* Second part with Section Four’s gradient */
-.sectionFourHeading 
-.gradientFourText {
-  background: linear-gradient(95deg, #ffffff 0%, #ffffff 100%);
+.sectionFourHeading .gradientFourText {
+  background: linear-gradient(95deg, #0fbcd3 0%, #0497d6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
