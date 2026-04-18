@@ -327,7 +327,7 @@ export default function HomePage() {
 
         <div className={styles.sectionFiveSubtext}>
           <p className={styles.sectionFivePara}>
-            Your users aren't on one device—so neither are we. Every website we build adapts perfectly
+            Your users aren&apos;t on one device—so neither are we. Every website we build adapts perfectly
             across phones, tablets, laptops, and large screens. No compromises. No missed breakpoints.
           </p>
         </div>
