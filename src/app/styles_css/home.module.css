@@ -376,7 +376,6 @@
 }
 
 .sectionFivePara {
-  font-size: clamp(15px, 1.35vw, 20px);
   font-weight: 400;
   color: #555;
   line-height: 1.7;
