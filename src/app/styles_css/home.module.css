@@ -353,52 +353,60 @@
 
 /* Only the second line gets the Section Five gradient */
 .sectionFiveHeading .gradientText {
-  background: linear-gradient(95deg, #eca509 0%, #ea1818 100%);
+  background: linear-gradient(95deg, #4776E6 0%, #8E54E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.sectionFiveSubtext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  max-width: 760px;
+  margin-top: -1.5rem;
+}
+
+.sectionFiveSubtitle {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.sectionFivePara {
+  font-size: clamp(15px, 1.35vw, 20px);
+  font-weight: 400;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .sectionFiveImages {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  align-items: baseline;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  width: 90%;
 }
 
-/* All three images: behave nicely in flex */
-.sectionFiveImage1,
-.sectionFiveImage2,
-.sectionFiveImage3 {
-  height: auto;      /* keep aspect ratio */
-  flex: 0 0 auto;    /* don’t grow, don’t shrink */
-
+.sfPhone1,
+.sfPhone2,
+.sfMonitor,
+.sfPhone4,
+.sfPhone5 {
+  height: auto;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.18));
 }
 
-/* Control sizes individually */
-.sectionFiveImage1 {
-  width: 40vw; 
-  z-index: 2;
-  margin-left: 45%;
-  padding-bottom: 4%;
-
-
-}
-
-.sectionFiveImage2 {
-  width: 10vw;       /* smaller */
-  z-index: 3;
-  margin-left: -45%;
-  padding-bottom: 3%;
-  
-  
-}
-
-.sectionFiveImage3 {
-  width: 65vw;       /* medium */
-  z-index: 1;
-  margin-left: -33%;
-  
-}
+.sfPhone1  { width: 7vw; }
+.sfPhone2  { width: 9.5vw; }
+.sfMonitor { width: 44vw; }
+.sfPhone4  { width: 9.5vw; }
+.sfPhone5  { width: 7vw; }
 
 
 /* ===== SECTION SIX ===== */
@@ -827,8 +835,9 @@
 }
 
   .sectionFive {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
   }
 
   .sectionFiveHeading {
@@ -839,6 +848,31 @@
     text-align: center;
     width: 77%;
   }
+
+  .sectionFiveSubtext {
+    max-width: 88%;
+    margin-top: -0.5rem;
+  }
+
+  .sectionFivePara {
+    font-size: clamp(14px, 3.6vw, 20px);
+    line-height: 1.6;
+  }
+
+  .sectionFiveImages {
+    width: 95%;
+    gap: 1rem;
+  }
+
+  /* Hide outermost phones on mobile */
+  .sfPhone1,
+  .sfPhone5 {
+    display: none;
+  }
+
+  .sfPhone2  { width: 18vw; }
+  .sfMonitor { width: 60vw; }
+  .sfPhone4  { width: 18vw; }
 
 
 

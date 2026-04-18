@@ -324,34 +324,20 @@ export default function HomePage() {
           <br />
           <span className={styles.gradientText}>Across all devices.</span>
         </motion.h1>
+
+        <div className={styles.sectionFiveSubtext}>
+          <p className={styles.sectionFivePara}>
+            Your users aren't on one device—so neither are we. Every website we build adapts perfectly
+            across phones, tablets, laptops, and large screens. No compromises. No missed breakpoints.
+          </p>
+        </div>
+
         <div className={styles.sectionFiveImages}>
-          <Image
-            className={styles.sectionFiveImage1}
-            src="/tablet.png"
-            alt="Main phone"
-            width={460}
-            height={920}
-            unoptimized
-            priority
-          />
-          <Image
-            className={styles.sectionFiveImage2}
-            src="/iphone-1.png"
-            alt="Main phone"
-            width={460}
-            height={920}
-            unoptimized
-            priority
-          />
-          <Image
-            className={styles.sectionFiveImage3}
-            src="/web.png"
-            alt="Main phone"
-            width={460}
-            height={920}
-            unoptimized
-            priority
-          />
+          <Image className={styles.sfPhone1}  src="/iphone-1.png" alt="" width={460} height={920} unoptimized priority />
+          <Image className={styles.sfPhone2}  src="/iphone-2.png" alt="" width={460} height={920} unoptimized priority />
+          <Image className={styles.sfMonitor} src="/web.png"      alt="" width={1200} height={800} unoptimized priority />
+          <Image className={styles.sfPhone4}  src="/iphone-4.png" alt="" width={460} height={920} unoptimized priority />
+          <Image className={styles.sfPhone5}  src="/iphone-5A.png" alt="" width={460} height={920} unoptimized priority />
         </div>
       </section>
 
