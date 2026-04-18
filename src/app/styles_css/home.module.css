@@ -449,7 +449,10 @@
   display: flex;
   flex-direction: column;
   gap: .8rem;
-  margin-top: auto;
+  justify-content: center;
+  align-self: stretch;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .sectionSixText1 {
