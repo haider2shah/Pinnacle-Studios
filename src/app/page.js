@@ -5,6 +5,7 @@ import NavBar from './components/navBar';
 import styles from './styles_css/home.module.css';
 import Image from 'next/image';
 import ImageColumns from './components/ImageColumns';
+import Reviews from './components/Reviews';
 
 
 export default function HomePage() {
@@ -309,6 +310,22 @@ export default function HomePage() {
             priority
           />
         </div>
+      </section>
+
+      {/* ===== REVIEWS SECTION ===== */}
+      <section className={styles.reviewsSection}>
+        <motion.h1
+          className={styles.reviewsHeading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+        >
+          <span className={styles.blackText}>Trusted by founders</span>
+          <br />
+          <span className={styles.reviewsGradient}>who demand the best.</span>
+        </motion.h1>
+        <Reviews />
       </section>
 
       {/* ===== SECTION FIVE ===== */}

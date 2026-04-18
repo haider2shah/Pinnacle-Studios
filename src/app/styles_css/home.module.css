@@ -333,10 +333,167 @@
 .webflow { width: 20%; }
 .react { width: 20%; }
 
+/* ===== REVIEWS SECTION ===== */
+@keyframes reviewsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.reviewsSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.reviewsHeading {
+  font-size: clamp(24px, 8vw, 55px);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+}
+
+.reviewsGradient {
+  background: linear-gradient(95deg, #FF6B35 0%, #C620FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reviewsTrackWrapper {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.reviewsTrack {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  padding: 1.5rem 0 2.5rem;
+  width: max-content;
+  animation: reviewsScroll 38s linear infinite;
+  user-select: none;
+}
+
+.reviewCard {
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 2.4rem 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.reviewQuoteMark {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #111;
+}
+
+.reviewText {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+  flex: 1;
+  margin: 0;
+}
+
+.reviewDivider {
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+}
+
+.reviewAuthor {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reviewAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reviewAuthorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.reviewName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.reviewRole {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.reviewStars {
+  color: #FF6B35;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-left: auto;
+}
+
+.reviewsTrackDupe {
+  display: contents;
+}
+
+.reviewsMobileTrack {
+  display: none;
+}
+
+.reviewsDots {
+  display: none;
+}
+
+.reviewsDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: all 0.3s ease;
+}
+
+.reviewsDotActive {
+  width: 22px;
+  height: 7px;
+  border-radius: 4px;
+  background: #111;
+  transition: all 0.3s ease;
+}
+
 /* ===== SECTION FIVE ===== */
-.sectionFive { 
-  display: flex; 
-  flex-direction: column; 
+.sectionFive {
+  display: flex;
+  flex-direction: column;
   width: 100%; 
   overflow: hidden;
   gap: 4rem; 
@@ -889,5 +1046,60 @@
   -webkit-text-fill-color: transparent;
 }
 
- 
+  .reviewsSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 3rem;
+  }
+
+  .reviewsHeading {
+    font-size: clamp(20px, 9.9vw, 75px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-align: center;
+    width: 77%;
+  }
+
+  /* Hide desktop infinite scroll on mobile */
+  .reviewsTrackWrapper {
+    display: none;
+  }
+
+  /* Mobile snap carousel */
+  .reviewsMobileTrack {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%;
+    padding: 1rem 12vw;
+    gap: 4vw;
+    box-sizing: border-box;
+  }
+
+  .reviewsMobileTrack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviewCard {
+    scroll-snap-align: center;
+    width: 74vw;
+    flex-shrink: 0;
+    min-height: 340px;
+    padding: 2rem;
+  }
+
+  /* Dot indicators */
+  .reviewsDots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.2rem;
+  }
+
 }
