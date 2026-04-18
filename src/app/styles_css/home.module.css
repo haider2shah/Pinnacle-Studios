@@ -310,13 +310,16 @@
   text-align: center;
   width: 75%;
   color: rgb(95, 95, 95);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .mainButton {
     color: #ffffff;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
-    width: 120px;
+    width: 155px;
+    padding: 14px 20px;
     border-radius: 2rem;
     background-color:#0071E3;
     align-self: center;
@@ -376,7 +379,7 @@
 }
 
 .sectionFivePara {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
   color: #555;
   line-height: 1.7;
@@ -468,9 +471,10 @@
 
   .button {
     color: #ffffff;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
-    width: 120px;
+    width: 155px;
+    padding: 14px 20px;
     border-radius: 2rem;
     background-color:#0071E3;
     right: 15px;
@@ -734,12 +738,11 @@
 .sectionFourPara {
   font-size: clamp(19px,3.2vw, 75px);
   padding-top: 1.6rem;
+  margin-top: 0;
   margin-bottom: 1.6rem;
   align-self:flex-start;
   text-align:center;
   width: 100%;
-
-
 }
 
 .sectionFourImage {
