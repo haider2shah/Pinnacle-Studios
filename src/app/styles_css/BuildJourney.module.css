@@ -1,0 +1,114 @@
+/* "Watch it get built" scroll journey — tall scroll track with a sticky,
+   full-viewport WebGL stage. Chapter copy fades in over the canvas; opacity
+   and translate are driven imperatively from the ScrollTrigger update. */
+
+.journey {
+  position: relative;
+  height: 520vh;
+  background: #04050c;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.canvasWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.chapter,
+.chapterFinal {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.chapter {
+  left: clamp(1.5rem, 6vw, 6rem);
+  bottom: clamp(2.5rem, 14vh, 8rem);
+  max-width: min(560px, 82vw);
+}
+
+.chapterFinal {
+  left: 0;
+  right: 0;
+  bottom: clamp(1.25rem, 5vh, 3.5rem);
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #8fa4ff;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  font-weight: 600;
+  color: #f2f4ff;
+  text-wrap: balance;
+}
+
+.ctaBtn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.95rem 2.3rem;
+  border-radius: 999px;
+  background: #6c7bff;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 32px rgba(108, 123, 255, 0.45);
+}
+
+.ctaBtn:hover {
+  background: #8291ff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 46px rgba(108, 123, 255, 0.65);
+}
+
+/* Static stand-in for users who prefer reduced motion: same story beats,
+   no 520vh scrub and no WebGL. */
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 70vh;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  background: #04050c;
+}
+
+@media (max-width: 640px) {
+  .journey {
+    height: 460vh;
+  }
+
+  .chapter {
+    bottom: clamp(4rem, 16vh, 9rem);
+  }
+}

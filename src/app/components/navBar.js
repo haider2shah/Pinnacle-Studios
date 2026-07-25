@@ -1,16 +1,17 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import navStyles from '../styles_css/navigationbar.module.css';
 import MobileMenu from './menu'; // Capital 'M' and correct spelling
 
 
 const NavBar = () => {
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const [isVisible, setIsVisible] = useState(true);
-  const [menuOpen, setMenuOpen] = useState (false); 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const percentRef = useRef(null);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -21,18 +22,24 @@ const NavBar = () => {
     }
   });
 
+  // Live page-scroll percentage, written straight to the DOM so the navbar
+  // never re-renders while scrolling.
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (percentRef.current) {
+      percentRef.current.textContent = `${Math.round(v * 100)}%`;
+    }
+  });
+
   return (
     <div className={navStyles.navWrapper}>
-      <motion.nav
-        initial={{ y: 0 }}
-        animate={{ y: isVisible ? 0 : -100 }}
-        transition={{ duration: 0.3 }}
-        className={navStyles.navbar}
-      >
+      {/* Scrolling down shrinks the bar from both sides into a pill with
+          just the logo + scroll percentage (desktop); scrolling up expands
+          it back. On mobile it slides away as before. */}
+      <nav className={`${navStyles.navbar} ${isVisible ? '' : navStyles.shrunk}`}>
         <div className={navStyles.menu}>
-          <img 
-            src="/menu.svg" 
-            className={navStyles.menuIcon} 
+          <img
+            src="/menu.svg"
+            className={navStyles.menuIcon}
             onClick = {() => setMenuOpen(true)}
             />
 
@@ -47,7 +54,9 @@ const NavBar = () => {
         </ul>
 
         <button type="button" className={navStyles.button}> Contact us</button>
-      </motion.nav>
+
+        <span ref={percentRef} className={navStyles.percent} aria-hidden="true">0%</span>
+      </nav>
       <AnimatePresence>
           {menuOpen && <MobileMenu onClose={() => setMenuOpen(false)} />}
       </AnimatePresence>

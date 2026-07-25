@@ -1,0 +1,33 @@
+/* Disintegration text: the wrap anchors the dust canvas, and the text gets
+   a soft cursor-following hole via mask (variables set from JS; parked
+   offscreen when the pointer leaves, so the text is instantly whole). */
+
+.dustWrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Three mask layers, intersected: the cursor-following hole, a permanent
+   soft bite out of the top-right corner (the top of the final "y." — the
+   always-crumbling spot that advertises the interaction), and the one-time
+   "snap" dissolve front (--snap sweeps across in px, driven from JS). */
+.dustText {
+  display: inline-block;
+  -webkit-mask-image:
+    radial-gradient(circle 64px at var(--dx, -9999px) var(--dy, -9999px), transparent 55%, black 92%),
+    radial-gradient(70px 48px at 100% 18%, transparent 40%, black 86%),
+    linear-gradient(100deg, transparent calc(var(--snap, -40px) - 20px), black calc(var(--snap, -40px) + 45px));
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle 64px at var(--dx, -9999px) var(--dy, -9999px), transparent 55%, black 92%),
+    radial-gradient(70px 48px at 100% 18%, transparent 40%, black 86%),
+    linear-gradient(100deg, transparent calc(var(--snap, -40px) - 20px), black calc(var(--snap, -40px) + 45px));
+  mask-composite: intersect;
+}
+
+.dustCanvas {
+  position: absolute;
+  top: -150px;  /* mirror of PAD in DustText.js */
+  left: -150px;
+  pointer-events: none;
+}

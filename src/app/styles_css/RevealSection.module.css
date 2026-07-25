@@ -1,0 +1,478 @@
+/* The Pinnacle lens: tall track + pinned stage; a fixed-size rounded lens
+   slides left → right over a wireframe page, showing the same page finished.
+   Both mocks share one skeleton, sized in container units (cqw) so they stay
+   in register at any width.
+   The track must NOT have overflow:hidden — it would break the sticky stage. */
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 220vh;
+  background: #ffffff;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* BEFORE layer: the whole travel band. Static — never animated. */
+.beforeBand {
+  position: absolute;
+  top: 4vh;
+  bottom: 4vh;
+  left: 2vw;
+  width: 96vw;
+  border-radius: 28px;
+  overflow: hidden;
+  container-type: inline-size;
+  box-shadow: inset 0 0 0 1px #00000010;
+}
+
+/* The lens assembly: constant size; only its transform changes. */
+.lensGroup {
+  position: absolute;
+  top: 4vh;
+  bottom: 4vh;
+  left: 2vw;
+  width: 47vw;
+  will-change: transform;
+}
+
+.window {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  overflow: hidden;
+  /* white ring + a breath of the brand lime + depth (shadow ring instead of
+     border so the inner mock stays pixel-registered with the layer below) */
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 40px rgba(170, 255, 0, 0.22),
+    0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+/* Little floating chip riding the lens */
+.lensBadge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  translate: -50% 0;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+
+/* The AFTER mock spans the lens's whole travel area (96vw) and counter-
+   translates against it, staying fixed to the stage and perfectly aligned
+   with the BEFORE wireframe underneath. */
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96vw;
+  height: 100%;
+  container-type: inline-size;
+  will-change: transform;
+}
+
+/* ── The mock page (shared skeleton; variants restyle it) ── */
+
+.mock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.before {
+  background: #fafafa;
+}
+
+.after {
+  background: #ffffff;
+  color: #2C2B2B;
+}
+
+.mockChrome {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  height: 3.4cqw;
+  padding: 0 1.4cqw;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5cqw;
+}
+
+.dots i {
+  width: 0.9cqw;
+  height: 0.9cqw;
+  border-radius: 50%;
+  background: #f4645f;
+}
+
+.dots i:nth-child(2) { background: #fbc12f; }
+.dots i:nth-child(3) { background: #3ec54c; }
+
+.before .dots i {
+  background: #e4e4e4;
+}
+
+.urlPill {
+  background: #f1f3f6;
+  border-radius: 999px;
+  padding: 0.35cqw 1.1cqw;
+  font-size: 0.9cqw;
+  color: #555555;
+}
+
+/* Ghost primitives: the wireframe's vocabulary */
+.bar {
+  display: block;
+  background: #e9e9e9;
+  border-radius: 999px;
+}
+
+.ghostPill {
+  display: inline-block;
+  background: #e9e9e9;
+  border-radius: 999px;
+}
+
+.ghostUrl {
+  width: 13cqw;
+  height: 1.5cqw;
+}
+
+.ghostDot {
+  display: block;
+  width: 1.4cqw;
+  height: 1.4cqw;
+  border-radius: 0.45cqw;
+  background: #e4e4e4;
+  margin-bottom: 0.6cqw;
+}
+
+.ghostLinks {
+  display: flex;
+  gap: 1.6cqw;
+  align-items: center;
+}
+
+.ghostLinks i {
+  width: 3.4cqw;
+  height: 0.9cqw;
+  border-radius: 999px;
+  background: #e9e9e9;
+}
+
+.mockBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6cqw 3cqw 1.8cqw;
+  min-height: 0;
+}
+
+.mockNav {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  flex-shrink: 0;
+}
+
+.mockLogo {
+  font-weight: 600;
+  font-size: 1.25cqw;
+}
+
+.barLogo {
+  width: 9cqw;
+  height: 1.3cqw;
+}
+
+.mockLinks {
+  display: flex;
+  gap: 1.6cqw;
+  font-size: 1cqw;
+}
+
+.mockLinks span {
+  color: #555555;
+}
+
+.mockCta {
+  margin-left: auto;
+  background: #2C2B2B;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.5cqw 1.4cqw;
+  font-size: 0.95cqw;
+  font-weight: 600;
+}
+
+.ghostCta {
+  margin-left: auto;
+  width: 8cqw;
+  height: 2cqw;
+}
+
+.mockHero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.1cqw;
+  max-width: 52cqw;
+  min-height: 0;
+}
+
+.mockKicker {
+  font-size: 0.95cqw;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  margin: 0;
+}
+
+.barKicker {
+  width: 10cqw;
+  height: 0.95cqw;
+}
+
+.mockH {
+  margin: 0;
+  line-height: 1.12;
+  font-size: 3.6cqw;
+  font-weight: 600;
+}
+
+.mockH em {
+  font-style: normal;
+  background: linear-gradient(95deg, #00d4ff, #b44fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.barH1 {
+  width: 34cqw;
+  height: 3cqw;
+}
+
+.barH2 {
+  width: 24cqw;
+  height: 3cqw;
+}
+
+.mockP {
+  margin: 0;
+  font-size: 1.15cqw;
+  line-height: 1.55;
+  color: #666666;
+}
+
+.barP {
+  width: 28cqw;
+  height: 1.1cqw;
+}
+
+.mockButton {
+  display: inline-block;
+  margin-top: 0.6cqw;
+  font-size: 1cqw;
+  background: #2C2B2B;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.7cqw 1.8cqw;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.ghostButton {
+  margin-top: 0.6cqw;
+  width: 12cqw;
+  height: 2.7cqw;
+}
+
+.mockCards {
+  display: flex;
+  gap: 1.6cqw;
+  flex-shrink: 0;
+}
+
+.mockCard {
+  flex: 1;
+  padding: 1.2cqw 1.4cqw;
+  border-radius: 1.2cqw;
+}
+
+.before .mockCard {
+  background: #f1f1f1;
+}
+
+.after .mockCard {
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+}
+
+.mockCard strong {
+  display: block;
+  font-size: 1.05cqw;
+  font-weight: 600;
+  margin-bottom: 0.4cqw;
+}
+
+.mockCard p {
+  margin: 0;
+  font-size: 0.9cqw;
+  line-height: 1.5;
+  color: #777777;
+}
+
+.barCardT {
+  width: 55%;
+  height: 1cqw;
+  margin-bottom: 0.6cqw;
+}
+
+.barCardP {
+  width: 85%;
+  height: 0.8cqw;
+}
+
+.cardDot {
+  display: block;
+  width: 1.4cqw;
+  height: 1.4cqw;
+  border-radius: 0.45cqw;
+  background: linear-gradient(95deg, #00d4ff, #b44fff);
+  margin-bottom: 0.6cqw;
+}
+
+/* ── Copy cards beside the lens ── */
+
+.copy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 34vw;
+}
+
+.copyLeft {
+  left: 7vw;
+}
+
+.copyRight {
+  right: 7vw;
+}
+
+.copyCard {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 24px;
+  padding: 2.6rem 2.4rem;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin: 0 0 1.1rem 0;
+}
+
+.heading {
+  font-size: clamp(24px, 2.9vw, 44px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #2C2B2B;
+  margin: 0 0 1.2rem 0;
+}
+
+.para {
+  font-size: clamp(14px, 1.15vw, 18px);
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
+}
+
+/* ── Mobile: no pin, no sliding — the finished mock + both text blocks ── */
+@media (max-width: 768px) {
+  .track {
+    height: auto;
+  }
+
+  .stage {
+    position: static;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 4rem 1.4rem;
+  }
+
+  .beforeBand {
+    display: none;
+  }
+
+  .lensGroup {
+    position: relative;
+    width: 100%;
+    height: 64vw;
+    transform: none !important;
+  }
+
+  .window {
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+  }
+
+  .lensBadge {
+    display: none;
+  }
+
+  .photo {
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+  }
+
+  .copy {
+    position: static;
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .copyCard {
+    box-shadow: none;
+    padding: 0.5rem 0.25rem;
+    background: transparent;
+  }
+}

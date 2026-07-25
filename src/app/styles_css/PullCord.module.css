@@ -1,0 +1,68 @@
+/* Ceiling-fan pull cord hanging from the top of the section */
+
+.cordWrap {
+  position: absolute;
+  top: 0;
+  left: 63%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: swing 3.6s ease-in-out infinite;
+}
+
+/* Freeze the sway while the user is holding the cord */
+.grabbed {
+  animation-play-state: paused;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(4.5deg); }
+  50% { transform: rotate(-4.5deg); }
+}
+
+.string {
+  width: 2px;
+  background-color: #2C2B2B;
+  border-radius: 1px;
+}
+
+/* Generous invisible hit area around the small bead (easier to grab,
+   especially on touch) */
+.grip {
+  display: flex;
+  padding: 12px;
+  margin-top: -12px;
+  cursor: grab;
+  touch-action: none; /* pulling must not scroll the page */
+}
+
+.grabbed .grip {
+  cursor: grabbing;
+}
+
+.bead {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #2C2B2B;
+}
+
+.pullLabel {
+  margin-top: -2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2C2B2B;
+  opacity: 0.55;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .cordWrap {
+    left: 78%;
+  }
+}

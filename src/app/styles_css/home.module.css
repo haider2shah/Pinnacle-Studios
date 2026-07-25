@@ -108,9 +108,12 @@
 
 /* Gradient text for second line */
 .gradientOneText {
-  background: linear-gradient(95deg, #eb0e75 0%, #680bb9 100%);
+  background: linear-gradient(95deg, #eb0e75, #680bb9, #eb0e75);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .colorText {
@@ -130,28 +133,118 @@
 
 /* ===== SECTION TWO ===== */
 .sectionTwo {
+  position: relative; /* anchors the particle canvas */
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4rem;
+  min-height: 100vh;
+  gap: 1.5rem; /* kicker sits close above the heading */
   align-items: center;
+  justify-content: center; /* heading centered in the open space above the mound */
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 13rem; /* asymmetric padding nudges the centered headings up */
+  overflow: hidden;
 }
+/* Small kicker line above the section-two heading */
+.sectionTwoKicker {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(10px, 0.9vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2C2B2B;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap; /* always one line */
+}
+
 .sectionTwoHeading {
-  font-size: clamp(24px, 8vw, 55px);
+  position: relative;
+  z-index: 1; /* above the particle canvas */
+  font-size: clamp(28px, 8.6vw, 72px);
   font-weight: 600;
   line-height: 1.3;
   margin: 0;
   text-align: center;
+}
 
-  
+/* Identical text in a flowing gradient, laid exactly over the heading and
+   revealed through a soft circular mask that tracks the cursor (--mx/--my
+   are set from JS; parked offscreen when the pointer leaves). */
+.headingPastel {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-mask-image: radial-gradient(circle 110px at var(--mx, -999px) var(--my, -999px), black 35%, transparent 78%);
+  mask-image: radial-gradient(circle 110px at var(--mx, -999px) var(--my, -999px), black 35%, transparent 78%);
+  pointer-events: none;
+}
+
+/* The gradient is clipped per letter, on the element that owns the text —
+   background-clip: text can't reach through the letter boxes' overflow
+   clipping, so clipping at the leaf is what makes the reveal render.
+   Staggered negative delays phase-shift each letter's flow so the sweep
+   still travels across the whole heading (same gradient as
+   "We use it masterfully."). */
+.headingPastel .flipRoll {
+  background: linear-gradient(95deg, #00d4ff, #b44fff, #00d4ff);
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
+}
+
+/* The overlay never rolls, so its clone letters are dead weight */
+.headingPastel .flipClone {
+  display: none;
+}
+
+/* Letter-roll flip: the picked letter rolls up out of its clipped box while
+   an identical clone rises in from below (ticker style). All letters live in
+   uniform top-aligned inline-block boxes so the split text lays out exactly
+   like the original run. */
+.word {
+  display: inline-block;
+  vertical-align: top;
+  white-space: pre;
+}
+
+.flipLetter {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.flipRoll {
+  display: inline-block;
+  position: relative;
+}
+
+.flipClone {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.rolling {
+  animation: letterRoll 0.55s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes letterRoll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
 }
 
 .gradientTwoText {
-  background: linear-gradient(95deg, #B200FF 0%, #FF0404 100%);
+  background: linear-gradient(95deg, #B200FF, #FF0404, #B200FF);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .sectionTwoImage {
@@ -165,7 +258,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4rem;
+  gap: 1.5rem;
   align-items: center;
   padding-top: 6rem;
   padding-bottom: 0;
@@ -236,16 +329,19 @@
 
 /* Second part with Section Four’s gradient */
 .sectionFourHeading .gradientFourText {
-  background: linear-gradient(95deg, #0fbcd3 0%, #0497d6 100%);
+  background: linear-gradient(95deg, #0fbcd3, #0497d6, #0fbcd3);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
-.sectionFourImages { 
-  display: flex; 
+.sectionFourImages {
+  display: flex;
   flex-direction: column;
   gap: .4vw;
-  width: 65%; 
+  width: 65%;
   background-color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
   padding-top: 6rem;
@@ -330,8 +426,200 @@
 .figma { width: 20%;}
 .wix { width: 20%; }
 .framer { width: 20%; }
+.claude { width: 14%; border-radius: 0.8rem; overflow: hidden; }
 .webflow { width: 20%; }
 .react { width: 20%; }
+
+/* ===== AI SECTION ===== */
+.aiSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 12.5rem;
+  background-color: #080808;
+  gap: 0;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  33%       { transform: scale(1.15) rotate(-8deg); opacity: 0.85; }
+  66%       { transform: scale(1.08) rotate(6deg); opacity: 0.95; }
+}
+
+.aiLogo {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: brightness(0) invert(1);
+  animation: sparklePulse 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.aiHeading {
+  font-size: clamp(24px, 4.2vw, 62px);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.8rem 0;
+  text-align: center;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.aiGradient {
+  background: linear-gradient(95deg, #00d4ff, #b44fff, #00d4ff);
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
+}
+
+.aiSubHeading {
+  font-size: clamp(16px, 1.6vw, 26px);
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  line-height: 1.4;
+}
+
+.lockIcon {
+  font-size: 1.8rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 3rem;
+  filter: brightness(0) invert(1);
+}
+
+.aiButton {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.aiButton:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+}
+
+.aiCard {
+  width: 65%;
+  background: linear-gradient(160deg, #1a6ef5 0%, #0d3d99 100%);
+  border-radius: 2.6rem;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.aiCardIntro {
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 75%;
+  margin: 0;
+}
+
+.aiPrinciples {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+}
+
+.aiPrincipleMedia {
+  position: absolute;
+  top: 11.5rem;
+  right: -11rem;
+  width: 68%;
+  z-index: 2;
+}
+
+.aiPrincipleImage {
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  transform: scale(1.22);
+  transform-origin: top right;
+}
+
+.aiArrowVonRestorff {
+  position: absolute;
+  top: 6rem;
+  left: 41.5rem;
+  width: 8.75rem;
+  height: auto;
+  z-index: 3;
+  transform-origin: 6.9375rem 8.625rem;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+.aiArrowJakob {
+  position: absolute;
+  top: 7.6rem;
+  left: 15.69rem;
+  width: 7.84rem;
+  height: auto;
+  z-index: 3;
+  transform-origin: 3.54rem 4.38rem;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+.aiArrowZeigarnik {
+  position: absolute;
+  top: 20rem;
+  left: 16.74rem;
+  width: 7.4875rem;
+  height: auto;
+  z-index: 3;
+  transform-origin: 6.469rem 1.906rem;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+.aiPrinciple {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.aiPrincipleTitle {
+  font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  margin: 0;
+}
+
+.aiPrincipleText {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 85%;
+}
+
+.aiPrincipleText strong {
+  color: #ffffff;
+  font-weight: 600;
+}
 
 /* ===== REVIEWS SECTION ===== */
 @keyframes reviewsScroll {
@@ -346,7 +634,7 @@
   gap: 4rem;
   align-items: center;
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
   background-color: #f7f7f7;
   overflow: hidden;
 }
@@ -360,10 +648,12 @@
 }
 
 .reviewsGradient {
-  background: linear-gradient(95deg, #FF6B35 0%, #C620FF 100%);
+  background: linear-gradient(95deg, #FF6B35, #C620FF, #FF6B35);
+  background-size: 400% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .reviewsTrackWrapper {
@@ -513,16 +803,19 @@
 
 /* Only the second line gets the Section Five gradient */
 .sectionFiveHeading .gradientText {
-  background: linear-gradient(95deg, #4776E6 0%, #8E54E9 100%);
+  background: linear-gradient(95deg, #4776E6, #8E54E9, #4776E6);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .sectionFiveSubtext {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 2rem;
   text-align: center;
   max-width: 760px;
   margin-top: -1.5rem;
@@ -591,9 +884,12 @@
 
 /* Only the second line gets Section Six's gradient */
 .sectionSixHeading .gradientText {
-  background: linear-gradient(95deg, #b23fff 0%, #0f97eb 100%);
+  background: linear-gradient(95deg, #b23fff, #0f97eb, #b23fff);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .sectionSixImage { 
@@ -647,12 +943,14 @@
 .yoursGrad {
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, #8201b5 0%, #e6052a 100%);
+  background: linear-gradient(95deg, #8201b5, #e6052a, #8201b5);
+  background-size: 400% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   pointer-events: none;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .sectionSixImageCard {
@@ -805,8 +1103,9 @@
   }
 
   .sectionTwo {
+    min-height: 92svh;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 9rem; /* nudges the centered headings up */
   }
 
   .sectionTwoHeading {
@@ -916,9 +1215,12 @@
 
 /* Second part with Section Four’s gradient */
 .sectionFourHeading .gradientFourText {
-  background: linear-gradient(95deg, #0fbcd3 0%, #0497d6 100%);
+  background: linear-gradient(95deg, #0fbcd3, #0497d6, #0fbcd3);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
   .sectionSix {
@@ -984,12 +1286,14 @@
   font-size: clamp(25px,9.6vw, 70px);
   font-weight: 600;
   line-height: 1.2;
-  background: linear-gradient(95deg, #8201b5 0%, #e6052a 100%);
+  background: linear-gradient(95deg, #8201b5, #e6052a, #8201b5);
+  background-size: 400% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   pointer-events: none;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
 .sectionSixPara {
@@ -1041,9 +1345,12 @@
 
 /* Only the second line gets Section Six's gradient */
 .sectionSixHeading .gradientText {
-  background: linear-gradient(95deg, #b23fff 0%, #0f97eb 100%);
+  background: linear-gradient(95deg, #b23fff, #0f97eb, #b23fff);
+  background-size: 400% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3.5s linear infinite;
 }
 
   .reviewsSection {
@@ -1100,6 +1407,37 @@
     align-items: center;
     gap: 8px;
     margin-top: 1.2rem;
+  }
+
+  .aiCard {
+    width: 88%;
+    padding: 2rem;
+  }
+
+  .aiPrinciples {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aiPrincipleText {
+    max-width: none;
+  }
+
+  .aiArrowVonRestorff,
+  .aiArrowJakob,
+  .aiArrowZeigarnik {
+    display: none;
+  }
+
+  .aiPrincipleMedia {
+    top: auto;
+    right: 0;
+    bottom: -13rem;
+    width: 85%;
+  }
+
+  .aiPrincipleImage {
+    transform-origin: bottom right;
   }
 
 }
