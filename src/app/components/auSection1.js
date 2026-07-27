@@ -17,7 +17,7 @@ const SectionOne = () => {
                 </div>
 
                 <div>
-                    <Image className= {auStyles.imageOne} alt="About us image" width={0} height={0} src="/aboutOne.png" unoptimized priority/>
+                    <Image className= {auStyles.imageOne} alt="About us image" width={0} height={0} src="/aboutOne.webp" unoptimized priority/>
                 </div>
             </div>
 

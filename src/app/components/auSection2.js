@@ -17,7 +17,7 @@ const SectionTwo = () => {
                 </div>
 
                 <div>
-                    <Image className= {auStyles.imageTwo} alt="About us image" width={0} height={0} src="/ipad.png" unoptimized priority/>
+                    <Image className= {auStyles.imageTwo} alt="About us image" width={0} height={0} src="/ipad.webp" unoptimized/>
                 </div>
             </div>
         </div>

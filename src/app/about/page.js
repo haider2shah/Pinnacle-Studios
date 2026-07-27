@@ -28,27 +28,27 @@ export default function AboutUs() {
           <div className= {auStyles.team}>
                 <ImageCard
                     name = "Haider Shah"
-                    src = "/haider.png"
+                    src = "/haider.webp"
                     position = "Lead UX Designer"
                 />
 
                 <ImageCard
                     name = "Syed Zain Ali"
-                    src = "/zain.png"
+                    src = "/zain.webp"
                     position = "Front - End Developer"
                 />
 
                 <ImageCard
                     name = "Ali Raza Kazmi"
-                    src = "/raza.png"
+                    src = "/raza.webp"
                     position = "Full - Stack Developer"
-                />  
+                />
 
                 <ImageCard
                     name = "Ali Raza Kazmi"
-                    src = "/raza.png"
+                    src = "/raza.webp"
                     position = "Full - Stack Developer"
-                />  
+                />
 
                 
 

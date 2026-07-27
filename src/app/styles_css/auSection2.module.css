@@ -15,7 +15,7 @@
   align-items: center;
   gap: 12vw;
 
-  background-image: url('/auSection2.png');    
+  background-image: url('/auSection2.webp');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 6vw;
@@ -52,7 +52,7 @@
   .box {
     display: flex;
     flex-direction: column;
-    background-image: url('/auSection2.png');    
+    background-image: url('/auSection2.webp');
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 3vw;

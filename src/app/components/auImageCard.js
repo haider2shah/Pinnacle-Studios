@@ -6,7 +6,7 @@ const ImageCard = ({name, position, src}) => {
         <div className= {Styles.wrapper}>
             <div className= {Styles.card}>
                 <div className= {Styles.picture}>
-                    <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {src} unoptimized priority/>
+                    <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {src} unoptimized/>
                 </div>
                 <div className= {Styles.text}>
                     <div>
