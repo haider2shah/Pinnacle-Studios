@@ -195,11 +195,31 @@ export default function HomePage() {
     target: sectionOneRef,
     offset: ['start 80%', 'end 10%'],
   });
+  const { scrollYProgress: phoneCarouselProgress } = useScroll({
+    target: sectionOneRef,
+    offset: ['start start', 'end end'],
+  });
 
   const xL1 = useTransform(sec1, [0, 1], ['12vw', '0vw']);
   const xL2 = useTransform(sec1, [0, 1], ['6vw', '0vw']);
   const xR1 = useTransform(sec1, [0, 1], ['-6vw', '0vw']);
   const xR2 = useTransform(sec1, [0, 1], ['-12vw', '0vw']);
+  const phoneCarouselActive = windowSize.width > 0 && windowSize.width <= 768;
+  const mobilePhoneWidth = Math.min(Math.max(windowSize.width * 0.52, 220), 430);
+  const mobilePhoneGap = Math.min(Math.max(windowSize.width * 0.012, 4), 10);
+  const mobilePhoneStep = mobilePhoneWidth + mobilePhoneGap;
+  const mobilePhoneTrackX = useTransform(
+    phoneCarouselProgress,
+    [0, 0.08, 0.5, 0.98, 1],
+    phoneCarouselActive
+      ? [-mobilePhoneStep * 2, -mobilePhoneStep * 2, -mobilePhoneStep * 3, -mobilePhoneStep * 4, -mobilePhoneStep * 4]
+      : [0, 0, 0, 0, 0]
+  );
+  const mobileDot1 = useTransform(phoneCarouselProgress, [0, 1], [0.35, 0.35]);
+  const mobileDot2 = useTransform(phoneCarouselProgress, [0, 1], [0.35, 0.35]);
+  const mobileDot3 = useTransform(phoneCarouselProgress, [0, 0.22, 0.42], [1, 1, 0.35]);
+  const mobileDot4 = useTransform(phoneCarouselProgress, [0.28, 0.5, 0.72], [0.35, 1, 0.35]);
+  const mobileDot5 = useTransform(phoneCarouselProgress, [0.62, 0.9, 1], [0.35, 1, 1]);
 
   return (
     <>
@@ -270,39 +290,79 @@ export default function HomePage() {
       </section>
 
       {/* ===== SECTION ONE ===== */}
-      <section ref={sectionOneRef} className={styles.sectionOne}>
-        <motion.h1
-          className={styles.sectionOneHeading}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-        >
-          <span className={styles.blackText}>We build what</span>
-          <br />
-          <span className={styles.gradientOneText}>others only imagine.</span>
-        </motion.h1>
+      <section
+        ref={sectionOneRef}
+        className={styles.sectionOne}
+        style={phoneCarouselActive ? { '--mobile-phone-width': `${mobilePhoneWidth}px`, '--mobile-phone-gap': `${mobilePhoneGap}px` } : undefined}
+      >
+        <div className={styles.sectionOneDesktop}>
+          <motion.h1
+            className={styles.sectionOneHeading}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+          >
+            <span className={styles.blackText}>We build what</span>
+            <br />
+            <span className={styles.gradientOneText}>others only imagine.</span>
+          </motion.h1>
 
-        <div className={styles.images}>
-          <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-            <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone-1.png" unoptimized priority />
-          </motion.div>
+          <div className={styles.images}>
+            <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
+              <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone-1.png" unoptimized priority />
+            </motion.div>
 
-          <motion.div style={{ x: xL2, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-            <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone-2.png" unoptimized priority />
-          </motion.div>
+            <motion.div style={{ x: xL2, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
+              <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone-2.png" unoptimized priority />
+            </motion.div>
 
-          <div style={{ zIndex: 10, position: 'relative', transform: 'translateZ(0)' }}>
-            <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone-3.png" unoptimized priority />
+            <div style={{ zIndex: 10, position: 'relative', transform: 'translateZ(0)' }}>
+              <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone-3.png" unoptimized priority />
+            </div>
+
+            <motion.div style={{ x: xR1, zIndex: 3, position: 'relative', transform: 'translateZ(0)' }}>
+              <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone-4.png" unoptimized priority />
+            </motion.div>
+
+            <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
+              <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5A.png" unoptimized priority />
+            </motion.div>
           </div>
+        </div>
 
-          <motion.div style={{ x: xR1, zIndex: 3, position: 'relative', transform: 'translateZ(0)' }}>
-            <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone-4.png" unoptimized priority />
-          </motion.div>
+        <div className={styles.sectionOneMobile}>
+          <div className={styles.sectionOneMobileSticky}>
+            <motion.h1
+              className={styles.sectionOneHeading}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+            >
+              <span className={styles.blackText}>We build what</span>
+              <br />
+              <span className={styles.gradientOneText}>others only imagine.</span>
+            </motion.h1>
 
-          <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
-            <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5A.png" unoptimized priority />
-          </motion.div>
+            <div className={styles.mobilePhoneViewport}>
+              <motion.div className={styles.mobilePhoneTrack} style={{ x: mobilePhoneTrackX }}>
+                {['/iphone-1.png', '/iphone-2.png', '/iphone-3.png', '/iphone-4.png', '/iphone-5A.png'].map((src) => (
+                  <div className={styles.mobilePhoneSlide} key={src}>
+                    <Image className={styles.mobilePhoneImage} alt="" width={0} height={0} src={src} unoptimized priority />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            <div className={styles.mobilePhoneDots} aria-hidden="true">
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot1 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot2 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot3 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot4 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot5 }} />
+            </div>
+          </div>
         </div>
       </section>
 
