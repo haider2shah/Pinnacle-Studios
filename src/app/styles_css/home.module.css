@@ -1099,8 +1099,9 @@
   .sectionOne {
     --mobile-phone-width: clamp(220px, 52vw, 430px);
     --mobile-phone-gap: clamp(4px, 1.2vw, 10px);
+    --mobile-section-height: 175svh;
     display: block;
-    height: 175svh;
+    height: var(--mobile-section-height);
     min-height: auto;
     padding-top: 0;
     padding-bottom: 0;
@@ -1119,14 +1120,14 @@
   .sectionOneMobileSticky {
     position: sticky;
     top: 0;
-    height: 100svh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: clamp(3rem, 7vh, 5rem);
-    padding-top: clamp(3.25rem, 6vh, 4rem);
-    padding-bottom: clamp(3.25rem, 6vh, 4rem);
+    padding-top: clamp(3rem, 5.5vh, 3.75rem);
+    padding-bottom: 0;
     overflow: visible;
   }
 

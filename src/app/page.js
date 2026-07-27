@@ -208,6 +208,13 @@ export default function HomePage() {
   const mobilePhoneWidth = Math.min(Math.max(windowSize.width * 0.52, 220), 430);
   const mobilePhoneGap = Math.min(Math.max(windowSize.width * 0.012, 4), 10);
   const mobilePhoneStep = mobilePhoneWidth + mobilePhoneGap;
+  const mobileHeadingHeight = windowSize.width * 0.09 * 1.18 * 2;
+  const mobileStickyTopPad = Math.min(Math.max(windowSize.height * 0.055, 48), 60);
+  const mobileHeadingGap = Math.min(Math.max(windowSize.height * 0.07, 48), 80);
+  const mobilePhoneHeight = mobilePhoneWidth * 2.07;
+  const mobileDotsHeight = 18;
+  const mobileCarouselScroll = mobilePhoneStep * 2;
+  const mobileSectionHeight = mobileStickyTopPad + mobileHeadingHeight + mobileHeadingGap + mobilePhoneHeight + mobileDotsHeight + mobileCarouselScroll;
   const mobilePhoneTrackX = useTransform(
     phoneCarouselProgress,
     [0, 0.08, 0.5, 0.98, 1],
@@ -293,7 +300,11 @@ export default function HomePage() {
       <section
         ref={sectionOneRef}
         className={styles.sectionOne}
-        style={phoneCarouselActive ? { '--mobile-phone-width': `${mobilePhoneWidth}px`, '--mobile-phone-gap': `${mobilePhoneGap}px` } : undefined}
+        style={phoneCarouselActive ? {
+          '--mobile-phone-width': `${mobilePhoneWidth}px`,
+          '--mobile-phone-gap': `${mobilePhoneGap}px`,
+          '--mobile-section-height': `${mobileSectionHeight}px`,
+        } : undefined}
       >
         <div className={styles.sectionOneDesktop}>
           <motion.h1
