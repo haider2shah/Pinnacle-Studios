@@ -1126,10 +1126,13 @@
 
 
   .images { display: flex; gap: 1.4vw; width:auto; align-items: center; justify-content: center; }
+  .images > div { flex-shrink: 0; }
+  .images > div:nth-child(2) { margin-right: -24vw; }
+  .images > div:nth-child(4) { margin-left: -24vw; }
 .imageOne { display: none; width: 40vw; height: auto; }
-.imageTwo { width: 88vw; height: auto; }
-.imageThree { width: 154vw; height: auto; }
-.imageFour { width: 88vw; height: auto; }
+.imageTwo { width: 36vw; height: auto; }
+.imageThree { width: 65vw; height: auto; }
+.imageFour { width: 36vw; height: auto; }
 .imageFive { display: none; width: 40vw; height: auto; }
   
 
