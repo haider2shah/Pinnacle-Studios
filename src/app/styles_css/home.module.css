@@ -1499,6 +1499,10 @@
     margin-top: 1.2rem;
   }
 
+  .aiHeading {
+    font-size: clamp(20px, 9vw, 58px);
+  }
+
   .aiCard {
     width: 88%;
     padding: 2rem;
