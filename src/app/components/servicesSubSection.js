@@ -24,7 +24,6 @@ const Subsection = ({ title, text, cards = [] }) => {
                   height={0}
                   src={card.image}
                   unoptimized
-                  priority
                 />
                 <p className={Styles.text}>{card.text}</p>
               </div>

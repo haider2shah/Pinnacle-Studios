@@ -19,16 +19,16 @@ const SecondServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,i
                     </div>
 
                     <div className= {Styles.picture}>
-                        <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {image} unoptimized priority/>
+                        <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {image} unoptimized/>
                     </div>
                     <div className= {Styles.picture}>
-                        <Image className= {Styles.imageMobile} alt="Team members" width={0} height={0} src= {imageMobile} unoptimized priority/>
+                        <Image className= {Styles.imageMobile} alt="Team members" width={0} height={0} src= {imageMobile} unoptimized/>
                     </div>
 
                     <div className= {Styles.iconWrapper}>
                         <div className= {Styles.iconCard}>
                             <div>
-                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {icon} unoptimized priority/>
+                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {icon} unoptimized/>
                             </div>
                             <div className= {Styles.iconText}>
                                 <div className= {Styles.iconHeadingOne} >
@@ -42,7 +42,7 @@ const SecondServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,i
 
                         <div className= {Styles.iconCard}>
                             <div>
-                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconTwo} unoptimized priority/>
+                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconTwo} unoptimized/>
                             </div>
                             <div className= {Styles.iconText}>
                                 <div className= {Styles.iconHeadingTwo} >
@@ -56,7 +56,7 @@ const SecondServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,i
 
                         <div className= {Styles.iconCard}>
                             <div>
-                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconThree} unoptimized priority/>
+                                <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconThree} unoptimized/>
                             </div>
                             <div className= {Styles.iconText}>
                                 <div className= {Styles.iconHeadingThree} >

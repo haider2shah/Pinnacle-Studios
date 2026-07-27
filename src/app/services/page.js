@@ -23,8 +23,8 @@ export default function Services() {
             <ServicesCard
                 title = "User Experience Design"
                 paragraph = "It just works. Because we believe design should serve you, not distract you. Every motion, every moment is shaped to support your flow — so what you’re doing takes center stage, not how you’re doing it."
-                image = "/UX image.png"
-                imageMobile = "/UX mobile.png"
+                image = "/UX image.webp"
+                imageMobile = "/UX mobile.webp"
                 iconParagraphOne={"With Figma, we design intuitive, user-focused interfaces that simplify workflows and bring your ideas to life."}
                 iconParagraphTwo={"We test early and often, ensuring your product aligns with user behavior, expectations, and business outcomes."}
                 iconParagraphThree={"We turn complex ideas into clean, responsive interfaces that feel natural, empowering users with every click and scroll."}
@@ -39,13 +39,13 @@ export default function Services() {
                 title="Design that tells your story"
                 text="Design becomes powerful when it reflects more than style — when it captures identity, intention, and story in every interaction."
                 cards={[
-                    { image: '/hospitality.jpg', text: 'Hospitality' },
-                    { image: '/tech.jpg', text: 'Start Ups' },
-                    { image: '/event.jpg', text: 'Event Organizer' },
-                    { image: '/hiring.jpg', text: 'Hiring Firms' },
-                    { image: '/doc.jpg', text: 'Private Clinics' },
-                    { image: '/bio.jpg', text: 'Bio Tech' }
-                    
+                    { image: '/hospitality.webp', text: 'Hospitality' },
+                    { image: '/tech.webp', text: 'Start Ups' },
+                    { image: '/event.webp', text: 'Event Organizer' },
+                    { image: '/hiring.webp', text: 'Hiring Firms' },
+                    { image: '/doc.webp', text: 'Private Clinics' },
+                    { image: '/bio.webp', text: 'Bio Tech' }
+
                 ]}
             />
 
@@ -55,8 +55,8 @@ export default function Services() {
             <SecondServicesCard
                 title = "Full - Stack Development"
                 paragraph = "Built to feel effortless. Designed to disappear. You won’t see the systems. Or the code. Just the flow — fast, stable, and intuitive. Everything working quietly in the background, so you can stay focused on what matters."
-                image = "/coding.png"
-                imageMobile = "/Code mobile.png"
+                image = "/coding.webp"
+                imageMobile = "/Code mobile.webp"
                 iconParagraphOne={"Delivers fast, responsive interfaces that ensure fluid navigation and consistent experiences across all devices."}
                 iconParagraphTwo={"Structured for growth, so your product evolves smoothly without breaking performance or maintainability."}
                 iconParagraphThree={"Zero-downtime deployments maintain performance, so users never face disruption during feature or system updates."}
@@ -71,13 +71,13 @@ export default function Services() {
                 title="Architecture that scales with your ambition"
                 text="True performance begins beneath the surface — in the way systems connect, scale, and stay reliable as your product grows."
                 cards={[
-                    { image: '/test.jpg', text: 'SaaS Dashboard' },
-                    { image: '/test.jpg', text: 'Healthcare Platform' },
-                    { image: '/test.jpg', text: 'E-Commerce Stack' },
-                    { image: '/test.jpg', text: 'Learning Management System' },
-                    { image: '/test.jpg', text: 'Banking App' },
-                    { image: '/test.jpg', text: 'Booking System' }
-                    
+                    { image: '/test.webp', text: 'SaaS Dashboard' },
+                    { image: '/test.webp', text: 'Healthcare Platform' },
+                    { image: '/test.webp', text: 'E-Commerce Stack' },
+                    { image: '/test.webp', text: 'Learning Management System' },
+                    { image: '/test.webp', text: 'Banking App' },
+                    { image: '/test.webp', text: 'Booking System' }
+
                 ]}
             />
 
@@ -87,8 +87,8 @@ export default function Services() {
             <ThirdServicesCard
                 title = "No - Code Development"
                 paragraph = "Fully custom. Surprisingly simple. With modern no-code platforms, we create smooth, responsive websites that scale — without writing a line of code. No complexity. No limits. Just clean, intuitive design that works."
-                image = "/nocode.png"
-                imageMobile = "/No code.png"
+                image = "/nocode.webp"
+                imageMobile = "/No code.webp"
                 iconParagraphOne={"Designed for speed, helping you launch quickly without compromising quality, responsiveness, or user experience."}
                 iconParagraphTwo={"Empowers your team to update content or design instantly, without relying on developers or technical tools."}
                 iconParagraphThree={"Structured to grow, ensuring your product handles new features and traffic without losing performance or stability."}
@@ -103,13 +103,13 @@ export default function Services() {
                 title="Freedom to launch. Power to grow."
                 text="No-code isn’t a shortcut. It’s a smarter way to build — combining speed, flexibility, and craftsmanship in one scalable system."
                 cards={[
-                    { image: '/product.jpg', text: 'Product Landing Pages' },
-                    { image: '/estate.jpg', text: 'Real Estate Listings' },
-                    { image: '/dining.jpg', text: 'Fine Dining Restaurants' },
-                    { image: '/creative.jpg', text: 'Creative Agencies' },
-                    { image: '/wellness.jpg', text: 'Wellness & Lifestyle Brands' },
-                    { image: '/art.jpg', text: 'Art Galleries & Exhibitions' }
-                    
+                    { image: '/product.webp', text: 'Product Landing Pages' },
+                    { image: '/estate.webp', text: 'Real Estate Listings' },
+                    { image: '/dining.webp', text: 'Fine Dining Restaurants' },
+                    { image: '/creative.webp', text: 'Creative Agencies' },
+                    { image: '/wellness.webp', text: 'Wellness & Lifestyle Brands' },
+                    { image: '/art.webp', text: 'Art Galleries & Exhibitions' }
+
                 ]}
             />
         </section>
