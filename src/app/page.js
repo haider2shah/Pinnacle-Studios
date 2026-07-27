@@ -191,6 +191,8 @@ export default function HomePage() {
   const whiteAlpha = useTransform(yoursProgress, [0, 1], [1, 0]);
 
   const sectionOneRef = useRef(null);
+  const mobileStickyRef = useRef(null);
+  const [mobileStickyHeight, setMobileStickyHeight] = useState(0);
   const { scrollYProgress: sec1 } = useScroll({
     target: sectionOneRef,
     offset: ['start 80%', 'end 10%'],
@@ -208,13 +210,8 @@ export default function HomePage() {
   const mobilePhoneWidth = Math.min(Math.max(windowSize.width * 0.52, 220), 430);
   const mobilePhoneGap = Math.min(Math.max(windowSize.width * 0.012, 4), 10);
   const mobilePhoneStep = mobilePhoneWidth + mobilePhoneGap;
-  const mobileHeadingHeight = windowSize.width * 0.09 * 1.18 * 2;
-  const mobileStickyTopPad = Math.min(Math.max(windowSize.height * 0.055, 48), 60);
-  const mobileHeadingGap = Math.min(Math.max(windowSize.height * 0.07, 48), 80);
-  const mobilePhoneHeight = mobilePhoneWidth * 2.07;
-  const mobileDotsHeight = 18;
   const mobileCarouselScroll = mobilePhoneStep * 2;
-  const mobileSectionHeight = mobileStickyTopPad + mobileHeadingHeight + mobileHeadingGap + mobilePhoneHeight + mobileDotsHeight + mobileCarouselScroll;
+  const mobileSectionHeight = (mobileStickyHeight || windowSize.height) + mobileCarouselScroll;
   const mobilePhoneTrackX = useTransform(
     phoneCarouselProgress,
     [0, 0.08, 0.5, 0.98, 1],
@@ -227,6 +224,25 @@ export default function HomePage() {
   const mobileDot3 = useTransform(phoneCarouselProgress, [0, 0.22, 0.42], [1, 1, 0.35]);
   const mobileDot4 = useTransform(phoneCarouselProgress, [0.28, 0.5, 0.72], [0.35, 1, 0.35]);
   const mobileDot5 = useTransform(phoneCarouselProgress, [0.62, 0.9, 1], [0.35, 1, 1]);
+
+  useEffect(() => {
+    if (!phoneCarouselActive || !mobileStickyRef.current) return;
+
+    const el = mobileStickyRef.current;
+    const updateHeight = () => {
+      setMobileStickyHeight(el.getBoundingClientRect().height);
+    };
+
+    updateHeight();
+    const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(updateHeight) : null;
+    resizeObserver?.observe(el);
+    window.addEventListener('resize', updateHeight);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, [phoneCarouselActive, windowSize.width, windowSize.height]);
 
   return (
     <>
@@ -303,6 +319,7 @@ export default function HomePage() {
         style={phoneCarouselActive ? {
           '--mobile-phone-width': `${mobilePhoneWidth}px`,
           '--mobile-phone-gap': `${mobilePhoneGap}px`,
+          '--mobile-carousel-scroll': `${mobileCarouselScroll}px`,
           '--mobile-section-height': `${mobileSectionHeight}px`,
         } : undefined}
       >
@@ -343,7 +360,7 @@ export default function HomePage() {
         </div>
 
         <div className={styles.sectionOneMobile}>
-          <div className={styles.sectionOneMobileSticky}>
+          <div ref={mobileStickyRef} className={styles.sectionOneMobileSticky}>
             <motion.h1
               className={styles.sectionOneHeading}
               initial={{ opacity: 0, y: 30 }}
