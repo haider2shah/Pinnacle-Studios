@@ -1501,6 +1501,7 @@
 
   .aiHeading {
     font-size: clamp(20px, 9vw, 58px);
+    width: 77%;
   }
 
   .aiCard {
