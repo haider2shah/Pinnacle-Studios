@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import SectionOne from '../components/auSection1';
 import SectionTwo from '../components/auSection2';
 import ImageCard from '../components/auImageCard';
@@ -5,6 +7,14 @@ import ImageCard from '../components/auImageCard';
 
 import NavBar from '../components/navBar';
 import auStyles from '../styles_css/auPage.module.css';
+
+const cardVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
 
 export default function AboutUs() {
     return (
@@ -21,11 +31,29 @@ export default function AboutUs() {
 
         <section className= {auStyles.Section3}>
           <div className= {auStyles.heading}>
-              <h1 className= {auStyles.heading1}>The minds behind</h1>
-              <h1 className= {auStyles.heading2}> Pinnacle Studios.</h1>
+              <motion.h1
+                  className= {auStyles.heading1}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+                  transition={{ duration: 0.9, ease: 'easeOut' }}
+              >The minds behind</motion.h1>
+              <motion.h1
+                  className= {auStyles.heading2}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3, margin: '0% 0px -10% 0px' }}
+                  transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
+              > Pinnacle Studios.</motion.h1>
           </div>
 
-          <div className= {auStyles.team}>
+          <motion.div
+              className= {auStyles.team}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+          >
                 <ImageCard
                     name = "Haider Shah"
                     src = "/haider.webp"
@@ -50,19 +78,13 @@ export default function AboutUs() {
                     position = "Full - Stack Developer"
                 />
 
-                
+          </motion.div>
 
-
-
- 
-          </div>
-          
 
         </section>
 
 
       </>
-      
+
     );
   }
-  

@@ -1,9 +1,16 @@
+'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Styles from '../styles_css/auImageCard.module.css';
+
+const cardItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+};
 
 const ImageCard = ({name, position, src}) => {
     return (
-        <div className= {Styles.wrapper}>
+        <motion.div className= {Styles.wrapper} variants={cardItemVariants}>
             <div className= {Styles.card}>
                 <div className= {Styles.picture}>
                     <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {src} unoptimized/>
@@ -21,7 +28,7 @@ const ImageCard = ({name, position, src}) => {
             </div>
 
 
-        </div>
+        </motion.div>
 
 
 

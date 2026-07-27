@@ -1,5 +1,7 @@
+'use client';
 import Styles from '../styles_css/thirdServiceCard.module.css';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 
 
@@ -7,7 +9,13 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
     return (
         <div className= {Styles.wrapper}>
             <div className= {Styles.card}>
-                    <div className= {Styles.textBox}>
+                    <motion.div
+                        className= {Styles.textBox}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.9, ease: 'easeOut' }}
+                    >
                         <p className={Styles.title}>
                                 {title}
                         </p>
@@ -16,17 +24,35 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
                         </p>
                         <button className= {Styles.button}>Contact us</button>
 
-                    </div>
+                    </motion.div>
 
-                    <div className= {Styles.picture}>
+                    <motion.div
+                        className= {Styles.picture}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
+                    >
                         <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {image} unoptimized/>
-                    </div>
-                    <div className= {Styles.picture}>
+                    </motion.div>
+                    <motion.div
+                        className= {Styles.picture}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
+                    >
                         <Image className= {Styles.imageMobile} alt="Team members" width={0} height={0} src= {imageMobile} unoptimized/>
-                    </div>
+                    </motion.div>
 
                     <div className= {Styles.iconWrapper}>
-                        <div className= {Styles.iconCard}>
+                        <motion.div
+                            className= {Styles.iconCard}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7, delay: 0, ease: 'easeOut' }}
+                        >
                             <div>
                                 <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {icon} unoptimized/>
                             </div>
@@ -38,9 +64,15 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
                                     <p> {iconParagraphOne}</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className= {Styles.iconCard}>
+                        <motion.div
+                            className= {Styles.iconCard}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+                        >
                             <div>
                                 <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconTwo} unoptimized/>
                             </div>
@@ -52,9 +84,15 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
                                     <p> {iconParagraphTwo}</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className= {Styles.iconCard}>
+                        <motion.div
+                            className= {Styles.iconCard}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+                        >
                             <div>
                                 <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconThree} unoptimized/>
                             </div>
@@ -66,7 +104,7 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
                                     <p> {iconParagraphThree}</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
             </div>
 
