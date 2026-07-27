@@ -232,14 +232,29 @@ export default function HomePage() {
   // so it travels (mobilePhoneImages.length - 1 - 2) steps in total.
   const mobileCarouselScroll = mobilePhoneStep * (mobilePhoneImages.length - 3);
   const mobileSectionHeight = (mobileStickyHeight || windowSize.height) + mobileCarouselScroll;
-  const mobilePhoneTrackX = useTransform(
+  // Every slide sits centered with equal side padding, but the last slide has
+  // no next slide peeking in to fill its right-side padding — so it reads as
+  // a much bigger gap than the small reveal between the other slides. Nudge
+  // the final resting position right so that gap matches the others instead.
+  const mobilePhoneSidePadding = Math.max((windowSize.width - mobilePhoneWidth) / 2, 0);
+  const mobilePhoneEndShift = Math.max(mobilePhoneSidePadding - mobilePhoneGap, 0);
+  const mobilePhoneTrackXLogical = useTransform(
     phoneCarouselProgress,
     [0, 0.08, 0.26, 0.44, 0.62, 0.8, 0.98, 1],
     phoneCarouselActive
       ? [-2, -2, -3, -4, -5, -6, -7, -7].map((n) => mobilePhoneStep * n)
       : [0, 0, 0, 0, 0, 0, 0, 0]
   );
-  const mobileCenteredIndex = useTransform(mobilePhoneTrackX, (x) => -x / mobilePhoneStep);
+  const mobilePhoneEndShiftMV = useTransform(
+    phoneCarouselProgress,
+    [0, 0.8, 0.98, 1],
+    phoneCarouselActive ? [0, 0, mobilePhoneEndShift, mobilePhoneEndShift] : [0, 0, 0, 0]
+  );
+  const mobilePhoneTrackX = useTransform(
+    [mobilePhoneTrackXLogical, mobilePhoneEndShiftMV],
+    ([base, shift]) => base + shift
+  );
+  const mobileCenteredIndex = useTransform(mobilePhoneTrackXLogical, (x) => -x / mobilePhoneStep);
   const mobileDot1 = useMobileDotOpacity(mobileCenteredIndex, 0);
   const mobileDot2 = useMobileDotOpacity(mobileCenteredIndex, 1);
   const mobileDot3 = useMobileDotOpacity(mobileCenteredIndex, 2);
