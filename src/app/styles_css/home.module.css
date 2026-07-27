@@ -1103,7 +1103,7 @@
   }
 
   .sectionTwo {
-    min-height: 92svh;
+    min-height: 100svh;
     padding-top: 5rem;
     padding-bottom: 9rem; /* nudges the centered headings up */
   }
