@@ -1101,7 +1101,7 @@
   .sectionOne {
     --mobile-phone-width: clamp(220px, 52vw, 430px);
     --mobile-phone-gap: clamp(4px, 1.2vw, 10px);
-    --mobile-carousel-scroll: 460px;
+    --mobile-carousel-scroll: 1150px;
     --mobile-section-height: calc(720px + var(--mobile-carousel-scroll));
     display: block;
     height: var(--mobile-section-height);

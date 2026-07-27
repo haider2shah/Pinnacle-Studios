@@ -78,6 +78,24 @@ const cardItemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
+// Placeholder set for the mobile phone carousel — repeats a few of the real
+// screens so the carousel scrolls for longer. Swap these for dedicated
+// screens later.
+const mobilePhoneImages = [
+  '/iphone-1.png',
+  '/iphone-2.png',
+  '/iphone-3.png',
+  '/iphone-4.png',
+  '/iphone-5A.png',
+  '/iphone-1.png',
+  '/iphone-2.png',
+  '/iphone-3.png',
+];
+
+function useMobileDotOpacity(centeredIndexMV, index) {
+  return useTransform(centeredIndexMV, (idx) => 1 - Math.min(Math.abs(idx - index), 1) * 0.65);
+}
+
 export default function HomePage() {
   // --- MOUSE PARALLAX SETUP ---
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -210,20 +228,26 @@ export default function HomePage() {
   const mobilePhoneWidth = Math.min(Math.max(windowSize.width * 0.52, 220), 430);
   const mobilePhoneGap = Math.min(Math.max(windowSize.width * 0.012, 4), 10);
   const mobilePhoneStep = mobilePhoneWidth + mobilePhoneGap;
-  const mobileCarouselScroll = mobilePhoneStep * 2;
+  // Carousel starts with slide index 2 centered and ends on the last slide,
+  // so it travels (mobilePhoneImages.length - 1 - 2) steps in total.
+  const mobileCarouselScroll = mobilePhoneStep * (mobilePhoneImages.length - 3);
   const mobileSectionHeight = (mobileStickyHeight || windowSize.height) + mobileCarouselScroll;
   const mobilePhoneTrackX = useTransform(
     phoneCarouselProgress,
-    [0, 0.08, 0.5, 0.98, 1],
+    [0, 0.08, 0.26, 0.44, 0.62, 0.8, 0.98, 1],
     phoneCarouselActive
-      ? [-mobilePhoneStep * 2, -mobilePhoneStep * 2, -mobilePhoneStep * 3, -mobilePhoneStep * 4, -mobilePhoneStep * 4]
-      : [0, 0, 0, 0, 0]
+      ? [-2, -2, -3, -4, -5, -6, -7, -7].map((n) => mobilePhoneStep * n)
+      : [0, 0, 0, 0, 0, 0, 0, 0]
   );
-  const mobileDot1 = useTransform(phoneCarouselProgress, [0, 1], [0.35, 0.35]);
-  const mobileDot2 = useTransform(phoneCarouselProgress, [0, 1], [0.35, 0.35]);
-  const mobileDot3 = useTransform(phoneCarouselProgress, [0, 0.22, 0.42], [1, 1, 0.35]);
-  const mobileDot4 = useTransform(phoneCarouselProgress, [0.28, 0.5, 0.72], [0.35, 1, 0.35]);
-  const mobileDot5 = useTransform(phoneCarouselProgress, [0.62, 0.9, 1], [0.35, 1, 1]);
+  const mobileCenteredIndex = useTransform(mobilePhoneTrackX, (x) => -x / mobilePhoneStep);
+  const mobileDot1 = useMobileDotOpacity(mobileCenteredIndex, 0);
+  const mobileDot2 = useMobileDotOpacity(mobileCenteredIndex, 1);
+  const mobileDot3 = useMobileDotOpacity(mobileCenteredIndex, 2);
+  const mobileDot4 = useMobileDotOpacity(mobileCenteredIndex, 3);
+  const mobileDot5 = useMobileDotOpacity(mobileCenteredIndex, 4);
+  const mobileDot6 = useMobileDotOpacity(mobileCenteredIndex, 5);
+  const mobileDot7 = useMobileDotOpacity(mobileCenteredIndex, 6);
+  const mobileDot8 = useMobileDotOpacity(mobileCenteredIndex, 7);
 
   useEffect(() => {
     if (!phoneCarouselActive || !mobileStickyRef.current) return;
@@ -375,8 +399,8 @@ export default function HomePage() {
 
             <div className={styles.mobilePhoneViewport}>
               <motion.div className={styles.mobilePhoneTrack} style={{ x: mobilePhoneTrackX }}>
-                {['/iphone-1.png', '/iphone-2.png', '/iphone-3.png', '/iphone-4.png', '/iphone-5A.png'].map((src) => (
-                  <div className={styles.mobilePhoneSlide} key={src}>
+                {mobilePhoneImages.map((src, index) => (
+                  <div className={styles.mobilePhoneSlide} key={`${src}-${index}`}>
                     <Image className={styles.mobilePhoneImage} alt="" width={0} height={0} src={src} unoptimized priority />
                   </div>
                 ))}
@@ -389,6 +413,9 @@ export default function HomePage() {
               <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot3 }} />
               <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot4 }} />
               <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot5 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot6 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot7 }} />
+              <motion.span className={styles.mobilePhoneDot} style={{ opacity: mobileDot8 }} />
             </div>
           </div>
         </div>
