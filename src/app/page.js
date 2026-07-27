@@ -1,5 +1,5 @@
 'use client';
-import { motion, useScroll, useTransform, useMotionValue, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useInView, useSpring } from 'framer-motion';
 import { Fragment, useRef, useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import NavBar from './components/navBar';
@@ -219,6 +219,14 @@ export default function HomePage() {
     target: sectionOneRef,
     offset: ['start start', 'end end'],
   });
+  // Touch scrolling reports raw, stepped progress — spring-smooth it so the
+  // carousel eases toward each position instead of snapping straight to it,
+  // matching the glide the desktop version gets from Lenis.
+  const smoothPhoneCarouselProgress = useSpring(phoneCarouselProgress, {
+    stiffness: 260,
+    damping: 32,
+    mass: 1,
+  });
 
   const xL1 = useTransform(sec1, [0, 1], ['12vw', '0vw']);
   const xL2 = useTransform(sec1, [0, 1], ['6vw', '0vw']);
@@ -239,14 +247,14 @@ export default function HomePage() {
   const mobilePhoneSidePadding = Math.max((windowSize.width - mobilePhoneWidth) / 2, 0);
   const mobilePhoneEndShift = Math.max(mobilePhoneSidePadding - mobilePhoneGap, 0);
   const mobilePhoneTrackXLogical = useTransform(
-    phoneCarouselProgress,
+    smoothPhoneCarouselProgress,
     [0, 0.08, 0.26, 0.44, 0.62, 0.8, 0.98, 1],
     phoneCarouselActive
       ? [-2, -2, -3, -4, -5, -6, -7, -7].map((n) => mobilePhoneStep * n)
       : [0, 0, 0, 0, 0, 0, 0, 0]
   );
   const mobilePhoneEndShiftMV = useTransform(
-    phoneCarouselProgress,
+    smoothPhoneCarouselProgress,
     [0, 0.8, 0.98, 1],
     phoneCarouselActive ? [0, 0, mobilePhoneEndShift, mobilePhoneEndShift] : [0, 0, 0, 0]
   );
