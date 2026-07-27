@@ -1080,6 +1080,8 @@
 
 
   .sectionOne {
+    min-height: 100svh;
+    justify-content: center;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
