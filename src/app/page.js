@@ -31,7 +31,13 @@ function LockIcon() {
     <motion.span
       ref={ref}
       className={styles.lockIcon}
-      animate={{ rotate: unlocked ? -10 : 0, scale: unlocked ? 1.08 : 1, opacity: unlocked ? 1 : 0.85 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{
+        opacity: isInView ? (unlocked ? 1 : 0.85) : 0,
+        y: isInView ? 0 : 20,
+        rotate: unlocked ? -10 : 0,
+        scale: unlocked ? 1.08 : 1,
+      }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       {unlocked ? '🔓' : '🔒'}
