@@ -1516,6 +1516,10 @@
     display: block;
   }
 
+  .lockIcon {
+    margin-bottom: 6rem;
+  }
+
   .aiCard {
     width: 88%;
     padding: 2rem;
