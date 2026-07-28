@@ -63,7 +63,36 @@ export default function DustText({ text, className = '' }) {
     const build = () => {
       const r = textEl.getBoundingClientRect();
       textW = Math.max(1, Math.ceil(r.width));
-      const textH = Math.max(1, Math.ceil(r.height));
+      const cs = getComputedStyle(textEl);
+      const font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+
+      // Rasterize the text and sample it into dust origin points. The text
+      // wraps at narrow widths (e.g. the mobile heading), so word-wrap it
+      // ourselves the same way the browser would instead of drawing it as
+      // one line — otherwise the sampled pixels land nowhere near the real
+      // wrapped text and the dust flies from the wrong spot.
+      const off = document.createElement('canvas');
+      let oc = off.getContext('2d', { willReadFrequently: true });
+      oc.font = font;
+      const words = text.split(' ');
+      const lines = [];
+      let current = '';
+      for (const word of words) {
+        const candidate = current ? `${current} ${word}` : word;
+        if (current && oc.measureText(candidate).width > textW) {
+          lines.push(current);
+          current = word;
+        } else {
+          current = candidate;
+        }
+      }
+      if (current) lines.push(current);
+
+      const fontSizePx = parseFloat(cs.fontSize);
+      const parsedLineHeight = parseFloat(cs.lineHeight);
+      const lineHeightPx = Number.isFinite(parsedLineHeight) ? parsedLineHeight : fontSizePx * 1.2;
+      const textH = Math.max(Math.ceil(r.height), Math.ceil(lineHeightPx * lines.length));
+
       const w = textW + PAD * 2;
       const h = textH + PAD * 2;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -73,17 +102,18 @@ export default function DustText({ text, className = '' }) {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Rasterize the text and sample it into dust origin points.
-      const off = document.createElement('canvas');
+      // Resizing the offscreen canvas resets its context, so re-apply.
       off.width = textW;
       off.height = textH;
-      const oc = off.getContext('2d', { willReadFrequently: true });
-      const cs = getComputedStyle(textEl);
-      oc.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      oc = off.getContext('2d', { willReadFrequently: true });
+      oc.font = font;
       oc.textBaseline = 'alphabetic';
-      const m = oc.measureText(text);
-      const ascent = m.fontBoundingBoxAscent ?? m.actualBoundingBoxAscent * 1.1;
-      oc.fillText(text, (textW - m.width) / 2, ascent);
+      const m0 = oc.measureText(lines[0] || text);
+      const ascent = m0.fontBoundingBoxAscent ?? m0.actualBoundingBoxAscent * 1.1;
+      lines.forEach((line, i) => {
+        const m = oc.measureText(line);
+        oc.fillText(line, (textW - m.width) / 2, ascent + i * lineHeightPx);
+      });
       const data = oc.getImageData(0, 0, textW, textH).data;
 
       points = [];
@@ -91,16 +121,28 @@ export default function DustText({ text, className = '' }) {
       cornerPts = [];
       dust = [];
       const GAP = 3;
+      let minInkX = Infinity;
+      let maxInkX = -Infinity;
       for (let y = 1; y < textH; y += GAP) {
         for (let x = 1; x < textW; x += GAP) {
           if (data[(y * textW + x) * 4 + 3] > 128) {
             const pt = { x, y, color: lerpColor(x / textW), state: 0 };
             points.push(pt);
-            if (x > textW * 0.86) rightEdge.push(pt);
-            // Matches the corner-bite mask ellipse in the CSS.
-            if (x > textW * 0.88 && y < textH * 0.5) cornerPts.push(pt);
+            if (x < minInkX) minInkX = x;
+            if (x > maxInkX) maxInkX = x;
           }
         }
+      }
+      // "Near the right edge" has to be relative to where the ink actually
+      // ends, not the container box — when the text wraps (mobile), the
+      // widest line rarely reaches the box's full width, so thresholding
+      // against textW would find nothing on the wrapped line that visually
+      // is the text's rightmost edge.
+      const inkSpan = Math.max(1, maxInkX - minInkX);
+      for (const pt of points) {
+        if (pt.x > minInkX + inkSpan * 0.86) rightEdge.push(pt);
+        // Matches the corner-bite mask ellipse in the CSS.
+        if (pt.x > minInkX + inkSpan * 0.88 && pt.y < textH * 0.5) cornerPts.push(pt);
       }
     };
 
