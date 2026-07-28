@@ -468,10 +468,10 @@
 }
 
 .aiLogo {
-  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
   margin-bottom: 1.5rem;
   display: block;
-  filter: brightness(0) invert(1);
   animation: sparklePulse 3s ease-in-out infinite;
   transform-origin: center;
 }
@@ -1502,6 +1502,10 @@
   .aiHeading {
     font-size: clamp(20px, 9vw, 58px);
     width: 77%;
+  }
+
+  .aiSubHeading {
+    font-size: clamp(19px, 3.2vw, 75px);
   }
 
   .aiCard {
