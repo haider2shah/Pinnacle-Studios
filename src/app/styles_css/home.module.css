@@ -509,6 +509,10 @@
   line-height: 1.4;
 }
 
+.aiSubHeadingBreak {
+  display: none;
+}
+
 .lockIcon {
   font-size: 1.8rem;
   display: block;
@@ -1506,6 +1510,10 @@
 
   .aiSubHeading {
     font-size: clamp(19px, 3.2vw, 75px);
+  }
+
+  .aiSubHeadingBreak {
+    display: block;
   }
 
   .aiCard {

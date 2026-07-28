@@ -624,7 +624,7 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
         >
-          Unlocking the power of design psychology.
+          Unlocking the power of<br className={styles.aiSubHeadingBreak} /> design psychology.
         </motion.h2>
 
         <LockIcon />
