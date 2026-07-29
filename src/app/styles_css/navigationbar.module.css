@@ -16,8 +16,8 @@
 
   position: fixed;
   top: 1.3rem;
-  width: 210px;
-  padding: 0.4rem 0rem;
+  width: fit-content;
+  padding: 0.4rem 0.9rem;
   border: 1px solid #0000001a;
   border-radius: 13px;
   background-color: #ffffff;
@@ -37,11 +37,22 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1rem;
   font-weight: 450;
   position: static;
   text-decoration: none;
   color: #4a4a4a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  height: 1.6rem;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -118,7 +129,7 @@
 
   .navbar.shrunk {
     transform: none; /* no mobile slide-away on desktop */
-    max-width: 226px;
+    max-width: 262px; /* wide enough for the logo icon + text + percent */
     /* this one governs the SHRINK (entering .shrunk) */
     transition: max-width 0.9s cubic-bezier(0.45, 0.05, 0.18, 1);
   }

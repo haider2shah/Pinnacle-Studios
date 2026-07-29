@@ -43,7 +43,10 @@ const NavBar = () => {
             onClick = {() => setMenuOpen(true)}
             />
 
-          <div className={navStyles.logo}>Pinnacle Studios.</div>
+          <div className={navStyles.logo}>
+            <img src="/PS%20Logo.svg" alt="" className={navStyles.logoIcon} />
+            Pinnacle Studios.
+          </div>
         </div>
 
         <ul className={navStyles['nav-links']}>
