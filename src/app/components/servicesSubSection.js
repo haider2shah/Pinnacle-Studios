@@ -17,7 +17,7 @@ const Subsection = ({ title, text, cards = [] }) => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          <h1 className={Styles.title}>{title}</h1>
+          <h3 className={Styles.title}>{title}</h3>
           <p className={Styles.para}>{text}</p>
         </motion.div>
 

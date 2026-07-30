@@ -19,9 +19,9 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.9, ease: 'easeOut' }}
                         >
-                            <p className={Styles.title}>
+                            <h1 className={Styles.title}>
                                     {title}
-                            </p>
+                            </h1>
                             <p className= {Styles.paragraph}>
                                     {paragraph}
                             </p>

@@ -16,9 +16,9 @@ const ThirdServicesCard = ({ title, paragraph, image,imageMobile,icon,iconTwo,ic
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.9, ease: 'easeOut' }}
                     >
-                        <p className={Styles.title}>
+                        <h2 className={Styles.title}>
                                 {title}
-                        </p>
+                        </h2>
                         <p className= {Styles.paragraph}>
                                 {paragraph}
                         </p>

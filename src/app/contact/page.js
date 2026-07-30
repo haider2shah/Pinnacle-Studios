@@ -6,6 +6,9 @@ export const metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Pinnacle Studios to start your next web design or development project. Based in Pleasanton, CA, serving the San Francisco Bay Area and beyond.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactUsPage() {

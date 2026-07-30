@@ -34,6 +34,7 @@
 }
 
 .title {
+  margin: 0;
   font-size: clamp(25px, 1vw, 43rem);
   font-weight: 600;
   width: 80%;

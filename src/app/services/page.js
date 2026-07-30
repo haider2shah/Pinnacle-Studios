@@ -11,6 +11,9 @@ export const metadata = {
   title: "Services",
   description:
     "UX design, full-stack development, and no-code solutions from Pinnacle Studios — websites built to scale with your business, serving clients across the San Francisco Bay Area and beyond.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 

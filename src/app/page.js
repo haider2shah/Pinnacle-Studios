@@ -377,7 +377,7 @@ export default function HomePage() {
         } : undefined}
       >
         <div className={styles.sectionOneDesktop}>
-          <motion.h1
+          <motion.h2
             className={styles.sectionOneHeading}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -387,7 +387,7 @@ export default function HomePage() {
             <span className={styles.blackText}>We build what</span>
             <br />
             <span className={styles.gradientOneText}>others only imagine.</span>
-          </motion.h1>
+          </motion.h2>
 
           <div className={styles.images}>
             <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
@@ -414,7 +414,7 @@ export default function HomePage() {
 
         <div className={styles.sectionOneMobile}>
           <div ref={mobileStickyRef} className={styles.sectionOneMobileSticky}>
-            <motion.h1
+            <motion.h2
               className={styles.sectionOneHeading}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -424,7 +424,7 @@ export default function HomePage() {
               <span className={styles.blackText}>We build what</span>
               <br />
               <span className={styles.gradientOneText}>others only imagine.</span>
-            </motion.h1>
+            </motion.h2>
 
             <div className={styles.mobilePhoneViewport}>
               <motion.div className={styles.mobilePhoneTrack} style={{ x: mobilePhoneTrackX }}>
@@ -452,7 +452,7 @@ export default function HomePage() {
 
       {/* ===== Portfolio Section ===== */}
       <section className={styles.portfolioSection}>
-        <motion.h1
+        <motion.h2
           className={styles.portfolioSectionHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -462,7 +462,7 @@ export default function HomePage() {
           <span className={styles.whiteText}>Your presence,</span>
           <br />
           <span className={styles.colorText}>Unapologetically bold.</span>
-        </motion.h1>
+        </motion.h2>
 
         <ImageColumns />
       </section>
@@ -480,7 +480,7 @@ export default function HomePage() {
         >
           We believe in endless possibilities
         </motion.p>
-        <motion.h1
+        <motion.h2
           ref={statementRef}
           className={styles.sectionTwoHeading}
           initial={{ opacity: 0, y: 30 }}
@@ -511,7 +511,7 @@ export default function HomePage() {
             <br />
             {renderRollLine(1, false)}
           </span>
-        </motion.h1>
+        </motion.h2>
       </section>
 
       {/* ===== BUILD JOURNEY (scroll-driven 3D story) ===== */}
@@ -519,7 +519,7 @@ export default function HomePage() {
 
       {/* ===== SECTION FOUR ===== */}
       <section className={styles.sectionFour}>
-        <motion.h1
+        <motion.h2
           className={styles.sectionFourHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -529,20 +529,20 @@ export default function HomePage() {
           <span className={styles.whiteText}>Developing websites with</span>
           <br />
           <span className={styles.gradientFourText}>world-class technology.</span>
-        </motion.h1>
+        </motion.h2>
 
         <div className={styles.sectionFourImages}>
-          <motion.h1 className={styles.sectionFourText1}
+          <motion.h3 className={styles.sectionFourText1}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
             TECH STACK.
-          </motion.h1>
+          </motion.h3>
 
-          <motion.h1 className={styles.sectionFourText}
+          <motion.h3 className={styles.sectionFourText}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}>
             Everything you need <br/> + a little more.
-          </motion.h1>
+          </motion.h3>
 
           <motion.div className={styles.firstRow}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -560,19 +560,19 @@ export default function HomePage() {
             <Image className={styles.framer}  alt="Framer" width={0} height={0} src="/Framer.webp"   unoptimized />
           </motion.div>
 
-          <motion.h1 className={styles.secondHeading}
+          <motion.h3 className={styles.secondHeading}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}>
             Design | Develop | Deploy
-          </motion.h1>
+          </motion.h3>
 
-          <motion.h1 className={styles.sectionFourPara}
+          <motion.p className={styles.sectionFourPara}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.45, ease: 'easeOut' }}>
             We design compelling visual narratives and intuitive user experiences, develop robust and
             high-performing applications with world-class technology, and strategically
             deploy your final solution to the global market.
-          </motion.h1>
+          </motion.p>
 
           <motion.button type="button" className={styles.mainButton}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -611,7 +611,7 @@ export default function HomePage() {
           </svg>
         </motion.div>
 
-        <motion.h1
+        <motion.h2
           className={styles.aiHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -621,7 +621,7 @@ export default function HomePage() {
           <span className={styles.whiteText}>We don&apos;t compete with AI.</span>
           <br />
           <DustText className={styles.aiGradient} text="We use it masterfully." />
-        </motion.h1>
+        </motion.h2>
 
         <motion.h2
           className={styles.aiSubHeading}
@@ -751,7 +751,7 @@ export default function HomePage() {
 
       {/* ===== REVIEWS SECTION ===== */}
       <section className={styles.reviewsSection}>
-        <motion.h1
+        <motion.h2
           className={styles.reviewsHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -761,7 +761,7 @@ export default function HomePage() {
           <span className={styles.blackText}>Trusted by founders</span>
           <br />
           <span className={styles.reviewsGradient}>who demand the best.</span>
-        </motion.h1>
+        </motion.h2>
         <motion.div style={{ width: '100%' }} {...fadeUp} transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}>
           <Reviews />
         </motion.div>
@@ -769,7 +769,7 @@ export default function HomePage() {
 
       {/* ===== SECTION FIVE ===== */}
       <section className={styles.sectionFive}>
-        <motion.h1
+        <motion.h2
           className={styles.sectionFiveHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -779,7 +779,7 @@ export default function HomePage() {
           <span className={styles.blackText}>Seamless everywhere.</span>
           <br />
           <span className={styles.gradientText}>Across all devices.</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.div
           className={styles.sectionFiveSubtext}
@@ -812,7 +812,7 @@ export default function HomePage() {
 
       {/* ===== SECTION SIX ===== */}
       <section className={styles.sectionSix}>
-        <motion.h1
+        <motion.h2
           className={styles.sectionSixHeading}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -822,7 +822,7 @@ export default function HomePage() {
           <span className={styles.whiteText}>Design that tells your story,</span>
           <br />
           <span className={styles.gradientText}>before you say a word.</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.div
           className={styles.sectionSixImageCard}

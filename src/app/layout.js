@@ -29,6 +29,9 @@ export const metadata = {
     template: "%s | Pinnacle Studios",
   },
   description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Pinnacle Studios | Web Design & Development Studio",
     description: siteDescription,
