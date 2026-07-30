@@ -88,14 +88,14 @@ const cardItemVariants = {
 // screens so the carousel scrolls for longer. Swap these for dedicated
 // screens later.
 const mobilePhoneImages = [
-  '/iphone-1.webp',
-  '/iphone-2.webp',
-  '/iphone-3.webp',
-  '/iphone-4.webp',
-  '/iphone-5A.webp',
-  '/iphone-1.webp',
-  '/iphone-2.webp',
-  '/iphone-3.webp',
+  { src: '/iphone-1.webp', alt: 'Real estate listings app design on iPhone' },
+  { src: '/iphone-2.webp', alt: 'Food delivery app design on iPhone' },
+  { src: '/iphone-3.webp', alt: 'Travel booking app design on iPhone' },
+  { src: '/iphone-4.webp', alt: 'Healthcare app design on iPhone' },
+  { src: '/iphone-5A.webp', alt: 'E-commerce app design on iPhone' },
+  { src: '/iphone-1.webp', alt: 'Real estate listings app design on iPhone' },
+  { src: '/iphone-2.webp', alt: 'Food delivery app design on iPhone' },
+  { src: '/iphone-3.webp', alt: 'Travel booking app design on iPhone' },
 ];
 
 function useMobileDotOpacity(centeredIndexMV, index) {
@@ -321,7 +321,7 @@ export default function HomePage() {
           <Image
             className={styles.mainImage}
             src="/emailmock.webp"
-            alt="Main phone"
+            alt="Email management app design on iPhone"
             width={460}
             height={920}
             unoptimized
@@ -330,7 +330,7 @@ export default function HomePage() {
           <Image
             className={styles.mainImageMobile}
             src="/mobilemock.webp"
-            alt="Main phone"
+            alt="Email management app design on iPhone"
             width={460}
             height={920}
             unoptimized
@@ -391,23 +391,23 @@ export default function HomePage() {
 
           <div className={styles.images}>
             <motion.div style={{ x: xL1, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-              <Image className={styles.imageOne} alt="" width={0} height={0} src="/iphone-1.webp" unoptimized />
+              <Image className={styles.imageOne} alt="Real estate listings app design on iPhone" width={0} height={0} src="/iphone-1.webp" unoptimized />
             </motion.div>
 
             <motion.div style={{ x: xL2, zIndex: 2, position: 'relative', transform: 'translateZ(0)' }}>
-              <Image className={styles.imageTwo} alt="" width={0} height={0} src="/iphone-2.webp" unoptimized />
+              <Image className={styles.imageTwo} alt="Food delivery app design on iPhone" width={0} height={0} src="/iphone-2.webp" unoptimized />
             </motion.div>
 
             <div style={{ zIndex: 10, position: 'relative', transform: 'translateZ(0)' }}>
-              <Image className={styles.imageThree} alt="" width={0} height={0} src="/iphone-3.webp" unoptimized />
+              <Image className={styles.imageThree} alt="Travel booking app design on iPhone" width={0} height={0} src="/iphone-3.webp" unoptimized />
             </div>
 
             <motion.div style={{ x: xR1, zIndex: 3, position: 'relative', transform: 'translateZ(0)' }}>
-              <Image className={styles.imageFour} alt="" width={0} height={0} src="/iphone-4.webp" unoptimized />
+              <Image className={styles.imageFour} alt="Healthcare app design on iPhone" width={0} height={0} src="/iphone-4.webp" unoptimized />
             </motion.div>
 
             <motion.div style={{ x: xR2, zIndex: 1, position: 'relative', transform: 'translateZ(0)' }}>
-              <Image className={styles.imageFive} alt="" width={0} height={0} src="/iphone-5A.webp" unoptimized />
+              <Image className={styles.imageFive} alt="E-commerce app design on iPhone" width={0} height={0} src="/iphone-5A.webp" unoptimized />
             </motion.div>
           </div>
         </div>
@@ -428,9 +428,9 @@ export default function HomePage() {
 
             <div className={styles.mobilePhoneViewport}>
               <motion.div className={styles.mobilePhoneTrack} style={{ x: mobilePhoneTrackX }}>
-                {mobilePhoneImages.map((src, index) => (
+                {mobilePhoneImages.map(({ src, alt }, index) => (
                   <div className={styles.mobilePhoneSlide} key={`${src}-${index}`}>
-                    <Image className={styles.mobilePhoneImage} alt="" width={0} height={0} src={src} unoptimized />
+                    <Image className={styles.mobilePhoneImage} alt={alt} width={0} height={0} src={src} unoptimized />
                   </div>
                 ))}
               </motion.div>
@@ -547,17 +547,17 @@ export default function HomePage() {
           <motion.div className={styles.firstRow}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}>
-            <Image className={styles.figma}  alt="" width={0} height={0} src="/Figmaa.webp"   unoptimized />
-            <Image className={styles.wix}    alt="" width={0} height={0} src="/claude.webp"      unoptimized />
-            <Image className={styles.framer} alt="" width={0} height={0} src="/lovable.webp"   unoptimized />
+            <Image className={styles.figma}  alt="Figma" width={0} height={0} src="/Figmaa.webp"   unoptimized />
+            <Image className={styles.wix}    alt="Claude" width={0} height={0} src="/claude.webp"      unoptimized />
+            <Image className={styles.framer} alt="Lovable" width={0} height={0} src="/lovable.webp"   unoptimized />
           </motion.div>
 
           <motion.div className={styles.secondRow}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}>
-            <Image className={styles.webflow} alt="" width={0} height={0} src="/openai.webp" unoptimized />
-            <Image className={styles.react}   alt="" width={0} height={0} src="/node.webp"    unoptimized />
-            <Image className={styles.framer}  alt="" width={0} height={0} src="/Framer.webp"   unoptimized />
+            <Image className={styles.webflow} alt="OpenAI" width={0} height={0} src="/openai.webp" unoptimized />
+            <Image className={styles.react}   alt="Node.js" width={0} height={0} src="/node.webp"    unoptimized />
+            <Image className={styles.framer}  alt="Framer" width={0} height={0} src="/Framer.webp"   unoptimized />
           </motion.div>
 
           <motion.h1 className={styles.secondHeading}
@@ -587,7 +587,7 @@ export default function HomePage() {
             <Image
               className={styles.sectionFourImage}
               src="/tablet.webp"
-              alt="Main phone"
+              alt="Freelance marketplace platform design on tablet"
               width={460}
               height={920}
               unoptimized
@@ -802,11 +802,11 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 1.4, delay: 0.6, ease: 'easeOut' }}
         >
-          <Image className={styles.sfPhone1}  src="/iphone-1.webp" alt="" width={460} height={920} unoptimized />
-          <Image className={styles.sfPhone2}  src="/iphone-2.webp" alt="" width={460} height={920} unoptimized />
-          <Image className={styles.sfMonitor} src="/web.webp"      alt="" width={1200} height={800} unoptimized />
-          <Image className={styles.sfPhone4}  src="/iphone-4.webp" alt="" width={460} height={920} unoptimized />
-          <Image className={styles.sfPhone5}  src="/iphone-5A.webp" alt="" width={460} height={920} unoptimized />
+          <Image className={styles.sfPhone1}  src="/iphone-1.webp" alt="Real estate listings app design on iPhone" width={460} height={920} unoptimized />
+          <Image className={styles.sfPhone2}  src="/iphone-2.webp" alt="Food delivery app design on iPhone" width={460} height={920} unoptimized />
+          <Image className={styles.sfMonitor} src="/web.webp"      alt="Responsive website design on desktop monitor" width={1200} height={800} unoptimized />
+          <Image className={styles.sfPhone4}  src="/iphone-4.webp" alt="Healthcare app design on iPhone" width={460} height={920} unoptimized />
+          <Image className={styles.sfPhone5}  src="/iphone-5A.webp" alt="E-commerce app design on iPhone" width={460} height={920} unoptimized />
         </motion.div>
       </section>
 
@@ -833,7 +833,7 @@ export default function HomePage() {
         >
           <MotionImage
             className={styles.sectionSixImage}
-            alt="" width={0} height={0} src="/iphone-3.webp" unoptimized
+            alt="Travel booking app design on iPhone" width={0} height={0} src="/iphone-3.webp" unoptimized
             variants={cardItemVariants}
           />
 

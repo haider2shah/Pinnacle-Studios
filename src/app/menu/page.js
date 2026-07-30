@@ -36,12 +36,12 @@ const mobileMenuPage = () => {
                         arrowIcon= "/arrow.svg"
                     />
                     <div className= {menuStyles.logoContainer}>
-                        <img className= {menuStyles.logo} src ="/li-icon.svg"/>
-                        <img className= {menuStyles.logo} src ="/fb-icon.svg"/>
-                        <img className= {menuStyles.logo} src ="/ig-icon.svg"/>
+                        <img className= {menuStyles.logo} src ="/li-icon.svg" alt="LinkedIn"/>
+                        <img className= {menuStyles.logo} src ="/fb-icon.svg" alt="Facebook"/>
+                        <img className= {menuStyles.logo} src ="/ig-icon.svg" alt="Instagram"/>
                     </div>
 
-                    <img className= {menuStyles.image} src ="/menuImage.svg"/>
+                    <img className= {menuStyles.image} src ="/menuImage.svg" alt=""/>
 
                 </div>
 

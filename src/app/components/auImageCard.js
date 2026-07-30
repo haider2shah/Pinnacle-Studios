@@ -13,7 +13,7 @@ const ImageCard = ({name, position, src}) => {
         <motion.div className= {Styles.wrapper} variants={cardItemVariants}>
             <div className= {Styles.card}>
                 <div className= {Styles.picture}>
-                    <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {src} unoptimized/>
+                    <Image className= {Styles.image} alt={`${name}, ${position} at Pinnacle Studios`} width={0} height={0} src= {src} unoptimized/>
                 </div>
                 <div className= {Styles.text}>
                     <div>

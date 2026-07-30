@@ -4,9 +4,9 @@ const MobileMenuCard = ({ title, icon, arrowIcon }) => {
     return (
         <div className= {cardStyles.cardWrapper}>
             <div className={cardStyles.menuCard}>
-                {icon && <img className= {cardStyles.cardIcon} src={icon} alt="icon" />}
+                {icon && <img className= {cardStyles.cardIcon} src={icon} alt="" />}
                 <span className={cardStyles.cardTitle}>{title}</span>
-                {arrowIcon && <img className= {cardStyles.cardArrow} src={arrowIcon} alt="arrow icon" />}
+                {arrowIcon && <img className= {cardStyles.cardArrow} src={arrowIcon} alt="" />}
             </div>
         </div>
     );

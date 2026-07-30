@@ -29,7 +29,7 @@ const SectionTwo = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
                 >
-                    <Image className= {auStyles.imageTwo} alt="About us image" width={0} height={0} src="/ipad.webp" unoptimized/>
+                    <Image className= {auStyles.imageTwo} alt="" width={0} height={0} src="/ipad.webp" unoptimized/>
                 </motion.div>
             </div>
         </div>

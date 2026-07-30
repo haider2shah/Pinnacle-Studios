@@ -27,7 +27,7 @@ const Subsection3 = ({ title, text, cards = [] }) => {
               <div className={Styles.mainCard} key={index}>
                 <Image
                   className={Styles.image}
-                  alt={`Card ${index + 1}`}
+                  alt={card.text}
                   width={0}
                   height={0}
                   src={card.image}

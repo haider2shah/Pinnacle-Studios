@@ -39,6 +39,7 @@ const NavBar = () => {
         <div className={navStyles.menu}>
           <img
             src="/menu.svg"
+            alt="Open menu"
             className={navStyles.menuIcon}
             onClick = {() => setMenuOpen(true)}
             />

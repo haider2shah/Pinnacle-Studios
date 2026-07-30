@@ -16,7 +16,7 @@ const MobileMenu = ({ onClose }) => {
         >
             <div className= {menuStyles.closeWrapper}>
                 <div className={menuStyles.closeBox}>
-                    <img onClick= {onClose} className={menuStyles.cencelIcon} src="/cancel-icon.svg" />
+                    <img onClick= {onClose} className={menuStyles.cencelIcon} src="/cancel-icon.svg" alt="Close menu" />
                     <h2 className={menuStyles.heading}>Menu</h2>
                 </div>
             </div>
@@ -44,9 +44,9 @@ const MobileMenu = ({ onClose }) => {
 
                 {/* Social Icons */}
                 <div className={menuStyles.logoContainer}>
-                    <img className={menuStyles.logo} src="/li-icon.svg" />
-                    <img className={menuStyles.logo} src="/fb-icon.svg" />
-                    <img className={menuStyles.logo} src="/ig-icon.svg" />
+                    <img className={menuStyles.logo} src="/li-icon.svg" alt="LinkedIn" />
+                    <img className={menuStyles.logo} src="/fb-icon.svg" alt="Facebook" />
+                    <img className={menuStyles.logo} src="/ig-icon.svg" alt="Instagram" />
                 </div>
 
 

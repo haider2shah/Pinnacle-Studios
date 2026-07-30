@@ -30,7 +30,7 @@ const SectionOne = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
                 >
-                    <Image className= {auStyles.imageOne} alt="About us image" width={0} height={0} src="/aboutOne.webp" unoptimized priority/>
+                    <Image className= {auStyles.imageOne} alt="Collage of emerging technology — robotics, medical imaging, and clean energy" width={0} height={0} src="/aboutOne.webp" unoptimized priority/>
                 </motion.div>
             </div>
 

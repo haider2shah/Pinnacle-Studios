@@ -36,7 +36,7 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
                         >
-                            <Image className= {Styles.image} alt="Team members" width={0} height={0} src= {image} unoptimized priority/>
+                            <Image className= {Styles.image} alt={title} width={0} height={0} src= {image} unoptimized priority/>
                         </motion.div>
                         <motion.div
                             className= {Styles.picture}
@@ -45,7 +45,7 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
                         >
-                            <Image className= {Styles.imageMobile} alt="Team members" width={0} height={0} src= {imageMobile} unoptimized priority/>
+                            <Image className= {Styles.imageMobile} alt={title} width={0} height={0} src= {imageMobile} unoptimized priority/>
                         </motion.div>
 
                         <div className= {Styles.iconWrapper}>
@@ -57,7 +57,7 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                                 transition={{ duration: 0.7, delay: 0, ease: 'easeOut' }}
                             >
                                 <div>
-                                    <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {icon} unoptimized/>
+                                    <Image className= {Styles.icon} alt={iconHeadingOne} width={0} height={0} src= {icon} unoptimized/>
                                 </div>
                                 <div className= {Styles.iconText}>
                                     <div className= {Styles.iconHeadingOne} >
@@ -77,7 +77,7 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                                 transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
                             >
                                 <div>
-                                    <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconTwo} unoptimized/>
+                                    <Image className= {Styles.icon} alt={iconHeadingTwo} width={0} height={0} src= {iconTwo} unoptimized/>
                                 </div>
                                 <div className= {Styles.iconText}>
                                     <div className= {Styles.iconHeadingTwo} >
@@ -97,7 +97,7 @@ const ServicesCard = ({ title, paragraph, image,icon,iconTwo,iconThree,iconParag
                                 transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
                             >
                                 <div>
-                                    <Image className= {Styles.icon} alt="Team members" width={0} height={0} src= {iconThree} unoptimized/>
+                                    <Image className= {Styles.icon} alt={iconHeadingThree} width={0} height={0} src= {iconThree} unoptimized/>
                                 </div>
                                 <div className= {Styles.iconText}>
                                     <div className= {Styles.iconHeadingThree} >
