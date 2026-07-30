@@ -50,9 +50,15 @@
 }
 
 .logoIcon {
-  height: 1.6rem;
+  height: 1rem;
   width: auto;
   flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .logoIcon {
+    display: none;
+  }
 }
 
 .nav-links {
