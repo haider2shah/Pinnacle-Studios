@@ -37,12 +37,23 @@ const NavBar = () => {
           it back. On mobile it slides away as before. */}
       <nav className={`${navStyles.navbar} ${isVisible ? '' : navStyles.shrunk}`}>
         <div className={navStyles.menu}>
-          <img
-            src="/menu.svg"
-            alt="Open menu"
-            className={navStyles.menuIcon}
-            onClick = {() => setMenuOpen(true)}
-            />
+          <Link
+            href="/menu"
+            aria-label="Open menu"
+            onClick={(e) => {
+              // Real link for accessibility/middle-click/open-in-new-tab, but
+              // a plain left click opens the overlay instead of navigating.
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+              e.preventDefault();
+              setMenuOpen(true);
+            }}
+          >
+            <img
+              src="/menu.svg"
+              alt=""
+              className={navStyles.menuIcon}
+              />
+          </Link>
 
           <div className={navStyles.logo}>
             <img src="/PS%20Logo.svg" alt="" className={navStyles.logoIcon} />
