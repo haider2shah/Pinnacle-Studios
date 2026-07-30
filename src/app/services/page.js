@@ -7,8 +7,11 @@ import Subsection1 from '../components/servicesSubSection1';
 import Subsection from '../components/servicesSubSection';
 import Subsection3 from '../components/servicesSubSection3';
 
-
-
+export const metadata = {
+  title: "Services",
+  description:
+    "UX design, full-stack development, and no-code solutions from Pinnacle Studios — websites built to scale with your business, serving clients across the San Francisco Bay Area and beyond.",
+};
 
 
 export default function Services() {

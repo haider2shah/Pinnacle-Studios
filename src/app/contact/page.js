@@ -2,6 +2,12 @@ import NavBar from '../components/navBar';
 import ContactForm from '../components/contactForm';
 import styles from '../styles_css/contactPage.module.css';
 
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Pinnacle Studios to start your next web design or development project. Based in Pleasanton, CA, serving the San Francisco Bay Area and beyond.",
+};
+
 export default function ContactUsPage() {
     return (
       <>
