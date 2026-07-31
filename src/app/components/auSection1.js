@@ -15,11 +15,11 @@ const SectionOne = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.9, ease: 'easeOut' }}
                 >
-                    <p className= {auStyles.text}>
+                    <h1 className= {auStyles.text}>
                         We help startups put
                         their best foot forward
                         in the digital world.
-                    </p>
+                    </h1>
 
                     <button className= {auStyles.button}>Contact us</button>
                 </motion.div>
