@@ -39,11 +39,20 @@ export const metadata = {
     siteName: "Pinnacle Studios",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pinnacle Studios — Design. Build. Elevate.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pinnacle Studios | Web Design & Development Studio",
     description: siteDescription,
+    images: ["/og-image.jpg"],
   },
 };
 
