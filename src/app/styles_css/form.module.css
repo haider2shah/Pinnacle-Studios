@@ -56,7 +56,7 @@
     cursor: pointer;
     width: 125px;
     margin-top: 16px;
-    background: url('/button.png') no-repeat center/cover;
+    background: url('/button.webp') no-repeat center/cover;
     background-position: center;
     background-size: cover;
     image-rendering: crisp-edges;
