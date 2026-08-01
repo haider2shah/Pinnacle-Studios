@@ -1,0 +1,14 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+}
+
+.logo {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+}

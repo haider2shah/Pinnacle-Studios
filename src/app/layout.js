@@ -1,6 +1,7 @@
 import { Open_Sans, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
+import LoadingOverlay from "./components/LoadingOverlay";
 
 // Import fonts using next/font
 const openSans = Open_Sans({
@@ -95,6 +96,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${openSans.variable} antialiased`}
       >
         <SmoothScroll />
+        <LoadingOverlay />
         {children}
       </body>
     </html>
