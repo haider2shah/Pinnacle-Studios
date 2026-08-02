@@ -14,32 +14,51 @@ const LOGO_PATHS = [
   "M280.949 226.53C281.474 223.788 281.659 221.204 282.779 219.123C285.058 214.886 287.786 210.885 290.431 206.854C293.535 202.126 297.399 202.267 300.455 207.172C316.017 232.152 331.575 257.136 347.12 282.127C358.268 300.048 369.398 317.981 380.523 335.916C381.311 337.187 382.112 338.472 382.708 339.837C384.802 344.633 382.526 348.764 377.347 349.044C372.035 349.33 366.612 349.67 361.401 348.894C358.481 348.459 354.826 346.475 353.311 344.056C329.31 305.728 305.601 267.217 281.838 228.741C281.491 228.181 281.298 227.526 280.949 226.53Z",
 ];
 
+// Center of path index 2 (the outer diagonal bar), in the 450x350 viewBox's
+// own coordinate space -- measured via getBBox(), not eyeballed. Scaling the
+// logo group with this as transform-origin makes that bar the thing the
+// camera appears to "dive into".
+const ZOOM_ORIGIN = "383px 248px";
+
 const STAGGER = 0.08;
 const DRAW_DURATION = 1.3;
 const FILL_DELAY = 1.0; // fill begins slightly before the outline finishes, for a smooth handoff
 const FILL_DURATION = 0.7;
 const HOLD = 0.4;
-const EXIT_DURATION = 0.6;
+
+const ZOOM_SCALE = 18;
+const ZOOM_DURATION = 0.9;
+const FLASH_DURATION = 0.4; // white flash fades in during the tail end of the zoom, as a
+// guaranteed-full-coverage fallback regardless of viewport size
+const POST_ZOOM_HOLD = 0.15;
+const REVEAL_DURATION = 0.6;
+
+const INTRO_END = (FILL_DELAY + FILL_DURATION + HOLD) * 1000;
+const ZOOM_END = INTRO_END + ZOOM_DURATION * 1000;
+const REVEAL_START = ZOOM_END + POST_ZOOM_HOLD * 1000;
 
 export default function LoadingOverlay({ onComplete }) {
-  const [exiting, setExiting] = useState(false);
-  const [done, setDone] = useState(false);
+  const [phase, setPhase] = useState('intro'); // intro -> zoom -> reveal -> done
 
   useEffect(() => {
-    const t = setTimeout(() => setExiting(true), (FILL_DELAY + FILL_DURATION + HOLD) * 1000);
-    return () => clearTimeout(t);
+    const t1 = setTimeout(() => setPhase('zoom'), INTRO_END);
+    const t2 = setTimeout(() => setPhase('reveal'), REVEAL_START);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
   }, []);
 
-  if (done) return null;
+  if (phase === 'done') return null;
 
   return (
     <motion.div
       className={styles.overlay}
-      animate={{ opacity: exiting ? 0 : 1 }}
-      transition={{ duration: EXIT_DURATION, ease: 'easeInOut' }}
+      animate={{ opacity: phase === 'reveal' ? 0 : 1 }}
+      transition={{ duration: REVEAL_DURATION, ease: 'easeInOut' }}
       onAnimationComplete={() => {
-        if (exiting) {
-          setDone(true);
+        if (phase === 'reveal') {
+          setPhase('done');
           onComplete?.();
         }
       }}
@@ -50,24 +69,45 @@ export default function LoadingOverlay({ onComplete }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {LOGO_PATHS.map((d, i) => (
-          <motion.path
-            key={i}
-            d={d}
-            stroke="white"
-            strokeWidth={3}
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            fill="white"
-            initial={{ pathLength: 0, fillOpacity: 0 }}
-            animate={{ pathLength: 1, fillOpacity: 1 }}
-            transition={{
-              pathLength: { duration: DRAW_DURATION, ease: 'easeInOut', delay: i * STAGGER },
-              fillOpacity: { duration: FILL_DURATION, ease: 'easeInOut', delay: FILL_DELAY + i * STAGGER },
-            }}
-          />
-        ))}
+        {/* Scale + transform-origin live on this <g>, not the root <svg> --
+            a <g> resolves transform-origin in the viewBox's own coordinate
+            system, while the root <svg> element resolves it against its
+            rendered CSS pixel box instead, which would pivot around the
+            wrong point entirely. */}
+        <motion.g
+          style={{ transformOrigin: ZOOM_ORIGIN }}
+          animate={{ scale: phase === 'zoom' || phase === 'reveal' ? ZOOM_SCALE : 1 }}
+          transition={{ duration: ZOOM_DURATION, ease: [0.6, 0.04, 0.98, 0.335] }}
+        >
+          {LOGO_PATHS.map((d, i) => (
+            <motion.path
+              key={i}
+              d={d}
+              stroke="white"
+              strokeWidth={3}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              fill="white"
+              initial={{ pathLength: 0, fillOpacity: 0 }}
+              animate={{ pathLength: 1, fillOpacity: 1 }}
+              transition={{
+                pathLength: { duration: DRAW_DURATION, ease: 'easeInOut', delay: i * STAGGER },
+                fillOpacity: { duration: FILL_DURATION, ease: 'easeInOut', delay: FILL_DELAY + i * STAGGER },
+              }}
+            />
+          ))}
+        </motion.g>
       </svg>
+
+      {/* Guaranteed full-screen white coverage once the zoomed bar should have
+          swallowed the viewport -- masks any gap between the scaled shape's
+          actual geometry and the real viewport size on very wide screens. */}
+      <motion.div
+        className={styles.flash}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: phase === 'zoom' || phase === 'reveal' ? 1 : 0 }}
+        transition={{ duration: FLASH_DURATION, ease: 'easeIn', delay: ZOOM_DURATION - FLASH_DURATION }}
+      />
     </motion.div>
   );
 }

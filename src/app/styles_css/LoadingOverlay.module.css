@@ -11,4 +11,14 @@
 .logo {
   width: clamp(120px, 18vw, 220px);
   height: auto;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  pointer-events: none;
 }
