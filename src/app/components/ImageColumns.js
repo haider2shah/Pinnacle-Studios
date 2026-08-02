@@ -12,7 +12,7 @@ const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : use
 // optimize script) — the originals are multi-megabyte PNGs whose decode cost
 // stalls the scroll thread and freezes the pinned animation.
 const col1Images = [
-  { id: 1,  src: '/grid/ux.webp',           alt: 'UX Design' },
+  { id: 1,  src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
   { id: 2,  src: '/grid/estate.webp',       alt: 'Real Estate' },
   { id: 3,  src: '/grid/coding.webp',       alt: 'Development' },
   { id: 4,  src: '/grid/wellness.webp',     alt: 'Wellness' },
@@ -56,7 +56,7 @@ const COLUMNS = [
 ];
 
 const mobileRow1 = [
-  { id: 'm1', src: '/grid/ux.webp',         alt: 'UX Design' },
+  { id: 'm1', src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
   { id: 'm2', src: '/grid/design.webp',     alt: 'Design' },
   { id: 'm3', src: '/grid/creative.webp',   alt: 'Creative' },
   { id: 'm4', src: '/grid/hiring.webp',     alt: 'Hiring' },
