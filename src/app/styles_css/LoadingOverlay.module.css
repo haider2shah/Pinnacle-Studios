@@ -5,44 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(24px, 4vw, 40px);
+  background-color: #000000;
 }
 
 .logo {
-  width: clamp(70px, 9vw, 120px);
+  width: clamp(120px, 18vw, 220px);
   height: auto;
-}
-
-.progressRow {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.progressTrack {
-  width: clamp(120px, 16vw, 200px);
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-}
-
-.progressFill {
-  height: 100%;
-  background-color: #fff;
-}
-
-.counter {
-  font-variant-numeric: tabular-nums;
-  font-family: var(--font-mono, ui-monospace, 'SF Mono', Consolas, monospace);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.85);
-  min-width: 2.5ch;
 }
