@@ -316,7 +316,7 @@ export default function ImageColumns() {
           aria-hidden="true"
         >
           <motion.div className={styles.featuredInner} style={{ scaleX: featuredInnerX, scaleY: featuredInnerY }}>
-            <Image src="/grid/ux-hero.webp" alt="" width={900} height={600} className={styles.image} priority />
+            <Image src="/grid/dental-mockup.webp" alt="" width={900} height={600} className={styles.image} priority />
           </motion.div>
         </motion.div>
 
@@ -335,7 +335,7 @@ export default function ImageColumns() {
           aria-hidden="true"
         >
           <motion.div className={styles.featuredInner} style={{ scaleX: featuredMobileInnerX, scaleY: featuredMobileInnerY }}>
-            <Image src="/grid/ux-hero.webp" alt="" width={600} height={430} className={styles.image} priority />
+            <Image src="/grid/dental-mockup.webp" alt="" width={600} height={430} className={styles.image} priority />
           </motion.div>
         </motion.div>
 
