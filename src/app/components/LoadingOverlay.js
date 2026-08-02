@@ -14,10 +14,23 @@ const LOGO_PATHS = [
   "M280.949 226.53C281.474 223.788 281.659 221.204 282.779 219.123C285.058 214.886 287.786 210.885 290.431 206.854C293.535 202.126 297.399 202.267 300.455 207.172C316.017 232.152 331.575 257.136 347.12 282.127C358.268 300.048 369.398 317.981 380.523 335.916C381.311 337.187 382.112 338.472 382.708 339.837C384.802 344.633 382.526 348.764 377.347 349.044C372.035 349.33 366.612 349.67 361.401 348.894C358.481 348.459 354.826 346.475 353.311 344.056C329.31 305.728 305.601 267.217 281.838 228.741C281.491 228.181 281.298 227.526 280.949 226.53Z",
 ];
 
-// Center of path index 2 (the outer diagonal bar), in the 450x350 viewBox's
-// own coordinate space -- measured via getBBox(), not eyeballed. Scaling the
-// logo group with this as transform-origin makes that bar the thing the
-// camera appears to "dive into".
+// Path index 2 (the outer diagonal bar) is the "gateway" -- instead of being
+// drawn as a solid shape like the other three, its outline is used to punch a
+// hole through the black backdrop, so the real page shows through it once it
+// starts growing.
+const GATEWAY_INDEX = 2;
+const SOLID_INDICES = [0, 1, 3];
+const GATEWAY_PATH = LOGO_PATHS[GATEWAY_INDEX];
+
+// Oversized square, used as the mask's base layer (white = backdrop stays
+// opaque) and as the black backdrop rect itself. 6000 units out from origin
+// comfortably covers even very wide/4K viewports once scaled.
+const BACKDROP_EXTENT = 6000;
+
+// Center of path index 2, in the 450x350 viewBox's own coordinate space --
+// measured via getBBox(), not eyeballed. Scaling the group with this as
+// transform-origin makes that bar the thing the camera dives into, and the
+// hole it leaves behind grow from the same fixed point.
 const ZOOM_ORIGIN = "383px 248px";
 
 const STAGGER = 0.08;
@@ -28,20 +41,20 @@ const HOLD = 0.4;
 
 const ZOOM_SCALE = 18;
 const ZOOM_DURATION = 0.9;
-const FLASH_DURATION = 0.4; // white flash fades in during the tail end of the zoom, as a
-// guaranteed-full-coverage fallback regardless of viewport size
+const GATEWAY_FADE_DURATION = 0.3; // how fast the bar itself disappears, unmasking the hole
 const POST_ZOOM_HOLD = 0.15;
-const REVEAL_DURATION = 0.6;
+const REVEAL_DURATION = 0.6; // final safety-net fade, in case the hole's geometry doesn't
+// quite reach every corner on unusually wide viewports
 
 const INTRO_END = (FILL_DELAY + FILL_DURATION + HOLD) * 1000;
 const ZOOM_END = INTRO_END + ZOOM_DURATION * 1000;
 const REVEAL_START = ZOOM_END + POST_ZOOM_HOLD * 1000;
 
 export default function LoadingOverlay({ onComplete }) {
-  const [phase, setPhase] = useState('intro'); // intro -> zoom -> reveal -> done
+  const [phase, setPhase] = useState('intro'); // intro -> gateway -> reveal -> done
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase('zoom'), INTRO_END);
+    const t1 = setTimeout(() => setPhase('gateway'), INTRO_END);
     const t2 = setTimeout(() => setPhase('reveal'), REVEAL_START);
     return () => {
       clearTimeout(t1);
@@ -50,6 +63,8 @@ export default function LoadingOverlay({ onComplete }) {
   }, []);
 
   if (phase === 'done') return null;
+
+  const growing = phase === 'gateway' || phase === 'reveal';
 
   return (
     <motion.div
@@ -69,20 +84,40 @@ export default function LoadingOverlay({ onComplete }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <defs>
+          <mask id="loadingGatewayMask" maskUnits="userSpaceOnUse" x={-BACKDROP_EXTENT} y={-BACKDROP_EXTENT} width={BACKDROP_EXTENT * 2} height={BACKDROP_EXTENT * 2}>
+            {/* white = backdrop stays opaque; black = punches the hole */}
+            <rect x={-BACKDROP_EXTENT} y={-BACKDROP_EXTENT} width={BACKDROP_EXTENT * 2} height={BACKDROP_EXTENT * 2} fill="white" />
+            <path d={GATEWAY_PATH} fill="black" />
+          </mask>
+        </defs>
+
         {/* Scale + transform-origin live on this <g>, not the root <svg> --
             a <g> resolves transform-origin in the viewBox's own coordinate
             system, while the root <svg> element resolves it against its
             rendered CSS pixel box instead, which would pivot around the
             wrong point entirely. */}
-        <motion.g
-          style={{ transformOrigin: ZOOM_ORIGIN }}
-          animate={{ scale: phase === 'zoom' || phase === 'reveal' ? ZOOM_SCALE : 1 }}
-          transition={{ duration: ZOOM_DURATION, ease: [0.6, 0.04, 0.98, 0.335] }}
+        {/* Plain <g>, not <motion.g>: Framer Motion manages transform /
+            transform-origin as its own internal motion values for SVG
+            elements and silently resets transform-origin to "0px 0px"
+            regardless of what's passed via style -- confirmed by inspecting
+            the live DOM. A native CSS transition doesn't have that problem. */}
+        <g
+          style={{
+            transformOrigin: ZOOM_ORIGIN,
+            transform: growing ? `scale(${ZOOM_SCALE})` : 'scale(1)',
+            transition: `transform ${ZOOM_DURATION}s cubic-bezier(0.6, 0.04, 0.98, 0.335)`,
+          }}
         >
-          {LOGO_PATHS.map((d, i) => (
+          {/* Black backdrop with the gateway hole. Everywhere except that
+              hole stays opaque black; the hole grows with the group scale,
+              revealing more of the real page underneath as it expands. */}
+          <rect x={-BACKDROP_EXTENT} y={-BACKDROP_EXTENT} width={BACKDROP_EXTENT * 2} height={BACKDROP_EXTENT * 2} fill="black" mask="url(#loadingGatewayMask)" />
+
+          {SOLID_INDICES.map((i) => (
             <motion.path
               key={i}
-              d={d}
+              d={LOGO_PATHS[i]}
               stroke="white"
               strokeWidth={3}
               strokeLinejoin="round"
@@ -96,18 +131,31 @@ export default function LoadingOverlay({ onComplete }) {
               }}
             />
           ))}
-        </motion.g>
-      </svg>
 
-      {/* Guaranteed full-screen white coverage once the zoomed bar should have
-          swallowed the viewport -- masks any gap between the scaled shape's
-          actual geometry and the real viewport size on very wide screens. */}
-      <motion.div
-        className={styles.flash}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: phase === 'zoom' || phase === 'reveal' ? 1 : 0 }}
-        transition={{ duration: FLASH_DURATION, ease: 'easeIn', delay: ZOOM_DURATION - FLASH_DURATION }}
-      />
+          {/* The gateway bar itself: drawn and filled white during the intro
+              just like the others, then fades away once the hole starts
+              growing, so nothing opaque is left sitting on top of it. */}
+          <motion.path
+            d={GATEWAY_PATH}
+            stroke="white"
+            strokeWidth={3}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            fill="white"
+            initial={{ pathLength: 0, fillOpacity: 0, opacity: 1 }}
+            animate={{
+              pathLength: 1,
+              fillOpacity: 1,
+              opacity: growing ? 0 : 1,
+            }}
+            transition={{
+              pathLength: { duration: DRAW_DURATION, ease: 'easeInOut', delay: GATEWAY_INDEX * STAGGER },
+              fillOpacity: { duration: FILL_DURATION, ease: 'easeInOut', delay: FILL_DELAY + GATEWAY_INDEX * STAGGER },
+              opacity: { duration: GATEWAY_FADE_DURATION, ease: 'easeIn' },
+            }}
+          />
+        </g>
+      </svg>
     </motion.div>
   );
 }
