@@ -44,7 +44,7 @@ const col5Images = [
   { id: 18, src: '/grid/ux-mobile.webp',    alt: 'Mobile UX' },
   { id: 19, src: '/grid/code-mobile.webp',  alt: 'Mobile Dev' },
   { id: 20, src: '/grid/san-fran.webp',     alt: 'San Fran' },
-  { id: 25, src: '/grid/estate.webp',       alt: 'Real Estate' },
+  { id: 25, src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
 ];
 
 const COLUMNS = [
@@ -84,7 +84,7 @@ const mobileRow4 = [
   { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
   { id: 'm21', src: '/grid/design.webp',      alt: 'Design' },
   { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
-  { id: 'm23', src: '/grid/estate.webp',      alt: 'Real Estate' },
+  { id: 'm23', src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
   { id: 'm24', src: '/grid/hospitality.webp', alt: 'Hospitality' },
 ];
 
