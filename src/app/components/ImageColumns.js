@@ -40,11 +40,11 @@ const col4Images = [
   { id: 24, src: '/grid/creative.webp',     alt: 'Creative' },
 ];
 const col5Images = [
-  { id: 17, src: '/grid/sf.webp',           alt: 'San Francisco' },
+  { id: 25, src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
   { id: 18, src: '/grid/ux-mobile.webp',    alt: 'Mobile UX' },
   { id: 19, src: '/grid/code-mobile.webp',  alt: 'Mobile Dev' },
   { id: 20, src: '/grid/san-fran.webp',     alt: 'San Fran' },
-  { id: 25, src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
+  { id: 17, src: '/grid/sf.webp',           alt: 'San Francisco' },
 ];
 
 const COLUMNS = [
@@ -79,12 +79,12 @@ const mobileRow3 = [
   { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
 ];
 const mobileRow4 = [
-  { id: 'm18', src: '/grid/ux-design.webp',   alt: 'UX Design' },
+  { id: 'm23', src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
   { id: 'm19', src: '/grid/code-mobile.webp', alt: 'Mobile Dev' },
   { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
   { id: 'm21', src: '/grid/design.webp',      alt: 'Design' },
   { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
-  { id: 'm23', src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
+  { id: 'm18', src: '/grid/ux-design.webp',   alt: 'UX Design' },
   { id: 'm24', src: '/grid/hospitality.webp', alt: 'Hospitality' },
 ];
 
