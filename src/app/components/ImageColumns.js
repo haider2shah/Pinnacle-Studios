@@ -27,7 +27,7 @@ const col2Images = [
 ];
 const col3Images = [
   { id: 9,  src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
-  { id: 10, src: '/grid/hospitality.webp',  alt: 'Hospitality' },
+  { id: 10, src: '/grid/lms-mockup.webp',   alt: 'LMS Website Design' },
   { id: 11, src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 12, src: '/grid/art.webp',          alt: 'Art' },
   { id: 23, src: '/grid/react.webp',        alt: 'React' },
@@ -73,7 +73,7 @@ const mobileRow2 = [
 ];
 const mobileRow3 = [
   { id: 'm11', src: '/grid/coding.webp',      alt: 'Development' },
-  { id: 'm12', src: '/grid/tech.webp',        alt: 'Tech' },
+  { id: 'm12', src: '/grid/lms-mockup.webp',  alt: 'LMS Website Design' },
   { id: 'm13', src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 'm14', src: '/grid/product.webp',     alt: 'Product' },
   { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
