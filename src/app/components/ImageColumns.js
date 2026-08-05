@@ -13,7 +13,7 @@ const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : use
 // stalls the scroll thread and freezes the pinned animation.
 const col1Images = [
   { id: 1,  src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
-  { id: 2,  src: '/grid/estate.webp',       alt: 'Real Estate' },
+  { id: 2,  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
   { id: 3,  src: '/grid/coding.webp',       alt: 'Development' },
   { id: 4,  src: '/grid/wellness.webp',     alt: 'Wellness' },
   { id: 21, src: '/grid/hospitality.webp',  alt: 'Hospitality' },
@@ -26,7 +26,7 @@ const col2Images = [
   { id: 22, src: '/grid/start-up.webp',     alt: 'Startup' },
 ];
 const col3Images = [
-  { id: 9,  src: '/grid/creative.webp',     alt: 'Creative' },
+  { id: 9,  src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
   { id: 10, src: '/grid/hospitality.webp',  alt: 'Hospitality' },
   { id: 11, src: '/grid/ux-design.webp',    alt: 'UX Design' },
   { id: 12, src: '/grid/art.webp',          alt: 'Art' },
@@ -63,9 +63,9 @@ const mobileRow1 = [
   { id: 'm5', src: '/grid/sf.webp',         alt: 'San Francisco' },
 ];
 const mobileRow2 = [
-  { id: 'm6',  src: '/grid/estate.webp',      alt: 'Real Estate' },
+  { id: 'm8',  src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
+  { id: 'm6',  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
   { id: 'm7',  src: '/grid/dining.webp',      alt: 'Dining' },
-  { id: 'm8',  src: '/grid/hospitality.webp', alt: 'Hospitality' },
   { id: 'm9',  src: '/grid/react.webp',       alt: 'React' },
   { id: 'm10', src: '/grid/ux-mobile.webp',   alt: 'Mobile UX' },
   { id: 'm16', src: '/grid/bio.webp',         alt: 'Bio' },
