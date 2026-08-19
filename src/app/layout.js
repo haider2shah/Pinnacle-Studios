@@ -2,6 +2,7 @@ import { Open_Sans, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import LoadingOverlay from "./components/LoadingOverlay";
+import Cursor from "./components/Cursor";
 
 // Import fonts using next/font
 const openSans = Open_Sans({
@@ -97,6 +98,7 @@ export default function RootLayout({ children }) {
       >
         <SmoothScroll />
         <LoadingOverlay />
+        <Cursor />
         {children}
       </body>
     </html>

@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles_css/ImageColumns.module.css';
-import { motion, useScroll, useTransform, easeInOut } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform, easeInOut } from 'framer-motion';
 
 // Measure before first paint in the browser, without the SSR warning.
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
@@ -26,16 +26,16 @@ const col2Images = [
   { id: 22, src: '/grid/start-up.webp',     alt: 'Startup' },
 ];
 const col3Images = [
-  { id: 9,  src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
-  { id: 10, src: '/grid/lms-mockup.webp',   alt: 'LMS Website Design' },
+  { id: 9,  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
+  { id: 10, src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 11, src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 12, src: '/grid/art.webp',          alt: 'Art' },
   { id: 23, src: '/grid/react.webp',        alt: 'React' },
 ];
 const col4Images = [
-  { id: 13, src: '/grid/hiring.webp',       alt: 'Hiring' },
-  { id: 14, src: '/grid/react.webp',        alt: 'React' },
-  { id: 15, src: '/grid/start-up.webp',     alt: 'Startup' },
+  { id: 13, src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
+  { id: 14, src: '/grid/lms-mockup.webp',    alt: 'LMS Website Design' },
+  { id: 15, src: '/grid/hiring.webp',        alt: 'Hiring' },
   { id: 16, src: '/grid/bio.webp',          alt: 'Bio' },
   { id: 24, src: '/grid/creative.webp',     alt: 'Creative' },
 ];
@@ -55,6 +55,8 @@ const COLUMNS = [
   { images: col5Images, offset: '0px'   },
 ];
 
+const PORTFOLIO_ITEMS = COLUMNS.flatMap((column) => column.images);
+
 const mobileRow1 = [
   { id: 'm1', src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
   { id: 'm2', src: '/grid/design.webp',     alt: 'Design' },
@@ -63,7 +65,7 @@ const mobileRow1 = [
   { id: 'm5', src: '/grid/sf.webp',         alt: 'San Francisco' },
 ];
 const mobileRow2 = [
-  { id: 'm8',  src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
+  { id: 'm8',  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
   { id: 'm6',  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
   { id: 'm7',  src: '/grid/dining.webp',      alt: 'Dining' },
   { id: 'm9',  src: '/grid/react.webp',       alt: 'React' },
@@ -73,18 +75,18 @@ const mobileRow2 = [
 ];
 const mobileRow3 = [
   { id: 'm11', src: '/grid/coding.webp',      alt: 'Development' },
-  { id: 'm12', src: '/grid/lms-mockup.webp',  alt: 'LMS Website Design' },
+  { id: 'm12', src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 'm13', src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 'm14', src: '/grid/product.webp',     alt: 'Product' },
   { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
 ];
 const mobileRow4 = [
   { id: 'm23', src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
+  { id: 'm18', src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
+  { id: 'm21', src: '/grid/lms-mockup.webp', alt: 'LMS Website Design' },
   { id: 'm19', src: '/grid/code-mobile.webp', alt: 'Mobile Dev' },
   { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
-  { id: 'm21', src: '/grid/design.webp',      alt: 'Design' },
   { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
-  { id: 'm18', src: '/grid/ux-design.webp',   alt: 'UX Design' },
   { id: 'm24', src: '/grid/hospitality.webp', alt: 'Hospitality' },
 ];
 
@@ -110,12 +112,91 @@ const COL_DRIFT = [-160, 140, -220, 130, -180];
 // stays on screen, then let it slide with the others.
 const ROW1_X_AT_DOCK = -40;
 const ROW1_X_AT_END = -340;
+const LIGHTBOX_LAYOUT_DURATION = 0.82;
+
+const lightboxImageVariants = {
+  enter: (direction) => ({
+    opacity: 0,
+    x: direction >= 0 ? 46 : -46,
+    scale: 0.985,
+    filter: 'blur(12px)',
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+  },
+  exit: (direction) => ({
+    opacity: 0,
+    x: direction >= 0 ? -46 : 46,
+    scale: 0.985,
+    filter: 'blur(12px)',
+  }),
+};
+
+function ArrowIcon({ direction }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      {direction === 'previous' ? (
+        <path d="M15.5 5.5 9 12l6.5 6.5" />
+      ) : (
+        <path d="m8.5 5.5 6.5 6.5-6.5 6.5" />
+      )}
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6.5 6.5 17.5 17.5" />
+      <path d="M17.5 6.5 6.5 17.5" />
+    </svg>
+  );
+}
 
 export default function ImageColumns() {
   const containerRef = useRef(null);
   const stageRef = useRef(null);
   const firstCardRef = useRef(null);
   const firstMobileCardRef = useRef(null);
+  const [lightbox, setLightbox] = useState(null);
+  const [slideDirection, setSlideDirection] = useState(0);
+  const selectedItem = lightbox == null ? null : PORTFOLIO_ITEMS[lightbox.index];
+  const wrapIndex = (index) => (index + PORTFOLIO_ITEMS.length) % PORTFOLIO_ITEMS.length;
+
+  const openLightbox = (index, layoutId) => {
+    if (index < 0) return;
+
+    setSlideDirection(0);
+    setLightbox({
+      index,
+      layoutId,
+    });
+  };
+
+  const closeLightbox = useCallback(() => {
+    if (lightbox == null || selectedItem == null) return;
+
+    setLightbox(null);
+  }, [lightbox, selectedItem]);
+
+  const moveLightbox = (step) => {
+    setSlideDirection(step > 0 ? 1 : -1);
+    setLightbox((current) => {
+      if (current == null) return current;
+      return {
+        ...current,
+        index: (current.index + step + PORTFOLIO_ITEMS.length) % PORTFOLIO_ITEMS.length,
+      };
+    });
+  };
+
+  const jumpLightbox = (index) => {
+    setSlideDirection(lightbox == null || index >= lightbox.index ? 1 : -1);
+    setLightbox((current) => (current == null ? current : { ...current, index }));
+  };
 
   // The featured image is laid out at the exact size of the first grid card
   // and animated with transforms only — never width/height, which would
@@ -294,8 +375,49 @@ export default function ImageColumns() {
       clearTimeout(settle);
       window.removeEventListener('resize', measure);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (lightbox == null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        setSlideDirection(-1);
+        setLightbox((current) => {
+          if (current == null) return current;
+          return {
+            ...current,
+            index: (current.index - 1 + PORTFOLIO_ITEMS.length) % PORTFOLIO_ITEMS.length,
+            layoutId: null,
+          };
+        });
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        setSlideDirection(1);
+        setLightbox((current) => {
+          if (current == null) return current;
+          return {
+            ...current,
+            index: (current.index + 1) % PORTFOLIO_ITEMS.length,
+            layoutId: null,
+          };
+        });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeLightbox, lightbox]);
 
   return (
     <section ref={containerRef} className={styles.container}>
@@ -347,21 +469,30 @@ export default function ImageColumns() {
               style={{ y: yValues[colIndex], marginTop: col.offset }}
             >
               {col.images.map((img, imgIndex) => (
-                <motion.div
+                <motion.button
                   key={img.id}
+                  type="button"
                   ref={colIndex === 0 && imgIndex === 0 ? firstCardRef : undefined}
                   className={styles.imageCard}
+                  data-card
+                  layoutId={`portfolio-card-${img.id}`}
+                  aria-label={`Expand ${img.alt}`}
+                  onClick={() => openLightbox(
+                    PORTFOLIO_ITEMS.findIndex((item) => item.id === img.id),
+                    `portfolio-card-${img.id}`
+                  )}
                   whileHover={{
                     scale: 1.05,
                     boxShadow: '0 24px 60px rgba(0, 0, 0, 0.45)',
                     zIndex: 20,
                     transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
                   }}
+                  whileTap={{ scale: 0.985 }}
                 >
                   {/* Eager: the pinned stage reveals all cards at once, so lazy
                       loading would make them pop in after the fade. */}
                   <Image src={img.src} alt={img.alt} width={600} height={400} className={styles.image} loading="eager" />
-                </motion.div>
+                </motion.button>
               ))}
             </motion.div>
           ))}
@@ -376,18 +507,115 @@ export default function ImageColumns() {
           ].map(({ row, x }, i) => (
             <motion.div key={i} className={styles.mobileRow} style={{ x }}>
               {row.map((img, imgIndex) => (
-                <div
+                <motion.button
+                  type="button"
                   key={img.id}
                   ref={i === 0 && imgIndex === 0 ? firstMobileCardRef : undefined}
                   className={styles.mobileCard}
+                  data-card
+                  layoutId={`portfolio-mobile-card-${img.id}`}
+                  aria-label={`Expand ${img.alt}`}
+                  onClick={() => openLightbox(
+                    PORTFOLIO_ITEMS.findIndex((item) => item.src === img.src),
+                    `portfolio-mobile-card-${img.id}`
+                  )}
                 >
                   <Image src={img.src} alt={img.alt} width={400} height={300} className={styles.image} loading="eager" />
-                </div>
+                </motion.button>
               ))}
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            className={styles.lightboxOverlay}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.999 }}
+            transition={{ duration: 0.82, ease: [0.16, 1, 0.3, 1] }}
+            onClick={closeLightbox}
+          >
+            <motion.div
+              className={styles.lightboxBackdrop}
+              aria-hidden="true"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
+            />
+
+            <motion.div
+              className={styles.lightboxFrame}
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${selectedItem.alt} expanded preview`}
+              onClick={(event) => event.stopPropagation()}
+              layoutId={lightbox.layoutId || undefined}
+              transition={{
+                layout: {
+                  duration: LIGHTBOX_LAYOUT_DURATION,
+                  ease: [0.16, 1, 0.3, 1],
+                },
+              }}
+            >
+              <button
+                type="button"
+                className={styles.lightboxClose}
+                aria-label="Close image preview"
+                onClick={closeLightbox}
+              >
+                <CloseIcon />
+              </button>
+
+              <motion.div className={styles.lightboxImageShell}>
+                <AnimatePresence mode="wait" custom={slideDirection} initial={false}>
+                  <motion.div
+                    key={selectedItem.id}
+                    className={styles.lightboxImageLayer}
+                    custom={slideDirection}
+                    variants={lightboxImageVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Image
+                      src={selectedItem.src}
+                      alt={selectedItem.alt}
+                      fill
+                      sizes="(max-width: 768px) 95vw, 1280px"
+                      className={styles.lightboxImage}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+
+              <div className={styles.lightboxControls} aria-label="Portfolio image navigation">
+                <button
+                  type="button"
+                  className={`${styles.lightboxNavButton} ${styles.lightboxPrev}`}
+                  aria-label="Show previous portfolio image"
+                  onClick={() => moveLightbox(-1)}
+                >
+                  <ArrowIcon direction="previous" />
+                </button>
+
+                <button
+                  type="button"
+                  className={`${styles.lightboxNavButton} ${styles.lightboxNext}`}
+                  aria-label="Show next portfolio image"
+                  onClick={() => moveLightbox(1)}
+                >
+                  <ArrowIcon direction="next" />
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
