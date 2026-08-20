@@ -32,6 +32,7 @@ const col3Images = [
   { id: 9,  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
   { id: 10, src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 11, src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
+  { id: 31, src: '/grid/automation-mockup.webp', alt: 'Automation Website Design' },
   { id: 12, src: '/grid/art.webp',          alt: 'Art' },
   { id: 23, src: '/grid/react.webp',        alt: 'React' },
 ];
@@ -85,6 +86,7 @@ const mobileRow3 = [
   { id: 'm11', src: '/grid/coding.webp',      alt: 'Development' },
   { id: 'm12', src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 'm13', src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
+  { id: 'm31', src: '/grid/automation-mockup.webp', alt: 'Automation Website Design' },
   { id: 'm14', src: '/grid/product.webp',     alt: 'Product' },
   { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
 ];
@@ -98,6 +100,16 @@ const mobileRow4 = [
   { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
   { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
   { id: 'm24', src: '/grid/hospitality.webp', alt: 'Hospitality' },
+];
+const mobileRow5 = [
+  { id: 'm32', src: '/grid/wellness.webp', alt: 'Wellness' },
+  { id: 'm33', src: '/grid/tech.webp', alt: 'Tech' },
+  { id: 'm34', src: '/grid/hospitality.webp', alt: 'Hospitality' },
+  { id: 'm35', src: '/grid/sf.webp', alt: 'San Francisco' },
+  { id: 'm36', src: '/grid/dining.webp', alt: 'Dining' },
+  { id: 'm37', src: '/grid/creative.webp', alt: 'Creative' },
+  { id: 'm38', src: '/grid/hiring.webp', alt: 'Hiring' },
+  { id: 'm39', src: '/grid/bio.webp', alt: 'Bio' },
 ];
 
 // Timeline over the section's full transit: 0 = it enters at the bottom of
@@ -384,6 +396,7 @@ export default function ImageColumns() {
   const xRow2 = useTransform(progress, [0, 1], [-400, 0]);
   const xRow3 = useTransform(progress, [0, 1], [0, -420]);
   const xRow4 = useTransform(progress, [0, 1], [-400, 0]);
+  const xRow5 = useTransform(progress, [0, 1], [0, 360]);
 
   useIsoLayoutEffect(() => {
     const measure = () => {
@@ -583,6 +596,7 @@ export default function ImageColumns() {
             { row: mobileRow2, x: xRow2 },
             { row: mobileRow3, x: xRow3 },
             { row: mobileRow4, x: xRow4 },
+            { row: mobileRow5, x: xRow5 },
           ].map(({ row, x }, i) => (
             <motion.div key={i} className={styles.mobileRow} style={{ x }}>
               {row.map((img, imgIndex) => (
