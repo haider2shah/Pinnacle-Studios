@@ -22,9 +22,6 @@ export default function Cursor() {
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    const supportsFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!supportsFinePointer) return;
-
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
     let rx = mx;
@@ -38,6 +35,8 @@ export default function Cursor() {
       body.classList.toggle('cur-view', mode === 'view');
       body.classList.toggle('cur-sf', mode === 'sf');
     };
+
+    body.classList.add('cur-active');
 
     const updateDot = (x, y) => {
       dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
@@ -85,6 +84,7 @@ export default function Cursor() {
     };
 
     document.addEventListener('pointermove', onMove, { passive: true });
+    document.addEventListener('mousemove', onMove, { passive: true });
     document.addEventListener('mouseout', onDocumentOut);
     window.addEventListener('pointerdown', onDown);
     window.addEventListener('pointerup', onUp);
@@ -94,6 +94,7 @@ export default function Cursor() {
 
     return () => {
       document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseout', onDocumentOut);
       window.removeEventListener('pointerdown', onDown);
       window.removeEventListener('pointerup', onUp);

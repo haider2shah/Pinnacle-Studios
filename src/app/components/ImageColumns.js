@@ -161,15 +161,72 @@ export default function ImageColumns() {
   const stageRef = useRef(null);
   const firstCardRef = useRef(null);
   const firstMobileCardRef = useRef(null);
+  const bodyOverflowRef = useRef('');
+  const scrollLockedRef = useRef(false);
+  const closeStateRef = useRef({
+    active: false,
+    layoutDone: false,
+    exitDone: false,
+  });
   const [lightbox, setLightbox] = useState(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [slideDirection, setSlideDirection] = useState(0);
   const selectedItem = lightbox == null ? null : PORTFOLIO_ITEMS[lightbox.index];
   const wrapIndex = (index) => (index + PORTFOLIO_ITEMS.length) % PORTFOLIO_ITEMS.length;
+
+  const lockBodyScroll = useCallback(() => {
+    if (typeof document === 'undefined' || scrollLockedRef.current) return;
+
+    bodyOverflowRef.current = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    scrollLockedRef.current = true;
+  }, []);
+
+  const unlockBodyScroll = useCallback(() => {
+    if (typeof document === 'undefined' || !scrollLockedRef.current) return;
+
+    document.body.style.overflow = bodyOverflowRef.current;
+    scrollLockedRef.current = false;
+  }, []);
+
+  const finalizeClose = useCallback(() => {
+    const closeState = closeStateRef.current;
+    if (!closeState.active || !closeState.layoutDone || !closeState.exitDone) return;
+
+    closeStateRef.current = {
+      active: false,
+      layoutDone: false,
+      exitDone: false,
+    };
+
+    unlockBodyScroll();
+    setLightbox(null);
+  }, [unlockBodyScroll]);
+
+  const markLayoutDone = useCallback(() => {
+    if (!closeStateRef.current.active) return;
+
+    closeStateRef.current.layoutDone = true;
+    finalizeClose();
+  }, [finalizeClose]);
+
+  const markExitDone = useCallback(() => {
+    if (!closeStateRef.current.active) return;
+
+    closeStateRef.current.exitDone = true;
+    finalizeClose();
+  }, [finalizeClose]);
 
   const openLightbox = (index, layoutId) => {
     if (index < 0) return;
 
     setSlideDirection(0);
+    closeStateRef.current = {
+      active: false,
+      layoutDone: false,
+      exitDone: false,
+    };
+    setIsLightboxOpen(true);
     setLightbox({
       index,
       layoutId,
@@ -179,7 +236,12 @@ export default function ImageColumns() {
   const closeLightbox = useCallback(() => {
     if (lightbox == null || selectedItem == null) return;
 
-    setLightbox(null);
+    closeStateRef.current = {
+      active: true,
+      layoutDone: false,
+      exitDone: false,
+    };
+    setIsLightboxOpen(false);
   }, [lightbox, selectedItem]);
 
   const moveLightbox = (step) => {
@@ -380,8 +442,7 @@ export default function ImageColumns() {
   useEffect(() => {
     if (lightbox == null) return;
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    lockBodyScroll();
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -414,10 +475,18 @@ export default function ImageColumns() {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [closeLightbox, lightbox]);
+  }, [closeLightbox, lightbox, lockBodyScroll]);
+
+  useEffect(() => () => {
+    unlockBodyScroll();
+    closeStateRef.current = {
+      active: false,
+      layoutDone: false,
+      exitDone: false,
+    };
+  }, [unlockBodyScroll]);
 
   return (
     <section ref={containerRef} className={styles.container}>
@@ -519,6 +588,7 @@ export default function ImageColumns() {
                     PORTFOLIO_ITEMS.findIndex((item) => item.src === img.src),
                     `portfolio-mobile-card-${img.id}`
                   )}
+                  whileTap={{ scale: 0.985 }}
                 >
                   <Image src={img.src} alt={img.alt} width={400} height={300} className={styles.image} loading="eager" />
                 </motion.button>
@@ -528,8 +598,10 @@ export default function ImageColumns() {
         </motion.div>
       </div>
 
-      <AnimatePresence>
-        {selectedItem && (
+      <AnimatePresence
+        onExitComplete={markExitDone}
+      >
+        {isLightboxOpen && selectedItem && (
           <motion.div
             className={styles.lightboxOverlay}
             initial={{ opacity: 1 }}
@@ -554,6 +626,7 @@ export default function ImageColumns() {
               aria-label={`${selectedItem.alt} expanded preview`}
               onClick={(event) => event.stopPropagation()}
               layoutId={lightbox.layoutId || undefined}
+              onLayoutAnimationComplete={markLayoutDone}
               transition={{
                 layout: {
                   duration: LIGHTBOX_LAYOUT_DURATION,

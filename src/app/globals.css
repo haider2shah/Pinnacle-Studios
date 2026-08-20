@@ -31,14 +31,13 @@ body {
   font-family: Open Sans;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body.cur-active,
-body.cur-active a,
-body.cur-active button,
-body.cur-active [role="button"],
-body.cur-active input,
-body.cur-active textarea,
-body.cur-active select {
-  cursor: none;
+body.cur-active * {
+  cursor: none !important;
 }
 
 button {
