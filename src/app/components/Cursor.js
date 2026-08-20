@@ -18,6 +18,10 @@ export default function Cursor() {
   const ringRef = useRef(null);
 
   useEffect(() => {
+    const shouldHideCursor = () =>
+      window.matchMedia('(hover: none), (pointer: coarse), (max-width: 767px)').matches;
+    if (shouldHideCursor()) return;
+
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
@@ -82,6 +86,9 @@ export default function Cursor() {
     const onVisibilityChange = () => {
       if (document.hidden) deactivateCursor();
     };
+    const onViewportChange = () => {
+      if (shouldHideCursor()) deactivateCursor();
+    };
 
     document.addEventListener('pointermove', onMove, { passive: true });
     document.addEventListener('mousemove', onMove, { passive: true });
@@ -90,6 +97,7 @@ export default function Cursor() {
     window.addEventListener('pointerup', onUp);
     window.addEventListener('blur', deactivateCursor);
     document.addEventListener('visibilitychange', onVisibilityChange);
+    window.addEventListener('resize', onViewportChange);
     rafId = window.requestAnimationFrame(tick);
 
     return () => {
@@ -100,6 +108,7 @@ export default function Cursor() {
       window.removeEventListener('pointerup', onUp);
       window.removeEventListener('blur', deactivateCursor);
       document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('resize', onViewportChange);
       window.cancelAnimationFrame(rafId);
       document.body.classList.remove('cur-active', 'cur-view', 'cur-link', 'cur-sf', 'cur-down');
     };

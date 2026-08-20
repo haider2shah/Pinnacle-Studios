@@ -102,3 +102,10 @@
 :global(body.cur-down) .cursorRing {
   transform: translate(-50%, -50%) scale(0.85);
 }
+
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
+  .cursorDot,
+  .cursorRing {
+    display: none;
+  }
+}
