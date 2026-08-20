@@ -12,14 +12,17 @@ const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : use
 // optimize script) — the originals are multi-megabyte PNGs whose decode cost
 // stalls the scroll thread and freezes the pinned animation.
 const col1Images = [
-  { id: 1,  src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
+  { id: 1,  src: '/grid/fintech-mockup.webp', alt: 'Fintech Website Design' },
+  { id: 28, src: '/grid/pottery-mockup.webp', alt: 'Pottery Website Design' },
   { id: 2,  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
   { id: 3,  src: '/grid/coding.webp',       alt: 'Development' },
   { id: 4,  src: '/grid/wellness.webp',     alt: 'Wellness' },
   { id: 21, src: '/grid/hospitality.webp',  alt: 'Hospitality' },
 ];
 const col2Images = [
-  { id: 5,  src: '/grid/design.webp',       alt: 'Design' },
+  { id: 5,  src: '/grid/serum-mockup.webp', alt: 'Serum Website Design' },
+  { id: 26, src: '/grid/logistics-mockup.webp', alt: 'Logistics Website Design' },
+  { id: 30, src: '/grid/restaurant-mockup.webp', alt: 'Restaurant Website Design' },
   { id: 6,  src: '/grid/dining.webp',       alt: 'Dining' },
   { id: 7,  src: '/grid/tech.webp',         alt: 'Tech' },
   { id: 8,  src: '/grid/product.webp',      alt: 'Product' },
@@ -33,14 +36,16 @@ const col3Images = [
   { id: 23, src: '/grid/react.webp',        alt: 'React' },
 ];
 const col4Images = [
-  { id: 13, src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
-  { id: 14, src: '/grid/lms-mockup.webp',    alt: 'LMS Website Design' },
+  { id: 13, src: '/grid/robotics-mockup.webp', alt: 'Robotics Website Design' },
+  { id: 14, src: '/grid/travel-mockup.webp',  alt: 'Travel Website Design' },
   { id: 15, src: '/grid/hiring.webp',        alt: 'Hiring' },
   { id: 16, src: '/grid/bio.webp',          alt: 'Bio' },
   { id: 24, src: '/grid/creative.webp',     alt: 'Creative' },
 ];
 const col5Images = [
-  { id: 25, src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
+  { id: 25, src: '/grid/ebike-mockup.webp', alt: 'Ebike Website Design' },
+  { id: 27, src: '/grid/dentist-mockup.webp', alt: 'Dentist Website Design' },
+  { id: 29, src: '/grid/denim-mockup.webp', alt: 'Denim Website Design' },
   { id: 18, src: '/grid/ux-mobile.webp',    alt: 'Mobile UX' },
   { id: 19, src: '/grid/code-mobile.webp',  alt: 'Mobile Dev' },
   { id: 20, src: '/grid/san-fran.webp',     alt: 'San Fran' },
@@ -58,8 +63,11 @@ const COLUMNS = [
 const PORTFOLIO_ITEMS = COLUMNS.flatMap((column) => column.images);
 
 const mobileRow1 = [
-  { id: 'm1', src: '/grid/dental-mockup.webp', alt: 'Dental Website Design' },
-  { id: 'm2', src: '/grid/design.webp',     alt: 'Design' },
+  { id: 'm1', src: '/grid/fintech-mockup.webp', alt: 'Fintech Website Design' },
+  { id: 'm28', src: '/grid/pottery-mockup.webp', alt: 'Pottery Website Design' },
+  { id: 'm2', src: '/grid/serum-mockup.webp', alt: 'Serum Website Design' },
+  { id: 'm26', src: '/grid/logistics-mockup.webp', alt: 'Logistics Website Design' },
+  { id: 'm30', src: '/grid/restaurant-mockup.webp', alt: 'Restaurant Website Design' },
   { id: 'm3', src: '/grid/creative.webp',   alt: 'Creative' },
   { id: 'm4', src: '/grid/hiring.webp',     alt: 'Hiring' },
   { id: 'm5', src: '/grid/sf.webp',         alt: 'San Francisco' },
@@ -81,9 +89,11 @@ const mobileRow3 = [
   { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
 ];
 const mobileRow4 = [
-  { id: 'm23', src: '/grid/salon-mockup.webp', alt: 'Salon Website Design' },
-  { id: 'm18', src: '/grid/lawyer-mockup.webp', alt: 'Law Firm Website Design' },
-  { id: 'm21', src: '/grid/lms-mockup.webp', alt: 'LMS Website Design' },
+  { id: 'm23', src: '/grid/ebike-mockup.webp', alt: 'Ebike Website Design' },
+  { id: 'm27', src: '/grid/dentist-mockup.webp', alt: 'Dentist Website Design' },
+  { id: 'm29', src: '/grid/denim-mockup.webp', alt: 'Denim Website Design' },
+  { id: 'm18', src: '/grid/robotics-mockup.webp', alt: 'Robotics Website Design' },
+  { id: 'm21', src: '/grid/travel-mockup.webp', alt: 'Travel Website Design' },
   { id: 'm19', src: '/grid/code-mobile.webp', alt: 'Mobile Dev' },
   { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
   { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
@@ -507,7 +517,7 @@ export default function ImageColumns() {
           aria-hidden="true"
         >
           <motion.div className={styles.featuredInner} style={{ scaleX: featuredInnerX, scaleY: featuredInnerY }}>
-            <Image src="/grid/dental-mockup.webp" alt="" width={900} height={600} className={styles.image} priority />
+            <Image src="/grid/fintech-mockup.webp" alt="" width={900} height={600} className={styles.image} priority />
           </motion.div>
         </motion.div>
 
@@ -526,7 +536,7 @@ export default function ImageColumns() {
           aria-hidden="true"
         >
           <motion.div className={styles.featuredInner} style={{ scaleX: featuredMobileInnerX, scaleY: featuredMobileInnerY }}>
-            <Image src="/grid/dental-mockup.webp" alt="" width={600} height={430} className={styles.image} priority />
+            <Image src="/grid/fintech-mockup.webp" alt="" width={600} height={430} className={styles.image} priority />
           </motion.div>
         </motion.div>
 
