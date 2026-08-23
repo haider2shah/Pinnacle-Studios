@@ -15,42 +15,29 @@ const col1Images = [
   { id: 1,  src: '/grid/fintech-mockup.webp', alt: 'Fintech Website Design' },
   { id: 28, src: '/grid/pottery-mockup.webp', alt: 'Pottery Website Design' },
   { id: 2,  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
-  { id: 3,  src: '/grid/coding.webp',       alt: 'Development' },
-  { id: 4,  src: '/grid/wellness.webp',     alt: 'Wellness' },
-  { id: 21, src: '/grid/hospitality.webp',  alt: 'Hospitality' },
+  { id: 41, src: '/grid/pharmacy-mockup.webp', alt: 'Pharmacy Website Design' },
 ];
 const col2Images = [
   { id: 5,  src: '/grid/serum-mockup.webp', alt: 'Serum Website Design' },
   { id: 26, src: '/grid/logistics-mockup.webp', alt: 'Logistics Website Design' },
   { id: 30, src: '/grid/restaurant-mockup.webp', alt: 'Restaurant Website Design' },
-  { id: 6,  src: '/grid/dining.webp',       alt: 'Dining' },
-  { id: 7,  src: '/grid/tech.webp',         alt: 'Tech' },
-  { id: 8,  src: '/grid/product.webp',      alt: 'Product' },
-  { id: 22, src: '/grid/start-up.webp',     alt: 'Startup' },
 ];
 const col3Images = [
   { id: 9,  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
   { id: 10, src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 11, src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 31, src: '/grid/automation-mockup.webp', alt: 'Automation Website Design' },
-  { id: 12, src: '/grid/art.webp',          alt: 'Art' },
-  { id: 23, src: '/grid/react.webp',        alt: 'React' },
 ];
 const col4Images = [
   { id: 13, src: '/grid/robotics-mockup.webp', alt: 'Robotics Website Design' },
   { id: 14, src: '/grid/travel-mockup.webp',  alt: 'Travel Website Design' },
-  { id: 15, src: '/grid/hiring.webp',        alt: 'Hiring' },
-  { id: 16, src: '/grid/bio.webp',          alt: 'Bio' },
-  { id: 24, src: '/grid/creative.webp',     alt: 'Creative' },
+  { id: 32, src: '/grid/medixa-mockup.webp', alt: 'Medixa Website Design' },
 ];
 const col5Images = [
   { id: 25, src: '/grid/ebike-mockup.webp', alt: 'Ebike Website Design' },
   { id: 27, src: '/grid/dentist-mockup.webp', alt: 'Dentist Website Design' },
   { id: 29, src: '/grid/denim-mockup.webp', alt: 'Denim Website Design' },
-  { id: 18, src: '/grid/ux-mobile.webp',    alt: 'Mobile UX' },
-  { id: 19, src: '/grid/code-mobile.webp',  alt: 'Mobile Dev' },
-  { id: 20, src: '/grid/san-fran.webp',     alt: 'San Fran' },
-  { id: 17, src: '/grid/sf.webp',           alt: 'San Francisco' },
+  { id: 40, src: '/grid/nitrox-mockup.webp', alt: 'Nitrox Website Design' },
 ];
 
 const COLUMNS = [
@@ -66,50 +53,30 @@ const PORTFOLIO_ITEMS = COLUMNS.flatMap((column) => column.images);
 const mobileRow1 = [
   { id: 'm1', src: '/grid/fintech-mockup.webp', alt: 'Fintech Website Design' },
   { id: 'm28', src: '/grid/pottery-mockup.webp', alt: 'Pottery Website Design' },
-  { id: 'm2', src: '/grid/serum-mockup.webp', alt: 'Serum Website Design' },
-  { id: 'm26', src: '/grid/logistics-mockup.webp', alt: 'Logistics Website Design' },
-  { id: 'm30', src: '/grid/restaurant-mockup.webp', alt: 'Restaurant Website Design' },
-  { id: 'm3', src: '/grid/creative.webp',   alt: 'Creative' },
-  { id: 'm4', src: '/grid/hiring.webp',     alt: 'Hiring' },
-  { id: 'm5', src: '/grid/sf.webp',         alt: 'San Francisco' },
+  { id: 'm2', src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
+  { id: 'm41', src: '/grid/pharmacy-mockup.webp', alt: 'Pharmacy Website Design' },
 ];
 const mobileRow2 = [
-  { id: 'm8',  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
-  { id: 'm6',  src: '/grid/real-estate-mockup.webp', alt: 'Real Estate Website Design' },
-  { id: 'm7',  src: '/grid/dining.webp',      alt: 'Dining' },
-  { id: 'm9',  src: '/grid/react.webp',       alt: 'React' },
-  { id: 'm10', src: '/grid/ux-mobile.webp',   alt: 'Mobile UX' },
-  { id: 'm16', src: '/grid/bio.webp',         alt: 'Bio' },
-  { id: 'm17', src: '/grid/art.webp',         alt: 'Art' },
+  { id: 'm5', src: '/grid/serum-mockup.webp', alt: 'Serum Website Design' },
+  { id: 'm26', src: '/grid/logistics-mockup.webp', alt: 'Logistics Website Design' },
+  { id: 'm30', src: '/grid/restaurant-mockup.webp', alt: 'Restaurant Website Design' },
 ];
 const mobileRow3 = [
-  { id: 'm11', src: '/grid/coding.webp',      alt: 'Development' },
+  { id: 'm8',  src: '/grid/spa-mockup.webp', alt: 'Spa Website Design' },
   { id: 'm12', src: '/grid/car-rental-mockup.webp', alt: 'Car Rental Website Design' },
   { id: 'm13', src: '/grid/vending-mockup.webp', alt: 'Vending Solutions Website Design' },
   { id: 'm31', src: '/grid/automation-mockup.webp', alt: 'Automation Website Design' },
-  { id: 'm14', src: '/grid/product.webp',     alt: 'Product' },
-  { id: 'm15', src: '/grid/start-up.webp',    alt: 'Startup' },
 ];
 const mobileRow4 = [
+  { id: 'm18', src: '/grid/robotics-mockup.webp', alt: 'Robotics Website Design' },
+  { id: 'm21', src: '/grid/travel-mockup.webp', alt: 'Travel Website Design' },
+  { id: 'm32', src: '/grid/medixa-mockup.webp', alt: 'Medixa Website Design' },
+];
+const mobileRow5 = [
   { id: 'm23', src: '/grid/ebike-mockup.webp', alt: 'Ebike Website Design' },
   { id: 'm27', src: '/grid/dentist-mockup.webp', alt: 'Dentist Website Design' },
   { id: 'm29', src: '/grid/denim-mockup.webp', alt: 'Denim Website Design' },
-  { id: 'm18', src: '/grid/robotics-mockup.webp', alt: 'Robotics Website Design' },
-  { id: 'm21', src: '/grid/travel-mockup.webp', alt: 'Travel Website Design' },
-  { id: 'm19', src: '/grid/code-mobile.webp', alt: 'Mobile Dev' },
-  { id: 'm20', src: '/grid/san-fran.webp',    alt: 'San Fran' },
-  { id: 'm22', src: '/grid/creative.webp',    alt: 'Creative' },
-  { id: 'm24', src: '/grid/hospitality.webp', alt: 'Hospitality' },
-];
-const mobileRow5 = [
-  { id: 'm32', src: '/grid/wellness.webp', alt: 'Wellness' },
-  { id: 'm33', src: '/grid/tech.webp', alt: 'Tech' },
-  { id: 'm34', src: '/grid/hospitality.webp', alt: 'Hospitality' },
-  { id: 'm35', src: '/grid/sf.webp', alt: 'San Francisco' },
-  { id: 'm36', src: '/grid/dining.webp', alt: 'Dining' },
-  { id: 'm37', src: '/grid/creative.webp', alt: 'Creative' },
-  { id: 'm38', src: '/grid/hiring.webp', alt: 'Hiring' },
-  { id: 'm39', src: '/grid/bio.webp', alt: 'Bio' },
+  { id: 'm40', src: '/grid/nitrox-mockup.webp', alt: 'Nitrox Website Design' },
 ];
 
 // Timeline over the section's full transit: 0 = it enters at the bottom of

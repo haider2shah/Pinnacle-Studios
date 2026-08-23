@@ -21,6 +21,7 @@ export default function Cursor() {
     const shouldHideCursor = () =>
       window.matchMedia('(hover: none), (pointer: coarse), (max-width: 767px)').matches;
     if (shouldHideCursor()) return;
+    const isLoadingOverlayActive = () => document.body.classList.contains('loading-overlay-active');
 
     const dot = dotRef.current;
     const ring = ringRef.current;
@@ -48,6 +49,11 @@ export default function Cursor() {
 
     const onMove = (event) => {
       if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+
+      if (isLoadingOverlayActive()) {
+        deactivateCursor();
+        return;
+      }
 
       body.classList.add('cur-active');
 

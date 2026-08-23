@@ -40,6 +40,11 @@ body.cur-active * {
   cursor: none !important;
 }
 
+body.loading-overlay-active,
+body.loading-overlay-active * {
+  cursor: none !important;
+}
+
 button {
   background-color: #a2fe9e;
   color: white;

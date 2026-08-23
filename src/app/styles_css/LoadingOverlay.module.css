@@ -6,6 +6,12 @@
   align-items: center;
   justify-content: center;
   background-color: #000000;
+  cursor: none;
+}
+
+.overlay,
+.overlay * {
+  cursor: none !important;
 }
 
 .logo {

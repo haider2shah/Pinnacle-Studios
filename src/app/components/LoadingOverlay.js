@@ -26,8 +26,12 @@ export default function LoadingOverlay({ onComplete }) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    document.body.classList.add('loading-overlay-active');
     const t = setTimeout(() => setExiting(true), (FILL_DELAY + FILL_DURATION + HOLD) * 1000);
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      document.body.classList.remove('loading-overlay-active');
+    };
   }, []);
 
   if (done) return null;
@@ -39,6 +43,7 @@ export default function LoadingOverlay({ onComplete }) {
       transition={{ duration: EXIT_DURATION, ease: 'easeInOut' }}
       onAnimationComplete={() => {
         if (exiting) {
+          document.body.classList.remove('loading-overlay-active');
           setDone(true);
           onComplete?.();
         }

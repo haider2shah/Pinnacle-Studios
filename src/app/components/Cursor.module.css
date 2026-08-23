@@ -39,6 +39,12 @@
   visibility: visible;
 }
 
+:global(body.loading-overlay-active) .cursorDot,
+:global(body.loading-overlay-active) .cursorRing {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 :global(body.cur-link) .cursorRing {
   width: 42px;
   height: 42px;
